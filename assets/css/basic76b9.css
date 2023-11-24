@@ -1,0 +1,7188 @@
+@charset "UTF-8";
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+RESET_start
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+* {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+p,
+span,
+em,
+strong,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+a {
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+}
+
+a {
+	outline: none;
+	text-decoration: none;
+}
+
+.sp {
+	display: none;
+}
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　RESET_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+COMMON_start
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+body {}
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+	font-family: "FOT-UD角ゴ_スモール Pr6 DB", sans-serif;
+	font-weight: 500;
+	font-style: normal;
+	vertical-align: baseline;
+}
+
+#grandwrapper {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+}
+
+
+
+
+
+
+/*
+〓〓〓フォント関連〓〓〓
+*/
+.red {
+	color: #c20001;
+}
+
+
+
+
+
+/*
+〓〓〓フォント〓〓〓
+*/
+/*@font-face {
+	font-family: "FOT-UD角ゴ_スモール Pr6 UL";
+	src: url("");
+}
+@font-face {
+	font-family: "FOT-UD角ゴ_スモール Pr6 EL";
+	src: url("");
+}
+@font-face {
+	font-family: "FOT-UD角ゴ_スモール Pr6 L";
+	src: url("");
+}
+@font-face {
+	font-family: "FOT-UD角ゴ_スモール Pr6 R";
+	src: url("");
+}
+@font-face {
+	font-family: "FOT-UD角ゴ_スモール Pr6 M";
+	src: url("");
+}
+@font-face {
+	font-family: "FOT-UD角ゴ_スモール Pr6 DB";
+	src: url("");
+}
+@font-face {
+	font-family: "FOT-UD角ゴ_スモール Pr6 B";
+	src: url("");
+}*/
+
+
+
+
+
+
+/*
+〓〓〓エフェクト関連〓〓〓
+*/
+/*
+ef_liner（黒帯ライナー。着火はjsで制御）
+*/
+.ef_liner {
+	position: relative;
+}
+
+/*HideObject*/
+.ef_liner::before {
+	content: "";
+	z-index: 10;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: #ffffff;
+	width: 100%;
+	height: 100%;
+}
+
+.ef_liner.end::before {
+	display: none;
+}
+
+/*LinerObject*/
+.ef_liner::after {
+	content: "";
+	z-index: 10;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: #000000;
+	width: 100%;
+	height: 100%;
+	transform: scaleX(0);
+	transition-duration: 300ms;
+	transition-property: all;
+	transition-timing-function: cubic-bezier(.42, 0, 0, .99);
+	transition-delay: 0ms;
+	transform-origin: left;
+}
+
+.ef_liner.run::after {
+	transform-origin: right;
+	transform: scaleX(1);
+}
+
+.ef_liner.end::after {
+	transform: scaleX(0);
+	transition-duration: 600ms;
+}
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　COMMON_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+LOADING_start
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#loading {
+	z-index: 999;
+	background-color: #000000;
+	color: #ffffff;
+	box-sizing: border-box;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border-top: 50em solid #000;
+	border-bottom: 50em solid #000;
+	border-left: 50em solid #000;
+	border-right: 50em solid #000;
+	transition-duration: 600ms;
+	transition-property: all;
+	transition-timing-function: cubic-bezier(.42, 0, 0, .99);
+	transition-delay: 1200ms;
+	transform-origin: left;
+}
+
+#loading.remove {
+	pointer-events: none;
+	background-color: transparent;
+	border-top: 0em solid #000;
+	border-bottom: 0em solid #000;
+	border-left: 0em solid #8f0026;
+	border-right: 0em solid #8f0026;
+}
+
+
+
+#loading > div p {
+	opacity: 0;
+	position: fixed;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	margin: -15px 0 0 0;
+	color: #ffffff;
+	font-size: 30px;
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 500;
+	font-style: normal;
+	line-height: 1em;
+	letter-spacing: 1em;
+	text-indent: 1em;
+	text-align: center;
+}
+
+#loading.active > div p {
+	animation-name: anime_lodingtxt;
+	animation-duration: 600ms;
+	animation-delay: 1000ms;
+	animation-fill-mode: both;
+}
+
+#loading.remove > div p {
+	animation-name: anime_lodingtxt_remove;
+	animation-duration: 600ms;
+	animation-delay: 600ms;
+	animation-fill-mode: both;
+}
+
+@keyframes anime_lodingtxt {
+	0% {
+		opacity: 0;
+		transform: translateX(200px);
+		letter-spacing: 0.5em;
+		text-indent: 0.5em;
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0px);
+		letter-spacing: 1em;
+		text-indent: 1em;
+	}
+}
+
+@keyframes anime_lodingtxt_remove {
+	0% {
+		opacity: 1;
+		letter-spacing: 1em;
+		text-indent: 1em;
+	}
+
+	100% {
+		opacity: 0;
+		transform: translateX(-200px);
+		letter-spacing: 0.5em;
+		text-indent: 0.5em;
+	}
+}
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　LOADING_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+footer_start
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+footer {
+	background-color: #000000;
+	text-align: center;
+	width: 100%;
+	padding: 0 0 70px;
+	font-size: 14px;
+}
+
+
+
+
+
+
+/*
+シェア
+*/
+.share {
+	background-color: #ffffff;
+	width: 100%;
+	padding: 80px 0;
+}
+
+.share h3 {
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 500;
+	font-style: normal;
+	font-size: 25px;
+	letter-spacing: 0.5em;
+	text-indent: 0.5em;
+	text-align: center;
+}
+
+.share ul {
+	display: flex;
+	justify-content: space-between;
+	width: 260px;
+	margin: 40px auto 0;
+}
+
+.share ul li {}
+
+.share ul li a {
+	display: block;
+	background-size: 60px 60px;
+	background-position: top center;
+	background-repeat: no-repeat;
+	width: 60px;
+	height: 60px;
+	text-indent: -9999px;
+}
+
+.share ul li.twitter a {
+	background-image: url(../images/shareicon_twitter.png);
+}
+
+.share ul li.line a {
+	background-image: url(../images/shareicon_line.png);
+}
+
+.share ul li.facebook a {
+	background-image: url(../images/shareicon_facebook.png);
+}
+
+
+
+
+
+
+/*
+ディープリンク
+*/
+.deeplink {
+	width: 100%;
+	margin: 95px 0 0;
+}
+
+.deeplink ul {
+	text-align: center;
+	width: 900px;
+	margin: 0 auto;
+}
+
+.deeplink ul li {
+	display: inline-block;
+	font-size: 13px;
+	line-height: 1em;
+	margin: 0 1.2em 0 0;
+	padding: 0 1.2em 0 0;
+	border-right: 1px #ffffff solid;
+}
+
+.deeplink ul li:last-child {
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+.deeplink ul li a {
+	color: #ffffff;
+}
+
+
+
+
+
+
+/*
+言語選択
+*/
+.lang {
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	width: 100%;
+	margin: 120px 0 0;
+}
+
+.lang h2 {
+	background-image: url(../images/footer_game_logo.png);
+	background-position: top center;
+	background-repeat: no-repeat;
+	width: 294px;
+	height: 93px;
+	margin: 0 auto;
+	text-indent: -9999px;
+}
+
+.lang ul {
+	text-align: center;
+	width: 300px;
+	margin: 40px auto 0;
+}
+
+.lang ul li {
+	display: inline-block;
+	position: relative;
+	font-size: 18px;
+	line-height: 1em;
+	letter-spacing: 0.25em;
+	margin: 0 1em 0 0;
+	padding: 0 1em 0 0;
+}
+
+.lang ul li:first-child::after {
+	content: "/";
+	display: block;
+	position: absolute;
+	color: #ffffff;
+	line-height: 1em;
+	top: 0;
+	right: -0.5em;
+	margin: 0;
+	text-indent: 0px;
+}
+
+.lang ul li:last-child {
+	margin: 0;
+	padding: 0;
+}
+
+.lang ul li a {
+	color: #3f3f3f;
+}
+
+.lang ul li a:hover,
+.lang ul li a.active {
+	color: #ffffff;
+}
+
+
+
+
+
+
+/*
+コピーライト
+*/
+footer p {
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	color: #ffffff;
+	font-size: 11px;
+	letter-spacing: 0.12em;
+	text-indent: 0.12em;
+	margin: 100px auto 10px;
+}
+
+
+
+
+
+
+/*
+コピーライト
+*/
+footer small {
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	color: #ffffff;
+	font-size: 13px;
+	letter-spacing: 0.12em;
+	text-indent: 0.12em;
+}
+
+
+
+
+
+
+/*
+パティ
+*/
+footer .deeplink::before {
+	content: "";
+	display: block;
+	background-image: url(../images/holo_patty.png);
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	background-position: top center;
+	width: 366px;
+	height: 88px;
+	margin: 0 auto 50px auto;
+}
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　footer_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+HEADER
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#header {
+	position: relative;
+	background-color: #000000;
+	background-image: url(../images/sub_header_bg.png);
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-size: auto 240px;
+	width: 100%;
+	height: 240px;
+}
+
+
+
+
+
+
+/*
+ブロック
+*/
+#header h1 {
+	z-index: 5;
+	position: absolute;
+	background-image: url(../images/sub_header_game_logo.png);
+	background-position: top center;
+	background-repeat: no-repeat;
+	width: 110px;
+	height: 35px;
+	text-indent: -9999px;
+	top: 65px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+#header h2 {
+	z-index: 5;
+	position: absolute;
+	color: #ffffff;
+	font-size: 30px;
+	line-height: 1.5em;
+	letter-spacing: 0.15em;
+	text-indent: 0.15em;
+	text-align: center;
+	width: 100%;
+	top: 140px;
+	left: 50%;
+	transform: translateX(-50%);
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 500;
+}
+
+/*
+#header h2 span {
+	display: block;
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 12px;
+}
+*/
+#header h3.platform{
+	z-index: 5;
+	position: absolute;
+	background-image: url(../images/platformicons.png);
+	background-position: top center;
+	background-repeat: no-repeat;
+	width: 342px;
+	height: 24px;
+	text-indent: -9999px;
+	top: 20px;
+	left: 20px;
+}
+#header h3.develop{
+	z-index: 5;
+	position: absolute;
+	background-image: url(../images/icon_mydearest.png);
+	background-position: top center;
+	background-repeat: no-repeat;
+	width: 52px;
+	height: 24px;
+	text-indent: -9999px;
+	top: 20px;
+	right: 20px;
+}
+
+
+
+
+
+
+/*OPTIMIZE*/
+@media screen and (min-width:768px) and (max-width:1279px) {
+	/**/
+}
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　HEADER_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+GNAVI
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#gnavi {
+	background-color: #ffffff;
+	width: 100%;
+	height: 75px;
+	padding: 10px 0 0;
+}
+
+
+
+
+
+
+/*
+ブロック
+*/
+#gnavi nav {
+	background-color: #000000;
+}
+
+#gnavi ul {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	height: 75px;
+	margin: 0 auto;
+}
+
+#gnavi ul li {}
+
+#gnavi ul li a {
+	display: block;
+	position: relative;
+}
+
+#gnavi ul li a em,
+#gnavi ul li a::after {
+	z-index: 2;
+	position: relative;
+	display: block;
+	background-color: #ffffff;
+	background-image: url(../images/gnavi.png);
+	background-size: 1014px 300px;
+	background-repeat: no-repeat;
+	width: 167px;
+	height: 75px;
+	text-indent: -9999px;
+	transition-duration: 600ms;
+	transition-property: all;
+	transition-timing-function: cubic-bezier(.42, 0, 0, .99);
+}
+
+#gnavi ul li a::after {
+	content: "";
+	z-index: 1;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+}
+
+#gnavi ul li a:hover em,
+#gnavi ul li.active em {
+	opacity: 0;
+}
+
+/*top*/
+#gnavi ul li.top a em {
+	background-position: 0 0;
+}
+
+#gnavi ul li.top a::after {
+	background-position: 0 -75px;
+}
+
+#gnavi ul li.top.update a em {
+	background-position: 0 -150px;
+}
+
+#gnavi ul li.top.update a::after {
+	background-position: 0 -225px;
+}
+
+/*info*/
+#gnavi ul li.info a em {
+	background-position: -173px 0;
+}
+
+#gnavi ul li.info a::after {
+	background-position: -173px -75px;
+}
+
+#gnavi ul li.info.update a em {
+	background-position: -173px -150px;
+}
+
+#gnavi ul li.info.update a::after {
+	background-position: -173px -225px;
+}
+
+/*chara*/
+#gnavi ul li.chara a em {
+	background-position: -340px 0;
+}
+
+#gnavi ul li.chara a::after {
+	background-position: -340px -75px;
+}
+
+#gnavi ul li.chara.update a em {
+	background-position: -340px -150px;
+}
+
+#gnavi ul li.chara.update a::after {
+	background-position: -340px -225px;
+}
+
+/*staff*/
+#gnavi ul li.staff a em {
+	background-position: -507px 0;
+}
+
+#gnavi ul li.staff a::after {
+	background-position: -507px -75px;
+}
+
+#gnavi ul li.staff.update a em {
+	background-position: -507px -150px;
+}
+
+#gnavi ul li.staff.update a::after {
+	background-position: -507px -225px;
+}
+
+/*news*/
+#gnavi ul li.news a em {
+	background-position: -674px 0;
+}
+
+#gnavi ul li.news a::after {
+	background-position: -674px -75px;
+}
+
+#gnavi ul li.news.update a em {
+	background-position: -674px -150px;
+}
+
+#gnavi ul li.news.update a::after {
+	background-position: -674px -225px;
+}
+
+/*special*/
+#gnavi ul li.special a em {
+	background-position: -841px 0;
+}
+
+#gnavi ul li.special a::after {
+	background-position: -841px -75px;
+}
+
+#gnavi ul li.special.update a em {
+	background-position: -841px -150px;
+}
+
+#gnavi ul li.special.update a::after {
+	background-position: -841px -225px;
+}
+
+/*両端*/
+#gnavi ul li:first-child a em,
+#gnavi ul li:first-child a::after,
+#gnavi ul li:last-child a em,
+#gnavi ul li:last-child a::after {
+	width: 173px;
+}
+
+
+
+
+
+
+/*
+ブロック
+*/
+#gnavi nav h1 {
+	display: none;
+}
+
+#gnavi nav h3.platform {
+	display: none;
+}
+
+#gnavi nav h3.develop {
+	display: none;
+}
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　GNAVI_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+CNAV（MENU）
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#menu {
+	background: linear-gradient(90deg, #101323, #303969, #101323);
+	width: 100%;
+	height: 130px;
+	margin: 10px 0 0;
+}
+
+
+
+
+
+
+/*
+ブロック
+*/
+#menu div.page {
+	background-image: url(../images/sub_menu_bg.png);
+	background-size: 19px auto;
+	background-position: center center;
+	background-repeat: repeat;
+	width: 100%;
+	height: 80px;
+	padding: 25px 0;
+}
+
+#menu ul {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	height: 80px;
+	margin: 0 auto;
+}
+
+#menu ul li {
+	margin: 0 10px;
+}
+
+#menu ul li > div {
+	display: block;
+	position: relative;
+	background-position: left bottom;
+	background-repeat: no-repeat;
+	color: #464a63;
+	width: 225px;
+	height: 80px;
+	cursor: pointer;
+}
+
+#menu ul li > div > * {
+	transition: all 300ms ease-out 0ms;
+}
+
+#menu ul li > div::before,
+#menu ul li > div::after {
+	z-index: 1;
+	content: "";
+	display: block;
+	position: absolute;
+	background-image: url(../images/sun_menu_bg.png);
+	background-position: bottom center;
+	background-repeat: no-repeat;
+	width: 225px;
+	height: 80px;
+	top: 0;
+	left: 0;
+	transition: all 500ms ease-out 0ms;
+}
+
+#menu ul li > div::after {
+	opacity: 0;
+	background-position: top center;
+}
+
+#menu ul li > div:hover::before,
+#menu ul li > div.active::before {
+	opacity: 0;
+}
+
+#menu ul li > div:hover::after,
+#menu ul li > div.active::after {
+	opacity: 1;
+}
+
+#menu ul li > div a {
+	z-index: 2;
+	display: block;
+	position: relative;
+	color: #464a63;
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 500;
+	font-size: 16px;
+	letter-spacing: 0.25em;
+	text-indent: 0.25em;
+	text-align: center;
+	width: 225px;
+	height: 63px;
+	top: 0;
+	left: 0;
+	padding: 32px 0 0;
+
+}
+
+#menu ul li > div a span {
+	display: block;
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 500;
+	font-style: normal;
+	font-size: 10px;
+	margin: 0 0;
+}
+
+#menu ul li > div a:hover,
+#menu ul li > div.active a {
+	letter-spacing: 0.5em;
+	text-indent: 0.5em;
+}
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　CNAV（MENU）_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+ERROR_start
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#error {
+	background-color: #000000;
+	color: #ffffff;
+}
+
+#error::before {
+	content: "";
+	z-index: 1;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url(../images/kv_main_bg.png);
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+#error::after {
+	content: "";
+	z-index: 2;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url(../images/pattern_lattice_bk70.png);
+	background-position: center center;
+	background-size: 240px auto;
+	background-repeat: repeat;
+}
+
+
+
+
+
+
+#error .information {
+	z-index: 3;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 600px;
+	height: 600px;
+	margin: -300px 0 0 -300px;
+}
+
+#error .information::after {
+	content: "";
+	opacity: 0.5;
+	z-index: 1;
+	position: absolute;
+	top: 0;
+	left: 0;
+	box-sizing: border-box;
+	width: 100%;
+	height: 100%;
+	background-color: #000000;
+	border: 1px #ffffff solid;
+	box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+}
+
+#error .information > div {
+	box-sizing: border-box;
+	z-index: 2;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	padding: 40px;
+	text-align: center;
+}
+
+#error .information > div * {
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 500;
+	font-size: 16px;
+	letter-spacing: 0.065em;
+	line-height: 1em;
+}
+
+
+
+#error .information > div h1 {
+	font-size: 60px;
+	letter-spacing: 0.2em;
+	margin: 60px 0;
+}
+
+#error .information > div p {
+	margin: 0 0 60px 0;
+}
+
+#error .information > div dt {
+	background-color: #ffffff;
+	color: #000000;
+	width: 10em;
+	margin: 0 auto 20px auto;
+}
+
+#error .information > div dd {
+	margin: 0 0 40px 0;
+	line-height: 1em;
+}
+
+#error .information > div dd a {
+	color: #d52222;
+	text-decoration: underline;
+	transition-duration: 600ms;
+	transition-property: all;
+	transition-timing-function: cubic-bezier(.42, 0, 0, .99);
+	transition-delay: 0;
+}
+
+#error .information > div dd a:hover {
+	letter-spacing: 0.2em;
+}
+
+
+
+#error .information small {
+	position: absolute;
+	left: 50%;
+	bottom: 40px;
+	margin: 0 0 0 -50%;
+	width: 100%;
+	color: #ffffff;
+	font-size: 11px;
+	text-align: center;
+	letter-spacing: 0.3em;
+	text-shadow: 0 0 20px rgba(255, 255, 255, 1);
+}
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　ERROR_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+OPTOUT_start
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#optout{
+	z-index: 999;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	box-sizing: border-box;
+	background-color: rgba(0,0,0,0.8);
+	color: #ffffff;
+	width: 100%;
+	padding: 30px;
+	font-size: 14px;
+	transform-origin: bottom;
+	transition-delay: 0ms;
+	transition-duration: 600ms;
+	transition-property: all;
+	transition-timing-function: cubic-bezier(.42,0,0,.99);
+	opacity: 0;
+	transform: scaleY(-1);
+}
+#optout.view {
+	opacity: 1;
+	transform: scaleY(1);
+}
+
+#optout a {
+	color: #00fcdb;
+}
+
+#optout > div > p {
+	margin: 0 0 1em 0;
+}
+
+#optout > div > ul {
+	display: flex;
+}
+#optout > div > ul li {
+	margin: 0 10px 0 0;
+	padding: 0.5em 1em;
+	border: 1px #00fcdb solid;
+	border-radius: 6px;
+	cursor: pointer;
+}
+#optout > div > ul li.agree {
+	background-color: #00fcdb;
+	color: #003a32;
+}
+#optout > div > ul li.disagree {
+	color: #00fcdb;
+}
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　OPTOUT_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+KV
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#kv {
+	position: relative;
+	background-color: #000000;
+	width: 100%;
+	height: 930px;
+	overflow: hidden;
+}
+
+
+
+
+
+
+/*
+ブロック
+*/
+#kv h1 {
+	z-index: 5;
+	position: absolute;
+	background-image: url(../images/kv_title.png);
+	background-position: top center;
+	background-repeat: no-repeat;
+	width: 380px;
+	height: 140px;
+	text-indent: -9999px;
+	top: 735px;
+	left: 50%;
+	margin: 0 0 0 -190px;
+}
+
+#kv h2 {
+	z-index: 5;
+	position: absolute;
+	top: 705px;
+	color: #ffffff;
+	width: 100%;
+	font-size: 11px;
+	letter-spacing: 0.265em;
+	text-align: center;
+	text-shadow: 0 0 10px #000;
+}
+
+#kv h3.platform{
+	z-index: 5;
+	position: absolute;
+	background-image: url(../images/platformicons.png);
+	background-position: top center;
+	background-repeat: no-repeat;
+	width: 432px;
+	height: 30px;
+	text-indent: -9999px;
+	top: 20px;
+	left: 20px;
+}
+
+#kv h3.develop {
+	z-index: 5;
+	position: absolute;
+	background-image: url(../images/icon_mydearest.png);
+	background-position: top center;
+	background-repeat: no-repeat;
+	width: 102px;
+	height: 52px;
+	text-indent: -9999px;
+	top: 20px;
+	right: 20px;
+}
+
+#kv h4 {
+	z-index: 5;
+	position: absolute;
+	top: 890px;
+	width: 100%;
+	color: #ffffff;
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 500;
+	font-style: normal;
+	font-size: 11px;
+	letter-spacing: 0.15em;
+	text-align: center;
+}
+
+#kv p.btn_cf {
+	z-index: 5;
+	position: absolute;
+	top: 680px;
+	right: 40px;
+}
+
+#kv p.btn_cf a,
+#kv p.btn_cf::after {
+	z-index: 2;
+	position: relative;
+	display: block;
+	background-image: url(../images/kv_campfire.png);
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	width: 180px;
+	height: 200px;
+	text-indent: -9999px;
+	transition-duration: 600ms;
+	transition-property: all;
+	transition-timing-function: cubic-bezier(.42, 0, 0, .99);
+}
+
+#kv p.btn_cf::after {
+	z-index: 1;
+	position: absolute;
+	top: 0;
+	left: 0;
+	content: "";
+}
+
+#kv p.btn_cf:hover::after {
+	opacity: 0;
+	transform: scale(1.5);
+	position: absolute;
+}
+/*buynow*/
+#kv p.buynow{
+	z-index: 5;
+	position: absolute;
+	top: 680px;
+	right: 40px;
+}
+#kv p.buynow a,
+#kv p.buynow::after{
+	z-index: 2;
+	position: relative;
+	display: block;
+	background-image: url(../images/en_indexfastbanner_oculusstore.png);
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	width: 180px;
+	height: 200px;
+	text-indent: -9999px;
+	transition-duration: 600ms;
+	transition-property: all;
+	transition-timing-function: cubic-bezier(.42,0,0,.99);
+}
+#kv p.buynow::after{
+	z-index: 1;
+	position: absolute;
+	top: 0;
+	left: 0;
+	content: "";
+}
+#kv p.buynow:hover::after{
+	opacity: 0;
+	transform: scale(1.5);
+	position: absolute;
+}
+/*onsale*/
+#kv .onsale {
+	z-index: 5;
+	position: absolute;
+	bottom: 60px;
+	left: 20px;
+	background-image: url(../images/onsale.png);
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	width: 175px;
+	height: 178px;
+	text-indent: -9999px;
+	filter: drop-shadow(0 0 10px rgba(0,0,0,0.5));
+}
+
+
+
+
+
+
+/*
+キービジュアル
+*/
+#kv .visual {
+	z-index: 3;
+	width: 100%;
+	height: 1068px;
+}
+
+#kv .visual span {
+	display: block;
+	position: absolute;
+	left: 50%;
+	background-size: 100% auto;
+	background-position: top center;
+}
+
+#kv .chara {
+	z-index: 3;
+	background-image: url(../images/kv_main_chara.png);
+	width: 890px;
+	height: 740px;
+	top: 160px;
+	margin: 0 0 0 -445px;
+}
+
+#kv .chara::after {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 890px;
+	height: 740px;
+	margin: -370px 0 0 -445px;
+	background-image: url(../images/kv_main_chara.png);
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	transform: scale(1.3);
+	filter: grayscale(100%);
+}
+
+#kv .chara::before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 890px;
+	height: 740px;
+	margin: -370px 0 0 -445px;
+	background-image: url(../images/kv_main_chara.png);
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	transform: scale(1);
+}
+
+#kv .background {
+	z-index: 2;
+	background-image: url(../images/kv_main_bg.png);
+	width: 1680px;
+	height: 1068px;
+	top: 0;
+	transform: translateX(-50%);
+}
+
+
+
+
+
+
+/*
+レビュー＆受賞歴
+*/
+#kv .reviewscore {
+	z-index: 3;
+	position: absolute;
+	top: 50px;
+	left: 50%;
+	background-image: url(../images/reviewscores.png);
+	background-size: 100% auto;
+	width: 600px;
+	height: 149px;
+	margin: 0 0 0 -300px;
+}
+
+
+
+
+
+
+/*
+アニメーション処理
+*/
+/*target*/
+#kv .platform,
+#kv .develop,
+#kv h2,
+#kv h1,
+#kv h4,
+#kv .btn_cf,
+#kv .buynow,
+#kv .onsale,
+#kv .chara,
+#kv .chara::after,
+#kv .chara::before,
+#kv .background,
+#kv .reviewscore {
+	transition-duration: 600ms;
+	transition-property: all;
+	transition-timing-function: cubic-bezier(.42, 0, 0, .99);
+}
+
+/*hide*/
+#kv.jwp_target .platform {
+	opacity: 0;
+	transform: translateX(30px);
+}
+
+#kv.jwp_target .develop {
+	opacity: 0;
+	transform: translateX(-30px);
+}
+
+#kv.jwp_target h2,
+#kv.jwp_target h1 {
+	opacity: 0;
+	transform: translateY(-30px);
+}
+
+#kv.jwp_target h4 {
+	opacity: 0;
+	letter-spacing: 0.5em;
+}
+
+#kv.jwp_target .btn_cf {
+	opacity: 0;
+	transform: scale(1.5);
+}
+#kv.jwp_target .onsale{
+	opacity: 0;
+	transform: scale(1.5);
+}
+#kv.jwp_target .buynow{
+	opacity: 0;
+	transform: scale(1.5);
+}
+
+#kv.jwp_target .chara,
+#kv.jwp_target .chara::after,
+#kv.jwp_target .background {
+	opacity: 0;
+}
+#kv .reviewscore {
+	opacity: 0;
+	transform: translateY(20px);
+}
+
+/*propety*/
+#kv.anime_active .platform {
+	transition-delay: 4000ms;
+	transform: translateX(0);
+}
+
+#kv.anime_active .develop {
+	transition-delay: 4000ms;
+	transform: translateX(0);
+}
+
+#kv.anime_active h2 {
+	transition-delay: 2600ms;
+}
+
+#kv.anime_active h1 {
+	transition-delay: 2800ms;
+}
+
+#kv.anime_active h4 {
+	transition-delay: 3000ms;
+}
+
+#kv.anime_active .btn_cf {
+	transition-delay: 3600ms;
+}
+#kv.anime_active .onsale{
+	transition-delay: 3600ms;
+}
+#kv.anime_active .buynow{
+	transition-delay: 3600ms;
+}
+
+#kv.anime_active .chara {
+	transition-duration: 1600ms;
+	transition-delay: 600ms;
+}
+
+#kv.anime_active .chara::after {
+	transition-duration: 1600ms;
+	transition-delay: 600ms;
+	transform: scale(1);
+	filter: grayscale(0);
+}
+
+#kv.anime_active .chara::before {
+	transition-duration: 2000ms;
+	transition-delay: 600ms;
+	opacity: 0;
+	transform: scale(1.5);
+}
+
+#kv.anime_active .background {
+	transition-delay: 0ms;
+}
+#kv.anime_active .reviewscore {
+	transition-duration: 600ms;
+	transition-delay: 4200ms;
+	opacity: 1;
+	transform: translateY(0px);
+}
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　KV_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+TOP：GNAV
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#top #gnavi {
+	position: relative;
+	padding: 10px 0;
+}
+
+/*
+#top #gnavi::after{
+	content: "";
+	display: block;
+	z-index: 3;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #000000;
+}
+*/
+
+
+
+
+
+
+/*
+アニメーション処理
+*/
+/*target*/
+/*
+#top #gnavi,
+#top #gnavi::after{
+	transition-duration: 600ms;
+	transition-property: all;
+	transition-timing-function: cubic-bezier(.42,0,0,.99);
+	transform-origin: left;
+}
+*/
+/*hide*/
+/*
+#top #gnavi.jwp_target{
+}
+*/
+/*propety*/
+/*
+#top #gnavi.anime_active{
+
+}
+#top #gnavi.anime_active::after{
+	transform: scaleX(0);
+	background-color: #aa0000;
+}
+*/
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　TOP：GNAV_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+BANNERBOX_top
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#top #bannerbox_top {
+	box-sizing: border-box;
+	position: relative;
+	background-image: url(../images/bannerbox_top_bg.png);
+	background-size: auto 100%;
+	background-position: top center;
+	height: 167px;
+}
+
+
+
+
+
+
+
+/*
+表示エリア
+*/
+#top #bannerbox_top ul {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 780px;
+	height: 100%;
+	margin: 0 auto;
+}
+#top #bannerbox_top ul li {
+	line-height: 1em;
+}
+#top #bannerbox_top li a {
+	display: inline-block;
+}
+#top #bannerbox_top ul li img {
+	width: 380px;
+	height: 127px;
+}
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　BANNERBOX_top_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+BANNERBOX_footer
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#bannerbox_footer {
+	box-sizing: border-box;
+	position: relative;
+	background-image: url(../images/pattern_tryangle_bk_par3.png);
+	background-size: auto 1000px;
+	background-position: top center;
+	background-color: #ffffff;
+	background-repeat: repeat;
+	padding: 30px 0;
+}
+
+
+
+
+
+
+
+/*
+表示エリア
+*/
+#bannerbox_footer ul {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	width: 1000px;
+	height: 100%;
+	margin: 0 auto;
+}
+#bannerbox_footer ul li {
+	margin: 20px 0;
+	line-height: 1em;
+}
+#bannerbox_top li a {
+	display: inline-block;
+}
+#bannerbox_footer ul li img {
+	width: 320px;
+	height: 107px;
+}
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　BANNERBOX_footer_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+PICKUP
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#pickup {
+	position: relative;
+	background-color: #000000;
+	width: 100%;
+	height: 169px;
+	margin: 0;
+	padding: 20px 0;
+	overflow: hidden;
+}
+
+
+
+
+
+
+/*
+コントロールUI
+*/
+#pickup .slick_ui {}
+
+#pickup .slick_ui li {
+	z-index: 6;
+	position: absolute;
+	top: 50%;
+	opacity: 0.75;
+	background-color: #ffffff;
+	color: #cccccc;
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 500;
+	font-size: 16px;
+	letter-spacing: 0.065em;
+	line-height: 1em;
+	margin: -16px 0 0 0;
+	padding: 0.5em 1em;
+	cursor: pointer;
+	border-radius: 3px;
+	transition-duration: 600ms;
+	transition-property: all;
+	transition-timing-function: cubic-bezier(.42, 0, 0, .99);
+}
+
+#pickup .slick_ui li:hover {
+	opacity: 1;
+	background-color: #000000;
+	color: #ffffff;
+}
+
+#pickup .slick_ui li:nth-of-type(1) {
+	left: 30px;
+}
+
+#pickup .slick_ui li:nth-of-type(1):hover {
+	left: 40px;
+}
+
+#pickup .slick_ui li:nth-of-type(2) {
+	right: 30px;
+}
+
+#pickup .slick_ui li:nth-of-type(2):hover {
+	right: 40px;
+}
+
+
+
+
+
+
+/*
+バナー本体
+*/
+/*スライド本体（Slickにおける基本サイズ継承元なのでバナーサイズにすること）*/
+#pickup .slick_body {
+	position: relative;
+	width: 322px;
+	height: 169px;
+	margin: 0 auto;
+}
+
+#pickup .slick_body .slick-list {
+	overflow: inherit;
+}
+
+/*余白調整*/
+#pickup .slick_body .slick-list {
+	overflow: visible !important;
+	margin-right: -10px;
+	/*余白用マージン*/
+}
+
+#pickup .slick_body .slick-slide {
+	margin-right: 10px;
+	/*余白*/
+}
+
+/*クリック領域*/
+#pickup .slick_body li a {
+	display: block;
+	position: relative;
+	background-position: top center;
+	color: #ffffff;
+	text-align: center;
+	width: 322px;
+	height: 169px;
+}
+
+#pickup .slick_body li a:hover {
+	opacity: 0.75;
+	transition-duration: 600ms;
+	transition-property: all;
+	transition-timing-function: cubic-bezier(.42, 0, 0, .99);
+}
+
+/*バナー画像*/
+#pickup .slick_body li a img {
+	z-index: 3;
+	position: absolute;
+	width: 322px;
+	height: 169px;
+	top: 0;
+	left: 0;
+}
+
+/*テキストオーバーレイ*/
+#pickup .slick_body li a div {
+	z-index: 5;
+	position: absolute;
+	width: 322px;
+	height: 169px;
+	top: 0;
+	left: 0;
+}
+
+#pickup .slick_body .slick-slide:nth-child(odd) > div a div {
+	background-image: url(../images/pickup_ol_red.png);
+}
+
+#pickup .slick_body .slick-slide:nth-child(even) > div a div {
+	background-image: url(../images/pickup_ol_blue.png);
+}
+
+/*テキスト*/
+#pickup .slick_body li a div h3 {
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 500;
+	font-style: normal;
+	font-size: 9px;
+	line-height: 2.5em;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+}
+
+#pickup .slick_body li a div p {
+	font-size: 13px;
+	line-height: 1.5em;
+	letter-spacing: 0.05em;
+	margin: 103px 10px 0;
+}
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　PICKUP_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+ABOUT
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#about {
+	position: relative;
+	background-color: #333333;
+	width: 100%;
+	height: 1680px;
+}
+
+#about .read {
+	width: 500px;
+}
+
+#about p {
+	z-index: 5;
+	color: #ffffff;
+	font-size: 14px;
+	line-height: 2em;
+	letter-spacing: 0.1em;
+	margin: 0 0 2em 0;
+	text-shadow: 0 0 6px #000000;
+}
+
+
+
+
+
+
+/*
+コンテンツ1
+*/
+#about .about_1 {
+	/*background-color: rgba(255, 150, 0, 0.5);*/
+	z-index: 3;
+	position: absolute;
+	top: 100px;
+	left: 50%;
+	width: 1000px;
+	margin: 0 0 0 -500px;
+	padding: 140px 0 0 0;
+	text-align: left;
+}
+
+#about .about_1 h3 {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-image: url(../images/about_title_01.png);
+	background-position: left center;
+	background-repeat: no-repeat;
+	width: 623px;
+	height: 115px;
+	text-indent: -9999px;
+}
+
+#about .about_1 figure {
+	position: absolute;
+	bottom: -150px;
+	right: -50px;
+	width: 525px;
+	height: 455px;
+}
+
+
+
+
+
+
+/*
+コンテンツ2
+*/
+#about .about_2 {
+	/*background-color: rgba(255, 150, 0, 0.5);*/
+	z-index: 3;
+	position: absolute;
+	top: 1060px;
+	left: 50%;
+	width: 620px;
+	margin: 0 0 0 -20px;
+	padding: 140px 0 0 0;
+	text-align: left;
+}
+
+#about .about_2 h3 {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-image: url(../images/about_title_02.png);
+	background-position: left center;
+	background-repeat: no-repeat;
+	width: 623px;
+	height: 115px;
+	text-indent: -9999px;
+}
+
+#about .about_2 figure {
+	position: absolute;
+	top: -360px;
+	left: -520px;
+	width: 526px;
+	height: 455px;
+}
+
+
+
+
+
+
+/*
+ループ動画
+*/
+#about .video-box {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-size: cover;
+	width: 100%;
+	height: 1720px;
+	overflow: hidden;
+}
+
+#about .video-box::before {
+	z-index: 2;
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url(../images/pattern_lattice_bk70.png);
+	background-size: 180px auto;
+	background-repeat: repeat;
+	background-position: center center;
+}
+
+#about .video-box video {
+	z-index: 1;
+	position: absolute;
+	height: 100%;
+	margin: 0 auto;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+
+
+
+
+
+/*
+アニメーション処理
+*/
+/*target*/
+#about .about_1,
+#about .about_1 h3,
+#about .about_1 p,
+#about .about_1 figure,
+#about .about_2,
+#about .about_2 h3,
+#about .about_2 p,
+#about .about_2 figure {
+	transition-duration: 600ms;
+	transition-property: all;
+	transition-timing-function: cubic-bezier(.42, 0, 0, .99);
+	transform-origin: left;
+}
+
+/*hide*/
+#about .about_1.jwp_target,
+#about .about_1.jwp_target h3,
+#about .about_1.jwp_target p,
+#about .about_1.jwp_target figure {
+	opacity: 0;
+	transform: translateX(100px);
+}
+
+#about .about_2.jwp_target,
+#about .about_2.jwp_target h3,
+#about .about_2.jwp_target p,
+#about .about_2.jwp_target figure {
+	opacity: 0;
+	transform: translateX(-100px);
+}
+
+/*propety*/
+#about .about_1.anime_active {
+	transition-delay: 0ms;
+}
+
+#about .about_1.anime_active h3 {
+	transition-delay: 300ms;
+}
+
+#about .about_1.anime_active p {
+	transition-delay: 600ms;
+}
+
+#about .about_1.anime_active figure {
+	transition-delay: 900ms;
+}
+
+#about .about_2.anime_active {
+	transition-delay: 0ms;
+}
+
+#about .about_2.anime_active h3 {
+	transition-delay: 300ms;
+}
+
+#about .about_2.anime_active p {
+	transition-delay: 600ms;
+}
+
+#about .about_2.anime_active figure {
+	transition-delay: 900ms;
+}
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　 ABOUT_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+MOVIE
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#movie {
+	position: relative;
+	background-image: url(../images/movie_bg.png);
+	background-position: top center;
+	background-repeat: repeat-x;
+	width: 100%;
+	height: 880px;
+}
+
+
+
+
+
+
+/*
+タイトル
+*/
+#movie h2 {
+	z-index: 4;
+	position: absolute;
+	background-image: url(../images/movie_title_bg.png);
+	background-size: 221px 303px;
+	background-position: right center;
+	background-repeat: no-repeat;
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 500;
+	font-style: normal;
+	font-size: 32px;
+	letter-spacing: 0.05em;
+	text-align: center;
+	width: 341px;
+	height: 258px;
+	padding: 55px 0 0;
+	top: 610px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+#movie h2 span {
+	display: inline-block;
+	font-size: 16px;
+}
+
+
+
+
+
+
+/*
+サムネイル
+*/
+#movie > p {
+	z-index: 5;
+	display: block;
+	position: absolute;
+	top: 150px;
+	left: 50%;
+	margin: 0 0 0 -423px;
+	width: 846px;
+	height: 504px;
+	text-indent: -9999px;
+	transition: all 300ms ease-out 0ms;
+}
+
+#movie > p:hover {
+	transform: scale(0.9);
+}
+
+#movie > p a {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	display: block;
+	background-image: url(../images/top_movie_thumb.png);
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+	width: 846px;
+	height: 504px;
+	margin: -252px 0 0 -423px;
+	transition: all 300ms ease-out 0ms;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+	filter: grayscale(100%);
+	border-radius: 6px;
+}
+
+#movie > p a:hover {
+	transform: scale(1.2);
+	filter: grayscale(0%);
+}
+
+#movie > p a::before {
+	z-index: 2;
+	display: block;
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -50px 0 0 -50px;
+	background-image: url(../images/movie_thumbnail_play.png);
+	width: 136px;
+	height: 136px;
+	text-indent: -9999px;
+	transition: all 300ms ease-out 0ms;
+}
+
+#movie > p a:hover::before {
+	transform: scale(0.5);
+}
+
+
+
+
+
+/*
+エンブレム
+*/
+#movie p::after {
+	z-index: 1;
+	display: block;
+	position: absolute;
+	content: "";
+	background-image: url(../images/movie_obj.png);
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	width: 170px;
+	height: 240px;
+	top: -180px;
+	left: 50%;
+	margin: 0 0 0 -85px;
+	text-indent: -9999px;
+}
+
+
+
+
+
+
+/*
+アニメーション処理
+*/
+/*target*/
+#movie > p a {
+	transition-duration: 600ms;
+	transition-property: all;
+	transition-timing-function: cubic-bezier(.42, 0, 0, .99);
+	transform-origin: center;
+}
+
+/*hide*/
+#movie.jwp_target > p a {
+	opacity: 0;
+	transform: scaleX(0);
+}
+
+/*propety*/
+#movie.anime_active > p a {
+	transition-delay: 0ms;
+}
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　MOVIE_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+STORY
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#introduction {
+	position: relative;
+	width: 100%;
+	padding: 300px 0 0;
+}
+
+
+
+
+
+
+/*
+見出し
+*/
+#introduction h2 {
+	z-index: 5;
+	position: relative;
+	background-image: url(../images/icon_tryangle_red.png);
+	background-size: 28px 17px;
+	background-position: center bottom;
+	background-repeat: no-repeat;
+	color: #000000;
+	font-size: 40px;
+	letter-spacing: 0.5em;
+	text-indent: 0.5em;
+	text-align: center;
+	width: fit-content;
+	height: 145px;
+	margin: 0 auto;
+}
+
+#introduction h2 span {
+	display: block;
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 500;
+	font-style: normal;
+	font-size: 14px;
+	letter-spacing: 1em;
+	text-indent: 1em;
+	text-align: center;
+}
+
+
+
+
+
+
+/*
+背景
+*/
+#introduction .cover {
+	position: absolute;
+	background-image: url(../images/top_parallax_bg.png);
+	background-position: center center;
+	background-repeat: no-repeat;
+	width: 2815px;
+	height: 1177px;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+#introduction .cover p {
+	z-index: 4;
+	position: absolute;
+	color: #ffffff;
+	font-size: 18px;
+	letter-spacing: 0.8em;
+	text-indent: 1em;
+	text-align: center;
+	top: 600px;
+	width: 100%;
+	text-shadow: 0 0 10px #000000;
+}
+
+#introduction .cover .parallax_mask {
+	z-index: 3;
+	position: absolute;
+	background-image: url(../images/top_parallax_mask.png);
+	background-position: center center;
+	background-repeat: no-repeat;
+	width: 2815px;
+	height: 1177px;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+#introduction .cover .parallax_bg {
+	z-index: 2;
+	position: absolute;
+	background-image: url(../images/top_parallax_visual.png);
+	background-size: auto 100%;
+	background-position: center center;
+	background-repeat: no-repeat;
+	width: 2815px;
+	height: 1177px;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+
+
+
+
+
+
+/*
+テキスト
+*/
+#introduction .box_story {
+	z-index: 5;
+	position: relative;
+	width: 100%;
+	margin: 400px 0 0;
+}
+
+#introduction .box_story p {
+	color: #000000;
+	font-size: 14px;
+	line-height: 3em;
+	letter-spacing: 0.15em;
+	text-align: center;
+	margin: 0 auto 3em auto;
+}
+
+#introduction .box_story p strong {
+	background-color: #000000;
+	color: #ffffff;
+	margin: 0 5px;
+	font-size: 13px;
+	font-weight: 500;
+}
+
+#introduction .box_story figure {
+	width: 106px;
+	height: 91px;
+	margin: 60px auto;
+}
+
+
+
+
+
+
+/*
+スフィア
+*/
+#top p.sphere {
+	position: relative;
+	width: 334px;
+	height: 600px;
+	margin: 100px auto 40px auto;
+}
+
+#top p.sphere::after {
+	content: "";
+	display: block;
+	position: absolute;
+	background-image: url(../images/introduction_sphere.png);
+	width: 334px;
+	height: 494px;
+	animation: sphere_top 4s infinite;
+}
+
+@keyframes sphere_top {
+	0% {
+		top: 0;
+	}
+
+	50% {
+		top: 40px;
+	}
+
+	100% {
+		top: 0;
+	}
+}
+
+
+
+
+
+
+/*
+アニメーション処理
+*/
+/*target*/
+#introduction h2,
+#introduction h2 span,
+#introduction .cover p,
+#introduction .box_story p,
+#introduction .cover .parallax_bg {
+	transition-duration: 600ms;
+	transition-property: all;
+	transition-timing-function: cubic-bezier(.42, 0, 0, .99);
+	transform-origin: center;
+}
+
+/*hide*/
+#introduction .cover.jwp_target p {
+	opacity: 0;
+	letter-spacing: 3em;
+	transition-duration: 2000ms;
+}
+
+#introduction .cover.jwp_target .parallax_bg {
+	opacity: 0;
+}
+
+#introduction .box_story p.jwp_target {
+	opacity: 0;
+	transform: translateY(-30px);
+}
+
+/*propety*/
+#introduction .cover.anime_active p {
+	transition-delay: 1000ms;
+}
+
+#introduction .cover.anime_active .parallax_bg {
+	animation: parallax_bg_loop 4s 2;
+}
+
+@keyframes parallax_bg_loop {
+	0% {
+		opacity: 0;
+	}
+
+	10% {
+		opacity: 0.3;
+	}
+
+	50% {
+		opacity: 0.7;
+	}
+
+	55% {
+		opacity: 0.5;
+	}
+
+	60% {
+		opacity: 0.75;
+	}
+
+	65% {
+		opacity: 0.8;
+	}
+
+	68% {
+		opacity: 0.6;
+	}
+
+	70% {
+		opacity: 0.3;
+	}
+
+	73% {
+		opacity: 0.55;
+	}
+
+	90% {
+		opacity: 0.7;
+	}
+
+	95% {
+		opacity: 0.3;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　STORY_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+CHARACTER
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#character {
+	position: relative;
+	width: 100%;
+	height: 2204px;
+}
+
+
+
+
+
+
+/*
+基本レイアウト
+*/
+#character h2 {
+	z-index: 5;
+	position: absolute;
+	background-image: url(../images/icon_tryangle_blue.png);
+	background-size: 28px 17px;
+	background-position: center bottom;
+	background-repeat: no-repeat;
+	color: #ffffff;
+	font-size: 40px;
+	letter-spacing: 0.5em;
+	text-align: center;
+	width: 100%;
+	height: 145px;
+	top: 300px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+#character h2 span {
+	display: block;
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 500;
+	font-style: normal;
+	font-size: 14px;
+	letter-spacing: 1em;
+	text-align: center;
+}
+
+#character .circle {
+	position: absolute;
+	background: radial-gradient(#00112b, #000000);
+	width: 2204px;
+	height: 2204px;
+	border-radius: 1102px;
+	top: 0;
+	left: 50%;
+	margin: 0 0 0 -1102px;
+}
+
+
+
+
+
+
+/*
+キャラ表示エリア
+*/
+#character .circle .box_chara {
+	position: absolute;
+	background-image: url(../images/character_main_bg.png);
+	background-position: left bottom;
+	background-repeat: no-repeat;
+	color: #ffffff;
+	width: 1000px;
+	height: 864px;
+	top: 615px;
+	left: 50%;
+	margin: 0 0 0 -500px;
+}
+
+#character .box_chara > div {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+#character .box_chara > div * {
+	opacity: 0;
+	transition-duration: 600ms;
+	transition-property: all;
+	transition-timing-function: cubic-bezier(.42, 0, 0, .99);
+}
+
+#character .box_chara > div.active * {
+	opacity: 1;
+	transition-delay: 600ms;
+}
+
+#character .box_chara > div h3 {
+	z-index: 5;
+	position: relative;
+	font-size: 50px;
+	letter-spacing: 0.1em;
+	margin: 50px 0 0 50px;
+	text-shadow: 0 0 10px #000000, 1px 1px 5px #000000, -1px -1px 5px #000000;
+}
+
+/*
+#character .box_chara > div h3 span{
+	display: block;
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 500;
+	font-style: normal;
+	font-size: 20px;
+}
+*/
+#character .box_chara > div h4 {
+	z-index: 5;
+	position: relative;
+	font-size: 20px;
+	letter-spacing: 0.1em;
+	margin: -15px 0 0 50px;
+	text-shadow: 0 0 10px #000000, 1px 1px 5px #000000, -1px -1px 5px #000000;
+}
+
+#character .box_chara > div h4 span {
+	font-size: 14px;
+}
+
+#character .box_chara > div p {
+	z-index: 5;
+	position: relative;
+	font-size: 12px;
+	letter-spacing: 0.1em;
+	line-height: 2.5em;
+	width: 420px;
+	margin: 50px 0 0 50px;
+	text-shadow: 0 0 10px #000000, 1px 1px 5px #000000, -1px -1px 5px #000000;
+}
+
+#character .box_chara > div figure {
+	z-index: 4;
+	position: absolute;
+	bottom: 26px;
+	right: 1px;
+	width: 998px;
+	height: 850px;
+	overflow: hidden;
+}
+
+#character .box_chara > div figure img {
+	display: block;
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+}
+
+/*キャラ別表示制御*/
+#character .box_chara > div.chloe figure img {
+	top: 0px;
+	right: 40px;
+	width: 400px;
+	height: auto;
+}
+
+#character .box_chara > div.coco figure img {
+	top: 0px;
+	right: -75px;
+	width: 800px;
+	height: auto;
+}
+
+#character .box_chara > div.anima figure img {
+	top: 20px;
+	right: -190px;
+	width: 800px;
+	height: auto;
+}
+
+#character .box_chara > div.noa figure img {
+	top: 0px;
+	right: -450px;
+	width: 1600px;
+	height: auto;
+}
+
+
+
+
+
+
+/*
+キャラ選択UI
+*/
+#character .circle .ui {
+	display: flex;
+	position: absolute;
+	justify-content: space-between;
+	width: 1000px;
+	height: 262px;
+	top: 1515px;
+	left: 50%;
+	margin: 0 0 0 -500px;
+}
+
+#character .circle .ui li {
+	color: #ffffff;
+	text-align: center;
+	width: 239px;
+	height: 262px;
+}
+
+#character .circle .ui li > div {
+	display: block;
+	position: relative;
+	background-position: left bottom;
+	background-repeat: no-repeat;
+	color: #3f3f3f;
+	width: 239px;
+	height: 262px;
+	cursor: pointer;
+}
+
+#character .circle .ui li > div > * {
+	transition: all 300ms ease-out 0ms;
+}
+
+
+
+/*サムネイル*/
+#character .circle .ui li > div::before,
+#character .circle .ui li > div::after {
+	content: "";
+	display: block;
+	z-index: 1;
+	position: absolute;
+	width: 239px;
+	height: 262px;
+	background-repeat: no-repeat;
+	background-position: bottom center;
+	transition: all 500ms ease-out 0ms;
+}
+
+#character .circle .ui li > div::after {
+	opacity: 0;
+	background-position: top center;
+}
+
+#character .circle .ui li:hover > div::before,
+#character .circle .ui li.active > div::before {
+	opacity: 0;
+}
+
+#character .circle .ui li:hover > div::after,
+#character .circle .ui li.active > div::after {
+	opacity: 1;
+}
+
+#character .circle .ui li.chloe > div::before,
+#character .circle .ui li.chloe > div::after {
+	background-image: url(../images/character_btn_chloe.png);
+}
+
+#character .circle .ui li.coco > div::before,
+#character .circle .ui li.coco > div::after {
+	background-image: url(../images/character_btn_coco.png);
+}
+
+#character .circle .ui li.anima > div::before,
+#character .circle .ui li.anima > div::after {
+	background-image: url(../images/character_btn_anima.png);
+}
+
+#character .circle .ui li.noa > div::before,
+#character .circle .ui li.noa > div::after {
+	background-image: url(../images/character_btn_noa.png);
+}
+
+
+
+/*テキスト要素*/
+#character .circle .ui li > div > div {
+	z-index: 2;
+	position: absolute;
+	letter-spacing: 0.1em;
+	width: 239px;
+	height: 262px;
+	top: 0;
+	left: 0;
+}
+
+#character .circle .ui li > div > div h5 {
+	font-size: 25px;
+	line-height: 1em;
+	margin: 182px 0 5px 0;
+}
+
+/*
+#character .circle .ui li > div > div h5 span{
+	display: block;
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 9px;
+	margin: 5px 0 0;
+}
+*/
+#character .circle .ui li > div > div p {
+	font-size: 12px;
+	margin: 0;
+}
+
+#character .circle .ui li:hover > div,
+#character .circle .ui li.active > div {
+	color: #ffffff;
+}
+
+#character .circle .ui li:hover > div > div,
+#character .circle .ui li.active > div > div {
+	letter-spacing: 0.3em;
+	text-indent: 0.5em;
+}
+
+
+
+
+
+
+/*
+アニメーション処理
+*/
+/*target*/
+#character .circle,
+#character h2,
+#character h2 span,
+#character .box_chara {
+	transition-duration: 600ms;
+	transition-property: all;
+	transition-timing-function: cubic-bezier(.42, 0, 0, .99);
+	transform-origin: center;
+}
+
+/*hide*/
+#character.jwp_target .circle {
+	transform: scale(0);
+}
+
+#character h2.jwp_target {
+	opacity: 0;
+	transform: scaleY(-30px);
+}
+
+#character h2.jwp_target span {
+	opacity: 0;
+	letter-spacing: 1.3em;
+}
+
+#character.jwp_target .box_chara {
+	opacity: 0;
+}
+
+/*propety*/
+#character.anime_active .circle {
+	transition-duration: 1200ms;
+	transition-delay: 600ms;
+	transform: scale(1);
+}
+
+#character h2.anime_active {
+	transition-delay: 900ms;
+}
+
+#character h2.anime_active span {
+	transition-delay: 1200ms;
+}
+
+#character.anime_active .box_chara {
+	opacity: 1;
+	transition-delay: 2000ms;
+}
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　CHARACTER_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+PRODUCT
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#product {
+	background-image: url(../images/product_main_bg.png);
+	background-position: center bottom;
+	background-repeat: repeat-x;
+	width: 100%;
+	padding: 0 0 290px;
+}
+
+
+
+
+
+
+/*
+見出し
+*/
+#product h2 {
+	background-image: url(../images/icon_tryangle_red.png);
+	background-size: 28px 17px;
+	background-position: center bottom;
+	background-repeat: no-repeat;
+	color: #000000;
+	font-size: 40px;
+	letter-spacing: 0.5em;
+	text-align: center;
+	width: 100%;
+	height: 145px;
+	margin: 240px auto 0;
+}
+
+#product h2 span {
+	display: block;
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 500;
+	font-style: normal;
+	font-size: 14px;
+	letter-spacing: 1em;
+	text-align: center;
+}
+
+
+
+
+
+
+/*
+カバーアート
+*/
+#product .coverart {
+	position: relative;
+	width: 100%;
+	height: 912px;
+	overflow: hidden;
+}
+
+#product figure {
+	position: relative;
+	background-image: url(../images/product_kv_bg.png);
+	background-size: 1528px 912px;
+	background-position: top center;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 787px;
+	margin: 0 auto;
+	padding: 125px 0 0;
+}
+
+#product figure img {
+	display: block;
+	margin: 0 auto;
+}
+
+
+
+
+
+
+/*
+スタッフリスト
+*/
+#product ul.stafflist {
+	margin: 60px auto 100px;
+}
+
+#product ul.stafflist li {
+	text-align: center;
+	margin: 0 auto 50px auto;
+	width: fit-content;
+}
+
+#product ul.stafflist li:last-child {
+	margin: 0 auto;
+	padding: 0;
+}
+
+#product ul.stafflist li em {
+	font-style: normal;
+	font-size: 14px;
+	letter-spacing: 0.2em;
+	text-indent: 0.2em;
+}
+
+#product ul.stafflist li h4 {
+	font-size: 23px;
+	line-height: 1em;
+	letter-spacing: 0.1em;
+	text-indent: 0.1em;
+	margin: 20px 0;
+}
+
+#product ul.stafflist li p {
+	color: #8b8b8b;
+	font-size: 11px;
+	letter-spacing: 0.1em;
+	text-indent: 0.2em;
+	margin: 0 0 5px;
+}
+
+
+
+
+
+
+/*
+キャスト
+*/
+#product .castlist h3{
+	font-size: 26px;
+	line-height: 1em;
+	letter-spacing: 0.3em;
+	text-indent: 0.3em;
+	text-align: center;
+}
+#product .castlist {
+	background-image: url(../images/product_cast_hz.png);
+	background-size: 1000px 15px;
+	background-position: top center;
+	background-repeat: no-repeat;
+	width: 1000px;
+	margin: 0 auto 150px;
+	padding: 75px 0 0;
+}
+
+#product .castlist figure {
+	background: none;
+	height: 477px;
+	padding: 0;
+}
+
+#product .castlist h3 {
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 17px;
+	margin: 60px 0 30px;
+}
+
+#product .castlist p {
+	font-size: 26px;
+	line-height: 2.2em;
+	letter-spacing: 0.1em;
+	text-align: center;
+}
+
+#product .castlist > dl {
+	text-align: center;
+	width: 900px;
+	margin: 0 auto;
+}
+#product .castlist > dl dd {
+	display: inline-block;
+	position: relative;
+	font-size: 20px;
+	line-height: 2.2em;
+	letter-spacing: 0.1em;
+	text-align: center;
+}
+#product .castlist > dl dd span{
+	font-size: 16px;
+}
+#product .castlist > dl dt+dd{
+	margin: 0 1em 0 0;
+}
+#product .castlist > dl dt+dd::after{
+	content: ";";
+	display: inline-block;
+	margin: 0 0 0 1em;
+}
+#product .castlist > dl dt:nth-of-type(4)+dd{
+	margin: 0;
+}
+#product .castlist > dl dt:nth-of-type(4)+dd::after{
+	margin: 0;
+	display: none;
+}
+#product .castlist > dl dt{
+	line-height: 1em;
+	margin: 1em 0 0 0;
+}
+
+/*
+#product .castlist > ul {
+	text-align: center;
+	width: 900px;
+	margin: 0 auto;
+}
+
+#product .castlist > ul li {
+	display: inline-block;
+	position: relative;
+	font-size: 26px;
+	line-height: 2.2em;
+	letter-spacing: 0.1em;
+	text-align: center;
+	margin: 0 1em 0 0;
+	padding: 0 1em 0 0;
+}
+
+#product .castlist > ul li::after {
+	content: "/";
+	display: block;
+	position: absolute;
+	top: 0;
+	right: -0.5em;
+	text-indent: 0;
+}
+
+#product .castlist > ul li:nth-child(3n),
+#product .castlist > ul li:nth-child(6n),
+#product .castlist > ul li:nth-child(8n){
+	margin: 0;
+	padding: 0;
+
+}
+#product .castlist > ul li:nth-child(3n)::after,
+#product .castlist > ul li:nth-child(6n)::after,
+#product .castlist > ul li:nth-child(8n)::after {
+	display: none;
+}
+*/
+
+
+
+
+
+
+/*
+サウンド
+*/
+#product .soundlist {
+	position: relative;
+	width: 100%;
+	margin: 0 0 150px;
+	padding: 0 0 80px;
+}
+
+#product .soundlist::before {
+	content: "";
+	position: absolute;
+	background-color: #000000;
+	background-image: url(../images/pattern_tryangle_l_w.png);
+	background-size: 250px 250px;
+	background-position: top center;
+	background-repeat: repeat;
+	width: 100%;
+	height: 97%;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+#product .soundlist::after {
+	content: "";
+	position: absolute;
+	background-image: url(../images/sound_box_bg.png);
+	background-size: 1434px 868px;
+	background-position: center center;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 97%;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+#product .soundlist ul {
+	z-index: 1;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	position: relative;
+	width: 1000px;
+	margin: 0 auto 0;
+}
+
+#product .soundlist ul li {
+	text-align: center;
+	width: 308px;
+	margin: 0 10px 35px;
+}
+
+#product .soundlist ul li:last-child {
+	margin: 0;
+}
+
+#product .soundlist ul li > figure {
+	background: none;
+	height: auto;
+	padding: 0;
+}
+
+#product .soundlist ul li > figure img {
+	display: block;
+	width: 308px;
+	height: auto;
+}
+
+#product .soundlist ul li > h4 {
+	background-color: #000000;
+	color: #ffffff;
+	font-size: 13px;
+	line-height: 1.65em;
+	letter-spacing: 0.1em;
+	text-indent: 0.1em;
+	margin: 25px 0;
+}
+
+#product .soundlist ul li > h4 span {
+	font-size: 10px;
+}
+
+#product .soundlist ul li > p {
+	color: #7f7f7f;
+	font-size: 10px;
+	line-height: 1.6em;
+	letter-spacing: 0.1em;
+	text-indent: 0.3em;
+	width: 95%;
+	margin: 0 auto 15px auto;
+}
+
+
+
+
+
+
+/*
+商品詳細
+*/
+#product .specandprice h3{
+	margin: 0 0 30px 0;
+	font-size: 26px;
+	line-height: 1em;
+	letter-spacing: 0.3em;
+	text-indent: 0.3em;
+	text-align: center;
+}
+#product .specandprice ul.spec{
+	background-image: url(../images/product_hz.png);
+	background-position: left top;
+	background-repeat: no-repeat;
+	width: 1000px;
+	margin: 60px auto 0;
+}
+#product .specandprice ul.spec li{
+	background-image: url(../images/product_hz.png);
+	background-position: left bottom;
+	background-repeat: no-repeat;
+}
+#product .specandprice ul li div{
+	display: flex;
+	box-sizing: border-box;
+	align-items: center;
+	line-height: 1em;
+}
+#product .specandprice ul li div h4{
+	box-sizing: border-box;
+	font-size: 13px;
+	line-height: 2.5em;
+	letter-spacing: 0.03em;
+	text-align: center;
+	width: 300px;
+	padding: 15px 0;
+}
+
+#product .specandprice ul li div > div{
+	flex: 1;
+	box-sizing: border-box;
+	width: 680px;
+	margin: 0 0 0 20px;
+	padding: 15px 0;
+}
+#product .specandprice ul li div > div p{
+	box-sizing: border-box;
+	font-size: 12px;
+	line-height: 2.5em;
+	letter-spacing: 0.25em;
+	text-align: center;
+	margin: 0 auto;
+	padding: 0 2em;
+	word-break: break-all;
+}
+#product .specandprice ul li div > div p span{
+	color: #003cd3;
+	font-size: 11px;
+}
+
+
+/*価格*/
+#product .pricebox {
+	background-image: url(../images/pricebox_bg.png);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: 1000px auto;
+	background-color: #eeeeee;
+	padding: 40px 0;
+}
+#product .pricebox > ul {
+	width: 780px;
+	margin: 0 auto;
+}
+#product .pricebox > ul > li {
+	position: relative;
+	box-sizing: border-box;
+	background-color: #ffffff;
+	width: 780px;
+	margin: 0 0 10px 0;
+	padding: 10px;
+	border-radius: 6px;
+}
+#product .pricebox > ul > li:last-child {
+	margin: 0;
+}
+#product .pricebox > ul > li > div:nth-of-type(1) {
+	display: flex;
+	justify-content: space-between;
+	margin: 0 0 10px 0;
+}
+#product .pricebox > ul > li > div:nth-of-type(1) h4 {
+	flex: 0 0 200px;
+	font-family: "FOT-UD角ゴ_スモール Pr6 B";
+	border-right: 1px #000000 solid;
+}
+#product .pricebox > ul > li > div:nth-of-type(1) p {
+	box-sizing: border-box;
+	width: 100%;
+	padding: 0 10px;
+	text-align: right;
+}
+#product .pricebox > ul > li > div:nth-of-type(1) p em {
+	font-style: normal;
+}
+#product .pricebox > ul > li > div:nth-of-type(1) p span {
+	font-size: 26px;
+	padding: 0 5px 0 0;
+}
+#product .pricebox > ul > li > div:nth-of-type(1) a,
+#product .pricebox > ul > li > div:nth-of-type(1) span.disabled {
+	box-sizing: border-box;
+	display: block;
+	flex: 0 0 190px;
+	background-color: #ffe400;
+	color: #000000;
+	padding: 1em 2em;
+	font-family: "FOT-UD角ゴ_スモール Pr6 B";
+	font-size: 12px;
+	text-align: center;
+	border-radius: 100px;
+}
+#product .pricebox > ul > li > div:nth-of-type(1) span.disabled {
+	background-color: #cccccc;
+	color: #666666;
+}
+#product .pricebox > ul > li .caption {
+	background-color: #f8f8f8;
+	padding: 15px;
+	font-size: 11px;
+	line-height: 1.65em;
+	text-align: justify;
+}
+#product .pricebox > ul > li .caption strong {
+	color: #ff0000;
+}
+
+#product .pricebox > ul > li.saleactive > div:nth-of-type(1) p em {
+	margin: 0 10px 0 0;
+	color: #afafaf;
+	text-decoration: line-through;
+}
+#product .pricebox > ul > li.saleactive > div:nth-of-type(1) p em:nth-of-type(2) {
+	margin: 0 0 0 10px;
+	text-decoration: none;
+	color: #000000;
+}
+#product .pricebox > ul > li.saleactive > div:nth-of-type(1) p em:nth-of-type(2) span {
+	color: #ff0000;
+}
+#product .pricebox > ul > li.saleactive .saletag {
+	display: inline-block;
+}
+#product .pricebox > ul > li .saletag {
+	display: none;
+	box-sizing: border-box;
+	position: absolute;
+	top: -10px;
+	left: -10px;
+	background-color: #0065cc;
+	color: #ffffff;
+	padding: 5px 10px;
+	font-size: 14px;
+	font-family: din-2014, sans-serif;
+	font-weight: 300;
+	font-style: italic;
+	line-height: 1em;
+}
+#product .pricebox > ul > li .saletag span {
+	font-family: din-2014, sans-serif;
+	font-weight: 700;
+	font-style: italic;
+}
+
+
+/*二次創作・実況について*/
+#product .brand{
+  box-sizing: border-box;
+	background-color: #ffffff;
+	width: 1000px;
+	margin: 50px auto 0;
+	padding: 60px;
+	border: 1px #000000 solid;
+	border-radius: 10px;
+}
+#product .brand h3{
+	background-image: url(../images/product_icon_tv.png);
+	background-size: 74px 63px;
+	background-position: center top;
+	background-repeat: no-repeat;
+	font-size: 18px;
+	letter-spacing: 0.5em;
+	text-align: center;
+	margin: 0 auto;
+	padding: 80px 0 0;
+}
+#product .brand p{
+	font-size: 14px;
+	line-height: 2.5em;
+	letter-spacing: 0.15em;
+	text-align: center;
+	margin: 50px auto 0;
+}
+#product .brand p b{
+	color: #f90000;
+}
+#product .brand ul{
+	display: flex;
+	justify-content: center;
+	width: 650px;
+	height: 75px;
+	margin: 40px auto 0;
+}
+#product .brand ul li{}
+#product .brand ul li a{
+  display: block;
+	background-image: url(../images/product_btn_bg.png);
+	background-size: 315px 75px;
+	background-repeat: no-repeat;
+	color: #ffffff;
+	font-size: 16px;
+	line-height: 70px;
+	letter-spacing: 0.15em;
+	text-align: center;
+	width: 315px;
+	height: 75px;
+}
+
+
+
+
+
+
+/*
+アニメーション処理
+*/
+/*target*/
+#product h2,
+#product h2 span,
+#product .coverart::before,
+#product .coverart::after,
+#product .coverart figure {
+	transition-duration: 600ms;
+	transition-property: all;
+	transition-timing-function: cubic-bezier(.42, 0, 0, .99);
+	transform-origin: center;
+}
+
+/*
+#product .coverart::before{
+	content: "";
+	display: block;
+	z-index: 3;
+	position: absolute;
+	right: 50%;
+	top: 0%;
+	right: 50%;
+	width: 50%;
+	height: 100%;
+	margin: 0 0 0 0;
+	transform-origin: center;
+	transform: scale(1,0);
+	background-color: #bb0000;
+}
+#product .coverart::after{
+	content: "";
+	display: block;
+	z-index: 3;
+	position: absolute;
+	left: 50%;
+	top: 0%;
+	right: 50%;
+	width: 50%;
+	height: 100%;
+	margin: 0 0 0 0;
+	transform-origin: center;
+	transform: scale(1,0);
+	background-color: #0050c8;
+}
+*/
+/*hide*/
+#product h2.jwp_target {
+	opacity: 0;
+	transform: scaleY(-30px);
+}
+
+#product h2.jwp_target span {
+	opacity: 0;
+	letter-spacing: 1.3em;
+}
+
+#product .coverart.jwp_target figure {
+	opacity: 0;
+}
+
+/*propety*/
+#product h2.anime_active {
+	transition-delay: 0ms;
+}
+
+#product h2.anime_active span {
+	transition-delay: 300ms;
+}
+
+#product .coverart.anime_active figure {
+	transition-delay: 600ms;
+}
+
+/*
+#product .coverart::before{
+	animation: coverart_effect_l 2s forwards 1;
+}
+@keyframes coverart_effect_l {
+	0% {
+		transform: scale(1,0);
+	}
+	29% {
+		transform: scale(1,1);
+	}
+	30% {
+		transform: scale(1,1);
+	}
+	60% {
+		transform: scale(2,2) translate(-25%,-25%) rotate(45deg);
+	}
+	90% {
+		transform: scale(2,2) translate(-25%,-25%) rotate(45deg);
+	}
+	100% {
+		transform: scale(2,2) translate(-100%,-25%) rotate(45deg);
+	}
+}
+
+#product .coverart::after{
+	animation: coverart_effect_l 2s forwards 1;
+}
+@keyframes coverart_effect_r {
+	0% {
+		transform: scale(1,0);
+	}
+	29% {
+		transform: scale(1,1);
+	}
+	30% {
+		transform: scale(1,1);
+	}
+	60% {
+		transform: scale(2,2) translate(25%,-25%) rotate(45deg);
+	}
+	90% {
+		transform: scale(2,2) translate(25%,-25%) rotate(45deg);
+	}
+	100% {
+		transform: scale(2,2) translate(100%,-25%) rotate(45deg);
+	}
+}
+*/
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　PRODUCT_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+sub_GMAE SYSTEM
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#gamesystem {
+	width: 100%;
+	padding: 100px 0;
+}
+
+
+
+
+
+
+/*
+イントロ
+*/
+#gamesystem .gameinfo {
+	margin: 0 0 140px 0;
+	text-align: center;
+}
+
+#gamesystem .gameinfo h2 {
+	position: relative;
+	margin: 0 0 70px 0;
+	color: #001028;
+	font-size: 30px;
+	text-align: center;
+	letter-spacing: 0.2em;
+	line-height: 1.65em;
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 500;
+}
+
+/*
+#gamesystem .gameinfo h2 span{
+	display: block;
+	z-index: -1;
+	position: absolute;
+	bottom: -74px;
+	color: #fff;
+	width: 100%;
+	font-size: 60px;
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 500;
+	letter-spacing: -0.1em;
+	text-shadow: 1px 1px #ccc, 1px -1px #ccc, -1px 1px #ccc, -1px -1px #ccc;
+}
+*/
+#gamesystem .gameinfo > figure {
+	position: relative;
+	height: 650px;
+	margin: 0 0 40px 0;
+}
+
+#gamesystem .gameinfo > figure::after {
+	content: "";
+	display: block;
+	z-index: 1;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: #001028;
+	width: 100%;
+	height: 500px;
+
+}
+
+#gamesystem .gameinfo > figure img {
+	z-index: 2;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 1400px;
+	height: auto;
+	margin: 0 0 0 -700px;
+}
+
+#gamesystem .gameinfo div > figure {
+	margin: 4em auto;
+	text-align: center;
+}
+
+#gamesystem .gameinfo div > figure img {
+	width: 700px;
+	height: auto;
+}
+
+#gamesystem .gameinfo p {
+	font-size: 16px;
+	line-height: 2.5em;
+	letter-spacing: 0.07em;
+	margin: 0 auto 3em auto;
+	width: 70%;
+}
+
+
+
+
+
+/*
+ブロック
+*/
+#gamesystem .systeminfo {
+	width: 1000px;
+	margin: 0 auto 140px;
+}
+
+#gamesystem .systeminfo h3 {
+	z-index: 3;
+	position: relative;
+	box-sizing: border-box;
+	background-image: url(../images/gamesystem_title_bg.png);
+	background-position: top right;
+	font-size: 65px;
+	line-height: 1em;
+	letter-spacing: 0;
+	width: 1000px;
+	height: 193px;
+	margin: 0 0 90px;
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 600;
+}
+
+#gamesystem .systeminfo h3 em {
+	display: block;
+	font-size: 35px;
+	line-height: 1em;
+	font-style: normal;
+}
+
+#gamesystem .systeminfo h3::before {
+	content: "";
+	z-index: 2;
+	position: absolute;
+	background-image: url(../images/gamesystem_title_parts_left.png);
+	background-position: top left;
+	width: 83px;
+	height: 193px;
+	top: 0;
+}
+
+#gamesystem .systeminfo h3::after {
+	content: "";
+	z-index: 1;
+	position: absolute;
+	background-image: url(../images/gamesystem_title_parts_right.png);
+	background-position: top left;
+	width: 96px;
+	height: 193px;
+	top: 0;
+	right: 0;
+}
+
+#gamesystem .systeminfo h3.makia {
+	background-size: 500px 178px;
+}
+
+#gamesystem .systeminfo h3.makia::before {
+	left: 480px;
+}
+
+#gamesystem .systeminfo h3.live {
+	background-size: 450px 178px;
+	line-height: 193px;
+}
+
+#gamesystem .systeminfo h3.live::before {
+	left: 530px;
+}
+
+#gamesystem .systeminfo h3.libra {
+	padding: 30px 0 0 0;
+	background-size: 277px 178px;
+}
+
+#gamesystem .systeminfo h3.libra::before {
+	left: 693px;
+}
+
+#gamesystem .systeminfo span {
+	display: inline-block;
+	position: absolute;
+	background-color: #c20001;
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 500;
+	font-style: normal;
+	color: #ffffff;
+	font-size: 18px;
+	letter-spacing: 0.5em;
+	text-indent: 0.5em;
+	line-height: 36px;
+	height: 36px;
+	padding: 0 15px;
+	bottom: 0;
+	left: 0;
+}
+
+#gamesystem .systeminfo p {
+	font-size: 16px;
+	line-height: 2.5em;
+	letter-spacing: 0.07em;
+}
+
+#gamesystem .systeminfo figure {
+	margin: 40px 0;
+}
+
+#gamesystem .systeminfo figure img {
+	display: block;
+}
+
+#gamesystem hr {
+	background-image: url(../images/gamesystem_hz.png);
+	background-size: 1000px 91px;
+	background-position: top center;
+	background-repeat: no-repeat;
+	width: 1000px;
+	height: 91px;
+	margin: 0 auto 140px;
+	border: none;
+}
+
+
+
+
+
+
+/*
+アニメーション処理
+*/
+/*target*/
+#gamesystem .gameinfo figure img,
+#gamesystem .gameinfo figure::after,
+#gamesystem .gameinfo > div p,
+#gamesystem .gameinfo > div figure {
+	transition-duration: 600ms;
+	transition-property: all;
+	transition-timing-function: cubic-bezier(.42, 0, 0, .99);
+	transform-origin: center;
+}
+
+/*hide*/
+#gamesystem .gameinfo figure.jwp_target img {
+	opacity: 0;
+	transform: translateY(60px);
+}
+
+#gamesystem .gameinfo figure.jwp_target::after {
+	opacity: 0;
+	transform: scaleX(0);
+}
+
+#gamesystem .gameinfo > div p.jwp_target {
+	opacity: 0;
+	transform: translateY(-30px);
+}
+
+#gamesystem .gameinfo > div figure.jwp_target {
+	opacity: 0;
+	transform: scaleX(0);
+}
+
+/*propety*/
+#gamesystem .gameinfo figure.anime_active img {
+	transition-duration: 1000ms;
+	transition-delay: 0ms;
+}
+
+#gamesystem .gameinfo figure.anime_active::after {
+	transition-delay: 1000ms;
+}
+
+#gamesystem .gameinfo > div p.anime_active {
+	transition-delay: 0ms;
+}
+
+#gamesystem .gameinfo > div figure.anime_active {
+	transition-delay: 0ms;
+}
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　sub_GMAE SYSTEM_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+sub_STORY
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#story {
+	position: relative;
+	width: 100%;
+	height: auto;
+}
+
+#story p strong {
+	background-color: #000000;
+	color: #ffffff;
+	margin: 0 5px;
+	font-size: 13px;
+	font-weight: 500;
+}
+
+
+
+
+
+
+/*
+プロローグ
+*/
+#story .prologue {
+	position: relative;
+	background-image: url(../images/story_parallax_bg.png);
+	background-size: 1680px 1771px;
+	background-position: top center;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 1771px;
+	margin: 0 0 0 0;
+	padding: 160px 0 0 0;
+}
+
+#story .prologue p strong {
+	background-color: #c20001;
+	color: #ffffff;
+}
+
+#story .prologue p ruby rt {
+	color: #ffffff;
+}
+
+#story .prologue h3 {
+	z-index: 4;
+	position: relative;
+	width: 100%;
+	margin: 0 0 80px 0;
+	color: #c20001;
+	font-size: 14px;
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	line-height: 1em;
+	letter-spacing: 0.7em;
+	text-indent: 0.7em;
+	text-align: center;
+}
+
+#story .prologue h3 span {
+	display: block;
+	font-size: 30px;
+	letter-spacing: 1.5em;
+	text-indent: 1.5em;
+	margin: 50px 0 0;
+}
+
+#story .prologue p {
+	z-index: 4;
+	position: relative;
+	color: #ffffff;
+	font-size: 14px;
+	line-height: 4em;
+	letter-spacing: 0.2em;
+	text-align: center;
+	width: 70%;
+	margin: 0 auto 4em auto;
+}
+
+#story .prologue p span {
+	display: inline-block;
+	background-image: url(../images/story_text_bg.png);
+	background-size: 94px auto;
+	background-position: center center;
+	background-repeat: no-repeat;
+	width: 75px;
+	height: 45px;
+	padding: 0 10px;
+}
+
+#story .prologue .parallax_mask {
+	z-index: 3;
+	position: absolute;
+	background-image: url(../images/story_parallax_mask.png);
+	background-size: 1680px 774px;
+	background-position: bottom center;
+	background-repeat: repeat-x;
+	width: 100%;
+	height: 1771px;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+#story .prologue .parallax_bg {
+	z-index: 2;
+	position: absolute;
+	background-image: url(../images/story_parallax_visual.png);
+	background-size: 1680px 1771px;
+	background-position: top center;
+	background-repeat: repeat-x;
+	width: 100%;
+	height: 1771px;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+
+
+
+
+
+/*
+イントロダクション
+*/
+#story .introduction {
+	position: relative;
+	text-align: center;
+	width: 100%;
+}
+
+#story .introduction h3 {
+	color: #002ec2;
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 14px;
+	line-height: 1em;
+	letter-spacing: 0.7em;
+	text-indent: 0.7em;
+	margin: 0 auto 105px;
+}
+
+#story .introduction h3 span {
+	display: block;
+	font-size: 30px;
+	letter-spacing: 1.5em;
+	text-indent: 1.5em;
+	margin: 50px 0 0;
+}
+
+#story .introduction p {
+	font-size: 14px;
+	line-height: 4em;
+	letter-spacing: 0.1em;
+	width: 70%;
+	margin: 0 auto 4em auto;
+}
+
+#story .introduction figure {
+	width: 106px;
+	height: 91px;
+	margin: 60px auto;
+}
+
+#story .meteora_sphere {
+	position: relative;
+	width: 334px;
+	height: 600px;
+	margin: 100px auto 40px auto;
+}
+
+#story .meteora_sphere::after {
+	content: "";
+	display: block;
+	position: absolute;
+	background-image: url(../images/introduction_sphere.png);
+	width: 334px;
+	height: 494px;
+	animation: sphere_sub 4s infinite;
+}
+
+@keyframes sphere_sub {
+	0% {
+		top: 0;
+	}
+
+	50% {
+		top: 20px;
+	}
+
+	100% {
+		top: 0;
+	}
+}
+
+
+
+
+
+/*
+アニメーション処理
+*/
+/*target*/
+#story .prologue h3,
+#story .introduction h3,
+#story .prologue h3 span,
+#story .introduction h3 span,
+#story .prologue p,
+#story .introduction p {
+	transition-duration: 800ms;
+	transition-property: all;
+	transition-timing-function: cubic-bezier(.42, 0, 0, .99);
+}
+
+/*delay*/
+#story .prologue h3,
+#story .introduction h3 {
+	transition-delay: 0ms;
+}
+
+#story .prologue h3 span,
+#story .introduction h3 span {
+	transition-delay: 0ms;
+}
+
+#story .prologue p,
+#story .introduction p {
+	transition-delay: 500ms;
+	transition-duration: 1800ms;
+}
+
+/*propety*/
+#story .prologue h3.jwp_target,
+#story .introduction h3.jwp_target {
+	opacity: 0;
+	letter-spacing: 1.7em;
+}
+
+#story .prologue h3.jwp_target span,
+#story .introduction h3.jwp_target span {
+	letter-spacing: 2em;
+}
+
+#story .prologue p.jwp_target,
+#story .introduction p.jwp_target {
+	opacity: 0;
+	transform: translateY(-30px);
+}
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　sub_STORY_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+sub_FRAGMENT
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#fragment {
+	width: 100%;
+	padding: 100px 0;
+}
+
+
+
+
+
+
+/*
+ブロック
+*/
+#fragment ul {
+	display: flex;
+	flex-wrap: wrap;
+	align-content: space-between;
+	width: 1000px;
+	margin: 0 auto;
+}
+
+#fragment ul li {
+	background-image: url(../images/fragment_hz.png);
+	background-size: 480px 78px;
+	background-position: bottom center;
+	width: 480px;
+	margin: 0 40px 50px 0;
+	padding: 40px 0 120px;
+	border-top: solid 1px #000000;
+}
+
+#fragment ul li:nth-child(even) {
+	margin: 0 0 50px 0;
+}
+
+#fragment ul li h3 {
+	font-size: 20px;
+	margin: 0 0 10px 0;
+	line-height: 1.8em;
+	letter-spacing: 0.2em;
+	text-indent: 0.3em;
+	text-align: center;
+	min-height: 80px;
+}
+
+/*
+#fragment ul li h3 span {
+	display: block;
+	font-size: 10px;
+	letter-spacing: 0.1em;
+	text-indent: 0.5em;
+	margin: 5px 0 0;
+}
+*/
+
+#fragment ul li figure {
+	margin: 40px auto;
+}
+
+#fragment ul li figure img {
+	display: block;
+}
+
+#fragment ul li p {
+	font-size: 12px;
+	letter-spacing: 0.1em;
+	line-height: 2.4em;
+	text-align: left;
+}
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　sub_FRAGMENT_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+sub_CAST
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#cast {
+	width: 100%;
+	padding: 150px 0;
+}
+
+
+
+
+
+
+/*
+ブロック
+*/
+#cast ul {
+	display: flex;
+	flex-wrap: wrap;
+	align-content: space-between;
+	width: 1000px;
+	margin: 0 auto;
+}
+
+#cast ul li {
+	background-image: url(../images/cast_hz.png), url(../images/cast_hz_bottom.png);
+	background-size: 480px 15px, 480px 7px;
+	background-position: top center, bottom center;
+	text-align: center;
+	width: 480px;
+	margin: 0 40px 50px 0;
+	padding: 45px 0 50px;
+}
+
+#cast ul li:nth-child(even) {
+	margin: 0 0 50px 0;
+}
+
+#cast ul li > em {
+	display: block;
+	background-size: 480px 103px;
+	background-position: center center;
+	font-size: 20px;
+	font-style: normal;
+	line-height: 80px;
+	letter-spacing: 0.1em;
+	text-indent: 0.3em;
+	width: 100%;
+	height: 80px;
+	margin: 0 auto 50px auto;
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 400;
+}
+
+#cast ul li.chloe > em {
+	background-image: url(../images/cast_chara_chloe.png);
+}
+
+#cast ul li.coco > em {
+	background-image: url(../images/cast_chara_coco.png);
+}
+
+#cast ul li.noa > em {
+	background-image: url(../images/cast_chara_noa.png);
+}
+
+#cast ul li.anima > em {
+	background-image: url(../images/cast_chara_anima.png);
+}
+
+#cast ul li.julie > em {
+	background-image: url(../images/cast_chara_julie.png);
+}
+
+#cast ul li.yamato > em {
+	background-image: url(../images/cast_chara_yamato.png);
+}
+
+#cast ul li.aoba > em {
+	background-image: url(../images/cast_chara_aoba.png);
+}
+
+#cast ul li.deiter > em {
+	background-image: url(../images/cast_chara_deiter.png);
+}
+
+#cast ul li h4 {
+	font-size: 20px;
+	line-height: 1em;
+	letter-spacing: 0.1em;
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 500;
+}
+#cast ul li h4:nth-of-type(1){
+	margin: 0 0 50px 0;
+	padding: 0 0 50px 0;
+	border-bottom: 2px #ccc solid;
+}
+#cast ul li h4 em{
+	display: inline-block;
+	background-color: #000000;
+	color: #ffffff;
+	text-decoration: none;
+	font-style: normal;
+	margin: 0 5px 0 0;
+}
+#cast ul li h4 span {
+	display: inline-block;
+	font-size: 11px;
+	letter-spacing: 0.1em;
+	line-height: 23px;
+	vertical-align: middle;
+}
+
+#cast ul li figure {
+	margin: 30px auto 20px;
+}
+
+#cast ul li figure img {
+	display: block;
+	width: 200px;
+	height: 200px;
+	margin: 0 auto;
+}
+
+#cast ul li > dl {
+	width: 100%;
+}
+
+#cast ul li > dl dt {
+	font-size: 10px;
+	letter-spacing: 0.2em;
+	text-indent: 0.2em;
+	margin: 0 0 20px;
+}
+
+#cast ul li > dl dd {
+	box-sizing: border-box;
+	background-color: #000000;
+	color: #ffffff;
+	font-size: 11px;
+	letter-spacing: 0.1em;
+	text-indent: 0.1em;
+	width: 100%;
+	margin: 0 0 5px;
+	padding: 4px 20px;
+}
+
+#cast ul li > dl dd span {
+	font-size: 11px;
+}
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　sub_CAST_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+sub_ARTIST
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#artist {
+	width: 100%;
+	padding: 150px 0 0;
+}
+
+
+
+
+
+
+/*
+ブロック
+*/
+#artist .box_artist {
+	position: relative;
+	background-image: url(../images/artist_hz.png);
+	background-size: 1000px 7px;
+	background-position: bottom center;
+	background-repeat: no-repeat;
+	text-align: center;
+	width: 100%;
+	margin: 0 auto 200px;
+	padding: 0 0 80px;
+}
+
+#artist .box_artist figure {
+	z-index: 1;
+	position: relative;
+	background-color: #000000;
+	background-image: url(../images/pattern_tryangle_l_w.png);
+	background-size: 250px 250px;
+	background-position: top center;
+	text-align: center;
+	width: 100%;
+	height: 533px;
+	margin: 75px auto 0;
+}
+
+#artist .box_artist figure img {
+	display: block;
+	margin: 0 auto;
+	width: 800px;
+	height: auto;
+}
+
+#artist .box_artist h3 {
+	z-index: 2;
+	position: absolute;
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	line-height: 0.8em;
+	width: 100%;
+}
+
+#artist .box_artist h3.short {
+	top: -74px;
+	font-size: 100px;
+	letter-spacing: 0.1em;
+	text-indent: 0.1em;
+	margin: 0 auto;
+	text-shadow: 0px 30px 0px #ffffff;
+}
+
+#artist .box_artist h3.long {
+	top: -52px;
+	font-size: 70px;
+	letter-spacing: 0.1em;
+	text-indent: 0.1em;
+	margin: 0 auto;
+	text-shadow: 0px 20px 0px #ffffff;
+}
+
+#artist .box_artist h3.ultralong{
+	top: -38px;
+	font-size: 50px;
+	letter-spacing: 0.1em;
+	text-indent: 0.1em;
+	margin: 0 auto;
+	text-shadow: 0px 20px 0px #ffffff;
+}
+
+#artist .box_artist .music {
+	z-index: 3;
+	position: relative;
+	background-color: #000000;
+	color: #ffffff;
+	width: 700px;
+	margin: -50px auto 0 auto;
+	padding: 50px 0;
+}
+
+#artist .box_artist .music h4 {
+	font-size: 20px;
+	line-height: 1em;
+	letter-spacing: 0.1em;
+	text-indent: 0.5em;
+}
+
+#artist .box_artist .music p {
+	font-size: 14px;
+	line-height: 1em;
+	letter-spacing: 0.5em;
+	text-indent: 0.5em;
+	margin: 25px 0 0;
+}
+
+#artist .box_artist .music hr {
+	background-color: #3e3e3e;
+	height: 1px;
+	margin: 30px 80px;
+	border: none;
+}
+
+#artist dl.disc {
+	text-align: center;
+	width: 800px;
+	margin: 60px auto 50px;
+}
+
+#artist dl.disc dt {
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 20px;
+	letter-spacing: 0.5em;
+	text-indent: 0.5em;
+	margin: 0 0 40px;
+}
+
+#artist dl.disc dd {
+	box-sizing: border-box;
+	background-color: #000000;
+	color: #ffffff;
+	font-size: 13px;
+	width: 100%;
+	margin: 0 0 5px;
+	padding: 7px 20px;
+}
+#artist dl.disc dd.bio {
+	text-align: justify;
+	padding: 20px;
+}
+
+#artist dl.official {
+	text-align: center;
+	width: 480px;
+	margin: 60px auto 0;
+}
+
+#artist dl.official dt {
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 20px;
+	letter-spacing: 0.5em;
+	text-indent: 0.5em;
+	margin: 0 0 30px;
+}
+
+#artist dl.official dd {
+	letter-spacing: 0.2em;
+	text-indent: 0.2em;
+	width: 100%;
+}
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　sub_ARTIST_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+sub_STAFF
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#staff {
+	width: 100%;
+	padding: 150px 0;
+}
+
+
+
+
+
+
+/*
+ブロック
+*/
+#staff div {
+	text-align: center;
+	width: 100%;
+}
+
+/*スタッフリスト_A*/
+#staff .stafflist_a {
+	margin: 0 auto 230px;
+}
+
+#staff .stafflist_a ul {}
+
+#staff .stafflist_a ul li {
+	background-image: url(../images/staff_hz.png);
+	background-size: 70px 80px;
+	background-position: bottom center;
+	background-repeat: no-repeat;
+	margin: 0 0 70px;
+	padding: 0 0 150px;
+}
+
+#staff .stafflist_a ul li:last-child {
+	background-image: none;
+	margin: 0;
+	padding: 0;
+}
+
+#staff .stafflist_a ul li em {
+	font-style: normal;
+	font-size: 18px;
+	letter-spacing: 0.1em;
+	text-indent: 0.2em;
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 400;
+}
+
+/*
+#staff .stafflist_a ul li em span {
+	display: block;
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 10px;
+}
+*/
+
+#staff .stafflist_a ul li h4 {
+	font-size: 27px;
+	letter-spacing: 0.1em;
+	text-indent: 0.1em;
+	margin: 40px 0 30px;
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 400;
+}
+
+#staff .stafflist_a ul li p {
+	color: #8b8b8b;
+	font-size: 11px;
+	letter-spacing: 0.1em;
+	text-indent: 0.1em;
+	margin: 0 0 5px;
+}
+
+/*スタッフリスト_B*/
+#staff .stafflist_b {
+	background-color: #000000;
+	background-image: url(../images/pattern_tryangle_l_w.png);
+	background-size: 250px 250px;
+	background-position: top center;
+	background-repeat: repeat;
+	color: #ffffff;
+	margin: 0 0 180px;
+	padding: 100px 0;
+}
+
+#staff .stafflist_b ul {
+	display: flex;
+	flex-wrap: wrap;
+	align-content: space-between;
+	width: 1000px;
+	margin: 0 auto;
+}
+
+#staff .stafflist_b ul li {
+	position: relative;
+	width: 480px;
+	margin: 0 10px 60px;
+}
+
+#staff .stafflist_b ul li::before {
+	content: "";
+	position: absolute;
+	background-color: #3b3b3b;
+	width: 100%;
+	height: 100%;
+	top: 20px;
+	left: 0;
+	opacity: 0.8;
+}
+
+#staff .stafflist_b ul li > * {
+	z-index: 5;
+	position: relative;
+}
+
+#staff .stafflist_b ul li em {
+	font-style: normal;
+	font-size: 18px;
+	letter-spacing: 0.1em;
+	text-indent: 0.1em;
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 400;
+}
+
+/*
+#staff .stafflist_b ul li em span {
+	display: block;
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 10px;
+	margin: 10px 0 0;
+}
+*/
+
+#staff .stafflist_b ul li h4 {
+	font-size: 22px;
+	letter-spacing: 0.1em;
+	text-indent: 0.1em;
+	margin: 10px 0 0;
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 400;
+}
+
+#staff .stafflist_b ul li h4 mark {
+	background-color: transparent;
+	color: #ffffff;
+	font-size: 16px;
+	font-weight: normal;
+	margin: 0 0 0 10px;
+}
+
+#staff .stafflist_b ul li h4 small {
+	font-size: 20px;
+	margin: 0 0 0 10px;
+}
+
+#staff .stafflist_b ul li h4 span {
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 12px;
+	margin: 20px 0 0;
+}
+
+/*スタッフリスト_C*/
+#staff .stafflist_c {}
+
+#staff .stafflist_c h5 {
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 500;
+	font-style: normal;
+	font-size: 20px;
+}
+
+#staff .stafflist_c p {
+	line-height: 2.5em;
+	letter-spacing: 0.12em;
+	width: 1000px;
+	margin: 90px auto;
+}
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　 sub_STAFF_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+sub_PARTNER
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#partner {
+	width: 100%;
+	padding: 150px 0;
+}
+
+
+
+
+
+
+/*
+リスト
+*/
+#partner ul {
+	display: flex;
+	flex-wrap: wrap;
+	align-content: space-between;
+	width: 1000px;
+	margin: 0 auto;
+}
+
+#partner ul li {
+	box-sizing: border-box;
+	background-image: url(../images/cast_hz.png), url(../images/cast_hz_bottom.png);
+	background-position: top center, bottom center;
+	text-align: center;
+	width: 320px;
+	margin: 0 0 50px 0;
+	padding: 50px;
+}
+
+#partner ul li h3 {
+	color: #666666;
+	font-size: 13px;
+	letter-spacing: 0.2em;
+	text-indent: 0.2em;
+	margin: 0 0 30px;
+}
+
+#partner ul li h4 {
+	min-height: 70px;
+	font-size: 16px;
+}
+#partner ul li p{}
+#partner ul li p a{
+	font-size: 10px;
+	background-color: #000;
+	color: #fff;
+	padding: 0.5em 1em;
+	word-break: break-all;
+}
+
+/*
+#partner ul li figure{
+	display: block;
+	position: relative;
+	width: 318px;
+	height: 178px;
+	border: 1px solid #000000;
+}
+#partner ul li figure a{
+	display: block;
+	width: 318px;
+	height: 178px;
+}
+#partner ul li figure img{
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+}
+*/
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　sub_PARTNER_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+sub_NEWS
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#news {
+	position: relative;
+	width: 100%;
+	padding: 190px 0 180px;
+}
+
+
+
+
+
+
+/*
+背景オブジェクト
+*/
+#news .background {
+	z-index: 1;
+	position: absolute;
+	background-image: url(../images/news_object_bg.png);
+	background-size: 649px 741px;
+	background-position: right top;
+	background-repeat: no-repeat;
+	width: 1680px;
+	height: 741px;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+
+
+
+
+
+/*
+一覧
+*/
+#news ul.news_list {
+	display: flex;
+	flex-wrap: wrap;
+	align-content: space-between;
+	position: relative;
+	width: 1000px;
+	margin: 0 auto;
+}
+
+#news ul.news_list li {
+	margin: 0 20px 20px 0;
+}
+
+#news ul.news_list li:nth-child(even) {
+	margin: 0 0 20px 0;
+}
+
+#news ul.news_list li a {
+	display: block;
+	position: relative;
+	color: #ffffff;
+	width: 490px;
+	height: 257px;
+}
+
+#news ul.news_list li a img {
+	z-index: 3;
+	position: absolute;
+	width: 490px;
+	height: 257px;
+	top: 0;
+	left: 0;
+}
+
+/*テキストオーバーレイ*/
+#news ul.news_list li a div {
+	z-index: 5;
+	position: absolute;
+	background-image: url(../images/newslist_ol_black.png);
+	background-size: 490px 257px;
+	background-position: top center;
+	text-align: center;
+	width: 490px;
+	height: 257px;
+	top: 0;
+	left: 0;
+}
+
+/*テキスト*/
+#news ul.news_list li a div h4 {
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 500;
+	font-style: normal;
+	font-size: 9px;
+	line-height: 1em;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+	text-indent: 0.2em;
+	margin: 5px 0 153px;
+}
+
+#news ul.news_list li a div data {
+	box-sizing: border-box;
+	background-color: #000000;
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 9px;
+	line-height: 1em;
+	letter-spacing: 0.2em;
+	text-indent: 0.2em;
+	padding: 0.5em 1em;
+}
+
+#news ul.news_list li a div p {
+	position: absolute;
+	bottom: 0px;
+	box-sizing: border-box;
+	width: 100%;
+	height: 53px;
+	padding: 7px 20px;
+	font-size: 13px;
+	line-height: 1.5em;
+	letter-spacing: 0.05em;
+}
+
+
+
+
+
+
+/*
+一覧ページング
+*/
+#news ul.page_list {
+	display: flex;
+	justify-content: center;
+	position: relative;
+	width: 1000px;
+	margin: 90px auto 0;
+}
+
+#news ul.page_list li {
+	background-color: #000000;
+	color: #ffffff;
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 20px;
+	line-height: 40px;
+	text-align: center;
+	width: 40px;
+	height: 40px;
+	margin: 0 5px;
+	border: 1px solid #000000;
+}
+
+#news ul.page_list li.prev,
+#news ul.page_list li.next {
+	width: 153px;
+	border: none;
+}
+
+#news ul.page_list li.prev {
+	margin: 1px 15px 1px 0;
+}
+
+#news ul.page_list li.next {
+	margin: 1px 0 1px 15px;
+}
+
+#news ul.page_list li a {
+	display: block;
+	background-color: #ffffff;
+	color: #000000;
+	width: 40px;
+	height: 40px;
+}
+
+#news ul.page_list li.prev a {
+	display: block;
+	background-color: #ffffff;
+	background-image: url(../images/news_btn_prev.png);
+	background-size: 153px 40px;
+	background-position: center center;
+	letter-spacing: 0.1em;
+	text-indent: 0.1em;
+	text-align: center;
+	width: 153px;
+	height: 40px;
+	border: none;
+}
+
+#news ul.page_list li.next a {
+	display: block;
+	background-color: #ffffff;
+	background-image: url(../images/news_btn_next.png);
+	background-size: 153px 40px;
+	background-position: center center;
+	letter-spacing: 0.1em;
+	text-indent: 0.1em;
+	text-align: center;
+	width: 153px;
+	height: 40px;
+	border: none;
+}
+
+
+
+
+
+
+/*
+詳細
+*/
+#news .news_detail {
+	z-index: 3;
+	position: relative;
+	text-align: center;
+	width: 1000px;
+	margin: 0 auto;
+}
+
+/*カバー画像*/
+#news .news_detail figure.cover img {
+	display: block;
+	width: 1000px;
+	height: auto;
+}
+
+/*メタ情報*/
+#news .news_detail .meta {
+	display: flex;
+	justify-content: space-between;
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	line-height: 1em;
+	letter-spacing: 0.3em;
+	margin: 40px 0;
+}
+
+/*カテゴリ*/
+#news .news_detail > h4 {
+	display: inline-block;
+	background-color: #000000;
+	color: #ffffff;
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 20px;
+	letter-spacing: 0.3em;
+	text-indent: 0.3em;
+	text-align: center;
+	margin: 0 auto;
+	padding: 5px 10px;
+}
+
+/*記事タイトル*/
+#news .news_detail > h1 {
+	font-size: 17px;
+	line-height: 1.7em;
+	letter-spacing: 0.5em;
+	text-align: center;
+	margin: -15px 0 0;
+	padding: 50px 100px;
+	border-top: 1px solid #000000;
+	border-bottom: 1px solid #000000;
+}
+
+
+
+
+
+
+/*
+記事本文
+*/
+/*ディフォルト調整*/
+#news .news_detail .post h1,
+#news .news_detail .post h2,
+#news .news_detail .post h3,
+#news .news_detail .post h4,
+#news .news_detail .post h5,
+#news .news_detail .post h6,
+#news .news_detail .post p,
+#news .news_detail .post strong,
+#news .news_detail .post em,
+#news .news_detail .post span,
+#news .news_detail .post del,
+#news .news_detail .post blockquote,
+#news .news_detail .post li,
+#news .news_detail .post blockquote{
+	word-break: break-word;
+}
+#news .news_detail .post pre{
+	white-space: pre-wrap;
+}
+
+
+
+/*個別スタイル*/
+#news .news_detail .post {
+	font-size: 16px;
+	text-align: left;
+	margin: 100px 0 0;
+}
+
+#news .news_detail .post img {
+	display: block;
+	max-width: 1000px;
+	margin: 10px 0;
+}
+
+#news .news_detail .post p {
+	line-height: 2em;
+	letter-spacing: 0.2em;
+	margin: 0 0 50px;
+}
+
+#news .news_detail .post h1 {
+	font-size: 24px;
+	line-height: 2em;
+	letter-spacing: 0.2em;
+	margin: 0 0 20px;
+}
+
+#news .news_detail .post h2 {
+	font-size: 20px;
+	line-height: 2em;
+	letter-spacing: 0.2em;
+	margin: 0 0 20px;
+}
+
+#news .news_detail .post h3 {
+	font-size: 16px;
+	line-height: 2em;
+	letter-spacing: 0.2em;
+	margin: 0 0 20px;
+}
+
+#news .news_detail .post blockquote {
+	color: #6b6b6b;
+	font-style: italic;
+	font-size: 13px;
+	line-height: 3em;
+	letter-spacing: 0.2em;
+	margin: 50px 90px 50px 100px;
+	padding: 0 0 0 25px;
+	border-left: 2px solid #000000;
+}
+
+#news .news_detail .post strong {
+	font-weight: bolder;
+}
+
+#news .news_detail .post > ul {
+	margin: 50px 0 50px 50px;
+}
+
+#news .news_detail .post > ul li {
+	margin: 0 0 5px;
+	list-style-type: disc;
+}
+
+#news .news_detail .post > ol {
+	margin: 50px 0 50px 50px;
+}
+
+#news .news_detail .post > ol li {
+	margin: 0 0 5px;
+	list-style-type: decimal;
+}
+
+
+
+
+
+
+/*
+詳細ページ内ページング
+*/
+#news ul.page_detail {
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+	width: 1000px;
+	margin: 150px auto 0;
+}
+
+#news ul.page_detail li {
+	text-align: center;
+	height: 60px;
+}
+
+#news ul.page_detail li.prev,
+#news ul.page_detail li.next {
+	width: 153px;
+}
+
+#news ul.page_detail li a {
+	display: block;
+	background-color: #000000;
+	color: #ffffff;
+	line-height: 60px;
+	letter-spacing: 0.2em;
+	text-indent: 0.2em;
+	height: 60px;
+	padding: 0 40px;
+}
+
+#news ul.page_detail li.prev a {
+	display: block;
+	background-color: #ffffff;
+	background-image: url(../images/news_btn_prev.png);
+	background-size: 153px 40px;
+	background-position: left center;
+	color: #000000;
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 20px;
+	line-height: 40px;
+	letter-spacing: 0.1em;
+	text-indent: 0.1em;
+	text-align: center;
+	width: 153px;
+	height: 40px;
+	margin: 10px 0;
+	padding: 0;
+	border: none;
+}
+
+#news ul.page_detail li.next a {
+	display: block;
+	background-color: #ffffff;
+	background-image: url(../images/news_btn_next.png);
+	background-size: 153px 40px;
+	background-position: right center;
+	color: #000000;
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 20px;
+	line-height: 40px;
+	letter-spacing: 0.1em;
+	text-indent: 0.1em;
+	text-align: center;
+	width: 153px;
+	height: 40px;
+	margin: 10px 0;
+	padding: 0;
+	border: none;
+}
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　      sub_NEWS_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+sub_CHARACTER
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#chara_list {
+	position: relative;
+	width: 100%;
+	padding: 10px 0 0;
+}
+
+
+
+
+
+
+/*
+ブロック
+*/
+#chara_list > ul {
+	width: 100%;
+}
+
+#chara_list > ul li.chara_item {
+	width: 100%;
+	height: 200px;
+	overflow: hidden;
+}
+
+
+
+
+/*
+サムネイル
+*/
+#chara_list > ul li.chara_item .thumb {
+	position: relative;
+	height: 200px;
+	margin: 0 auto;
+	cursor: pointer;
+}
+
+/*名前*/
+#chara_list > ul li.chara_item .thumb h3 {
+	position: absolute;
+	font-size: 50px;
+	line-height: 1em;
+	letter-spacing: 0.1em;
+	top: 60px;
+	left: 50px;
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 500;
+}
+
+/*
+#chara_list > ul li.chara_item .thumb h3 span {
+	display: block;
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 13px;
+	line-height: 1em;
+	letter-spacing: 0.2em;
+	text-indent: 0.2em;
+	margin: 10px 0 0;
+}
+*/
+
+#chara_list > ul li.chara_item .thumb:hover h3,
+#chara_list > ul li.chara_item .thumb:hover h3 span {
+	letter-spacing: 0.3em;
+}
+
+/*声優名*/
+#chara_list > ul li.chara_item .thumb h4 {
+	position: absolute;
+	font-size: 14px;
+	line-height: 1em;
+	letter-spacing: 0.1em;
+	top: 125px;
+	left: 50px;
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 400;
+}
+#chara_list > ul li.chara_item .thumb h4 span{
+	font-size: 11px;
+	letter-spacing: 0.1em;
+}
+
+#chara_list > ul li.chara_item .thumb:hover h4 {
+	letter-spacing: 0.3em;
+}
+
+/*カットイン画像*/
+#chara_list > ul li.chara_item .thumb p.chutin {
+	opacity: 0.2;
+	position: absolute;
+	top: 0;
+	right: 0;
+	background-image: url(../images/character_thumb.png);
+	background-size: 100% auto;
+	width: 467px;
+	height: 200px;
+	filter: brightness(100%);
+}
+
+#chara_list > ul li.chara_item .thumb:hover p.chutin {
+	opacity: 0.8;
+	transform: scale(1.07, 1.07);
+	filter: brightness(100%);
+}
+
+
+
+/*
+展開
+*/
+#chara_list > ul li.chara_item .main {
+	position: relative;
+	height: 1496px;
+	margin: 0 auto;
+}
+
+
+
+/*データ*/
+#chara_list > ul li.chara_item .main .cd {
+	z-index: 2;
+	position: absolute;
+	top: 80px;
+	left: 50%;
+}
+
+#chara_list > ul li.chara_item .main .data {
+	z-index: 3;
+	position: absolute;
+	top: 80px;
+	left: 80px;
+	background-image: url(../images/chara_currentframe.png);
+	background-size: 500px auto;
+	box-sizing: border-box;
+	width: 500px;
+	height: 740px;
+	padding: 40px;
+}
+
+#chara_list > ul li.chara_item .main .data h3 {
+	font-size: 50px;
+	line-height: 1em;
+	letter-spacing: 0.1em;
+	margin: 0;
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 500;
+}
+
+/*
+#chara_list > ul li.chara_item .main .data h3 span {
+	display: block;
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 15px;
+	line-height: 1em;
+	letter-spacing: 0.2em;
+	text-indent: 0.2em;
+	margin: 20px 0 0 0;
+}
+*/
+
+#chara_list > ul li.chara_item .main .data h4 {
+	font-size: 14px;
+	line-height: 1em;
+	letter-spacing: 0.1em;
+	margin: 10px 0 0 0;
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 400;
+}
+#chara_list > ul li.chara_item .main .data h4 span{
+	font-size: 10px;
+}
+
+#chara_list > ul li.chara_item .main .data p.appendclass {
+	box-sizing: border-box;
+	font-size: 12px;
+	line-height: 1.65em;
+	letter-spacing: 0.1em;
+	text-align: center;
+	width: 100%;
+	margin: 30px 0 0 0;
+	padding: 10px 0;
+	border-right: 2px solid;
+	border-left: 2px solid;
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 400;
+}
+
+#chara_list > ul li.chara_item .main .data .profiletext {
+	width: 100%;
+	margin: 30px 0 0 0;
+}
+
+#chara_list > ul li.chara_item .main .data .profiletext p {
+	color: #ffffff;
+	font-size: 13px;
+	line-height: 1.9em;
+	letter-spacing: 0.1em;
+	margin: 0 0 40px 0;
+	text-shadow: 0 0 10px #000000;
+}
+
+#chara_list > ul li.chara_item .main .classembolem {
+	position: absolute;
+	background-image: url(../images/chara_classframe.png);
+	background-size: 235px 177px;
+	text-align: center;
+	width: 235px;
+	height: 177px;
+	top: 80px;
+	left: 580px;
+}
+
+#chara_list > ul li.chara_item .main .classembolem p.rank {
+	filter: blur(5px);
+}
+
+
+
+/*サンプルボイス*/
+#chara_list > ul li.chara_item .main div.samplevoice {
+	z-index: 2;
+	position: absolute;
+	background-color: rgba(0, 0, 0, 0.5);
+	box-sizing: border-box;
+	width: 500px;
+	top: 850px;
+	left: 80px;
+	padding: 30px;
+	text-align: center;
+}
+
+#chara_list > ul li.chara_item .main div.samplevoice h5{
+	margin: 0 0 10px 0;
+}
+
+#chara_list > ul li.chara_item .main div.samplevoice ul {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+#chara_list > ul li.chara_item .main div.samplevoice ul li{
+	color: #ffffff;
+	width: 200px;
+	margin: 5px;
+	font-size: 14px;
+	text-align: center;
+	cursor: pointer;
+}
+/*
+#chara_list > ul li.chara_item .main .samplevoice li {
+	display: inline-block;
+	text-align: center;
+	width: 200px;
+	margin: 0 5px;
+	padding: 0 0 0 0;
+}
+
+#chara_list > ul li.chara_item .main .samplevoice li:first-child {
+	margin: 0 5px;
+	padding: 0 10px 0 0;
+}
+
+#chara_list > ul li.chara_item .main .samplevoice li h5 {
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 13px;
+	letter-spacing: 0.1em;
+	text-indent: 0.1em;
+	margin: 0 0 10px;
+}
+
+#chara_list > ul li.chara_item .main .samplevoice li {
+	display: block;
+	color: #ffffff;
+	font-size: 12px;
+	line-height: 37px;
+	letter-spacing: 0.3em;
+	width: 100%;
+	height: 37px;
+	cursor: pointer;
+}
+
+#chara_list > ul li.chara_item .main .samplevoice li::before {
+	content: "";
+	display: inline-block;
+	border-top: 5px solid transparent;
+	border-right: 0 solid transparent;
+	border-bottom: 5px solid transparent;
+	border-left: 10px solid #ffffff;
+	width: 0;
+	height: 0;
+	margin: 0 5px 0 0;
+}
+*/
+
+/*coming soon*/
+/*
+#chara_list > ul li.chara_item .main .samplevoice li.comingsoon {
+	background-color: #333 !important;
+	color: #777 !important;
+	cursor: default;
+}
+
+#chara_list > ul li.chara_item .main .samplevoice .comingsoon::before {
+	display: none;
+}
+*/
+
+
+
+/*
+スクリーンショット
+*/
+#chara_list > ul li.chara_item .main ul.ss {
+	z-index: 2;
+	display: flex;
+	justify-content: space-between;
+	position: absolute;
+	width: 500px;
+	top: 1060px;
+	left: 80px;
+}
+
+#chara_list > ul li.chara_item .main ul.ss li {
+	width: 245px;
+	height: 138px;
+}
+
+#chara_list > ul li.chara_item .main ul.ss li a {
+	display: block;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	border: 1px solid #ffffff;
+}
+
+#chara_list > ul li.chara_item .main ul.ss li a::after {
+	content: "";
+	position: absolute;
+	background-image: url(../images/chara_enlarge.png);
+	background-size: 30px 30px;
+	width: 30px;
+	height: 30px;
+	right: 8px;
+	bottom: 8px;
+}
+
+#chara_list > ul li.chara_item .main ul.ss li a img {
+	width: 100%;
+	height: 100%;
+}
+
+#chara_list > ul li.chara_item .main ul.ss li a:hover img {
+	transition-duration: 300ms;
+	filter: grayscale(120%);
+}
+
+
+
+
+
+
+
+/*
+キャラ用設定
+*/
+/*クロエ*/
+#chara_list > ul li.chara_item.chloe {
+	background: linear-gradient(80deg, #292929, #000000);
+	color: #a5a5a5;
+}
+
+#chara_list > ul li.chara_item.chloe .thumb p.chutin {
+	background-position: 0 0;
+}
+
+#chara_list > ul li.chara_item.chloe .main .cd {
+	background-image: url(../images/character_cdfull_chloe.png);
+	width: 361px;
+	height: 1370px;
+	margin: 0 0 0 760px;
+}
+
+#chara_list > ul li.chara_item.chloe.active .main .cd {
+	margin: 0 0 0 140px;
+}
+
+#chara_list > ul li.chara_item.chloe .main .classembolem p.rank {
+	display: block;
+	background-image: url(../images/chara_rank_chloe.png);
+	background-size: 100%;
+	width: 64px;
+	height: 74px;
+	margin: 65px auto 0;
+}
+
+#chara_list > ul li.chara_item.chloe .main .samplevoice li {
+	background-color: #a5a5a5;
+}
+
+#chara_list > ul li.chara_item.chloe .main .samplevoice li:hover {
+	background-color: #ffffff;
+	color: #a5a5a5;
+}
+
+#chara_list > ul li.chara_item.chloe .main .samplevoice li:hover::before {
+	transition-duration: 300ms;
+	border-left: 10px solid #a5a5a5;
+}
+
+
+
+/*コーコ*/
+#chara_list > ul li.chara_item.coco {
+	background: linear-gradient(80deg, #383845, #000000);
+	color: #d2d2f5;
+}
+
+#chara_list > ul li.chara_item.coco .thumb p.chutin {
+	background-position: 0 -200px;
+}
+
+#chara_list > ul li.chara_item.coco .main .cd {
+	background-image: url(../images/character_cdfull_coco.png);
+	width: 795px;
+	height: 1121px;
+	margin: 80px 0 0 600px;
+}
+
+#chara_list > ul li.chara_item.coco.active .main .cd {
+	margin: 80px 0 0 -100px;
+}
+
+#chara_list > ul li.chara_item.coco .main .classembolem p.rank {
+	display: block;
+	background-image: url(../images/chara_rank_coco.png);
+	background-size: 100%;
+	width: 64px;
+	height: 90px;
+	margin: 55px auto 0;
+}
+
+#chara_list > ul li.chara_item.coco .main .samplevoice li {
+	background-color: #d2d2f5;
+}
+
+#chara_list > ul li.chara_item.coco .main .samplevoice li:hover {
+	background-color: #ffffff;
+	color: #d2d2f5;
+}
+
+#chara_list > ul li.chara_item.coco .main .samplevoice li:hover::before {
+	transition-duration: 300ms;
+	border-left: 10px solid #d2d2f5;
+}
+
+
+
+/*ノア*/
+#chara_list > ul li.chara_item.noa {
+	background: linear-gradient(80deg, #0b1e42, #000000);
+	color: #2364e1;
+}
+
+#chara_list > ul li.chara_item.noa .thumb p.chutin {
+	background-position: 0 -400px;
+}
+
+#chara_list > ul li.chara_item.noa .main .cd {
+	background-image: url(../images/character_cdfull_noa.png);
+	width: 1467px;
+	height: 1161px;
+	margin: 80px 0 0 300px;
+}
+
+#chara_list > ul li.chara_item.noa.active .main .cd {
+	margin: 80px 0 0 -530px;
+}
+
+#chara_list > ul li.chara_item.noa .main .classembolem p.rank {
+	display: block;
+	background-image: url(../images/chara_rank_noa.png);
+	background-size: 100%;
+	width: 64px;
+	height: 90px;
+	margin: 55px auto 0;
+}
+
+#chara_list > ul li.chara_item.noa .main .samplevoice li {
+	background-color: #2364e1;
+}
+
+#chara_list > ul li.chara_item.noa .main .samplevoice li:hover {
+	background-color: #ffffff;
+	color: #2364e1;
+}
+
+#chara_list > ul li.chara_item.noa .main .samplevoice li:hover::before {
+	transition-duration: 300ms;
+	border-left: 10px solid #2364e1;
+}
+
+
+
+/*アニマ*/
+#chara_list > ul li.chara_item.anima {
+	/*background: linear-gradient(80deg, #3a010c, #000000);*/
+	background: linear-gradient(80deg, #3a010c, #110003);
+	color: #B90023;
+}
+
+#chara_list > ul li.chara_item.anima .thumb p.chutin {
+	background-position: 0 -600px;
+}
+
+#chara_list > ul li.chara_item.anima .main .cd {
+	background-image: url(../images/character_cdfull_anima.png);
+	width: 766px;
+	height: 1142px;
+	margin: 30px 0 0 820px;
+}
+
+#chara_list > ul li.chara_item.anima.active .main .cd {
+	margin: 80px 0 0 20px;
+}
+
+#chara_list > ul li.chara_item.anima .main .classembolem p.rank {
+	display: block;
+	background-image: url(../images/chara_rank_anima.png);
+	background-size: 100%;
+	width: 64px;
+	height: 90px;
+	margin: 55px auto 0;
+}
+
+#chara_list > ul li.chara_item.anima .main .samplevoice li {
+	background-color: #B90023;
+}
+
+#chara_list > ul li.chara_item.anima .main .samplevoice li:hover {
+	background-color: #ffffff;
+	color: #B90023;
+}
+
+#chara_list > ul li.chara_item.anima .main .samplevoice li:hover::before {
+	transition-duration: 300ms;
+	border-left: 10px solid #B90023;
+}
+
+
+
+/*ヤマト*/
+#chara_list > ul li.chara_item.yamato {
+	background: linear-gradient(80deg, #351e00, #000000);
+	color: #ff9100;
+}
+
+#chara_list > ul li.chara_item.yamato .thumb p.chutin {
+	background-position: 0 -800px;
+}
+
+#chara_list > ul li.chara_item.yamato .main .cd {
+	background-image: url(../images/character_cdfull_yamato.png);
+	width: 482px;
+	height: 1407px;
+	margin: 0 0 0 670px;
+}
+
+#chara_list > ul li.chara_item.yamato.active .main .cd {
+	margin: 0 0 0 70px;
+}
+
+#chara_list > ul li.chara_item.yamato .main .classembolem p.rank {
+	display: block;
+	background-image: url(../images/chara_rank_yamato.png);
+	background-size: 100%;
+	width: 64px;
+	height: 90px;
+	margin: 55px auto 0;
+}
+
+#chara_list > ul li.chara_item.yamato .main .samplevoice li {
+	background-color: #ff9100;
+}
+
+#chara_list > ul li.chara_item.yamato .main .samplevoice li:hover {
+	background-color: #ffffff;
+	color: #ff9100;
+}
+
+#chara_list > ul li.chara_item.yamato .main .samplevoice li:hover::before {
+	transition-duration: 300ms;
+	border-left: 10px solid #ff9100;
+}
+
+
+
+/*アオバ*/
+#chara_list > ul li.chara_item.aoba {
+	background: linear-gradient(80deg, #082e2e, #000000);
+	color: #23c8c8;
+}
+
+#chara_list > ul li.chara_item.aoba .thumb p.chutin {
+	background-position: 0 -1000px;
+}
+
+#chara_list > ul li.chara_item.aoba .main .cd {
+	background-image: url(../images/character_cdfull_aoba.png);
+	width: 313px;
+	height: 1399px;
+	margin: 0 0 0 750px;
+}
+
+#chara_list > ul li.chara_item.aoba.active .main .cd {
+	margin: 0 0 0 150px;
+}
+
+#chara_list > ul li.chara_item.aoba .main .classembolem p.rank {
+	display: block;
+	background-image: url(../images/chara_rank_aoba.png);
+	background-size: 100%;
+	width: 64px;
+	height: 90px;
+	margin: 55px auto 0;
+}
+
+#chara_list > ul li.chara_item.aoba .main .samplevoice li {
+	background-color: #23c8c8;
+}
+
+#chara_list > ul li.chara_item.aoba .main .samplevoice li:hover {
+	background-color: #ffffff;
+	color: #23c8c8;
+}
+
+#chara_list > ul li.chara_item.aoba .main .samplevoice li:hover::before {
+	transition-duration: 300ms;
+	border-left: 10px solid #23c8c8;
+}
+
+
+
+/*ジュリィ*/
+#chara_list > ul li.chara_item.julie {
+	background: linear-gradient(80deg, #303403, #000000);
+	color: #b9c80f;
+}
+
+#chara_list > ul li.chara_item.julie .thumb p.chutin {
+	background-position: 0 -1200px;
+}
+
+#chara_list > ul li.chara_item.julie .main .cd {
+	background-image: url(../images/character_cdfull_julie.png);
+	width: 975px;
+	height: 1353px;
+	margin: 0 0 0 400px;
+}
+
+#chara_list > ul li.chara_item.julie.active .main .cd {
+	margin: 0 0 0 -200px;
+}
+
+#chara_list > ul li.chara_item.julie .main .classembolem p.rank {
+	display: block;
+	background-image: url(../images/chara_rank_julie.png);
+	background-size: 100%;
+	width: 64px;
+	height: 90px;
+	margin: 55px auto 0;
+}
+
+#chara_list > ul li.chara_item.julie .main .samplevoice li {
+	background-color: #b9c80f;
+}
+
+#chara_list > ul li.chara_item.julie .main .samplevoice li:hover {
+	background-color: #ffffff;
+	color: #b9c80f;
+}
+
+#chara_list > ul li.chara_item.julie .main .samplevoice li:hover::before {
+	transition-duration: 300ms;
+	border-left: 10px solid #b9c80f;
+}
+
+
+
+/*デイター*/
+#chara_list > ul li.chara_item.deiter {
+	background: linear-gradient(80deg, #2c291c, #000000);
+	color: #7d785f;
+}
+
+#chara_list > ul li.chara_item.deiter .thumb p.chutin {
+	background-position: 0 -1400px;
+}
+
+#chara_list > ul li.chara_item.deiter .main .cd {
+	background-image: url(../images/character_cdfull_deiter.png);
+	width: 569px;
+	height: 1407px;
+	margin: -10px 0 0 650px;
+}
+
+#chara_list > ul li.chara_item.deiter.active .main .cd {
+	margin: -10px 0 0 50px;
+}
+
+#chara_list > ul li.chara_item.deiter .main .classembolem p.rank {
+	display: block;
+	background-image: url(../images/chara_rank_deiter.png);
+	background-size: 100%;
+	width: 64px;
+	height: 90px;
+	margin: 55px auto 0;
+}
+
+#chara_list > ul li.chara_item.deiter .main .samplevoice li {
+	background-color: #7d785f;
+}
+
+#chara_list > ul li.chara_item.deiter .main .samplevoice li:hover {
+	background-color: #ffffff;
+	color: #7d785f;
+}
+
+#chara_list > ul li.chara_item.deiter .main .samplevoice li:hover::before {
+	transition-duration: 300ms;
+	border-left: 10px solid #7d785f;
+}
+
+
+
+
+
+
+
+/*
+アニメーション処理
+*/
+#chara_list > ul li.chara_item,
+#chara_list > ul li.chara_item * {
+	transition-duration: 300ms;
+	transition-property: all;
+	transition-timing-function: cubic-bezier(.42, 0, 0, .99);
+}
+
+#chara_list > ul li.chara_item.active {
+	transition-delay: 300ms;
+	height: 1500px;
+}
+
+
+/*サムネイルまわり*/
+#chara_list > ul li.chara_item.active .thumb h3 {
+	transition-delay: 0ms;
+	opacity: 0;
+	margin: 0 0 0 -900px;
+}
+
+#chara_list > ul li.chara_item.active .thumb h4 {
+	transition-delay: 100ms;
+	opacity: 0;
+	margin: 0 0 0 -900px;
+}
+
+#chara_list > ul li.chara_item.active .thumb p.chutin {
+	transition-delay: 200ms;
+	opacity: 0;
+	margin: 0 0 0 500px;
+}
+
+#chara_list > ul li.chara_item.active .thumb {
+	height: 0
+}
+
+
+/*メイン表示*/
+#chara_list > ul li.chara_item .main {
+	transition-delay: 600ms;
+	opacity: 0;
+	height: 0;
+}
+
+#chara_list > ul li.chara_item .main * {
+	opacity: 0;
+}
+
+#chara_list > ul li.chara_item.active .main {
+	opacity: 1;
+	height: 1500px;
+}
+
+#chara_list > ul li.chara_item.active .main * {
+	opacity: 1;
+}
+
+/*キャラ画像*/
+#chara_list > ul li.chara_item .main .cd {
+	transform: scale(0.8);
+}
+
+#chara_list > ul li.chara_item.active .main .cd {
+	transition-duration: 1000ms;
+	transform: scale(1);
+}
+
+/*パーソナルデータブロック全体*/
+#chara_list > ul li.chara_item .main .data {
+	transform: translateX(-40px);
+}
+
+#chara_list > ul li.chara_item.active .main .data {
+	transition-delay: 1000ms;
+	transform: translateX(0px);
+}
+
+/*名前*/
+#chara_list > ul li.chara_item .main .data h3 {
+	transform: translateX(20px);
+}
+
+#chara_list > ul li.chara_item.active .main .data h3 {
+	transition-delay: 1100ms;
+	transform: translateX(0px);
+}
+
+/*欧文表記*/
+#chara_list > ul li.chara_item .main .data h3 span {
+	transform: translateX(20px);
+}
+
+#chara_list > ul li.chara_item.active .main .data h3 span {
+	transition-delay: 1200ms;
+	transform: translateX(0px);
+}
+
+/*声優名*/
+#chara_list > ul li.chara_item .main .data h4 {
+	transform: translateX(20px);
+}
+
+#chara_list > ul li.chara_item.active .main .data h4 {
+	transition-delay: 1300ms;
+	transform: translateX(0px);
+}
+
+/*階級など*/
+#chara_list > ul li.chara_item.active .main .data p.appendclass {
+	transition-delay: 1400ms;
+}
+
+/*プロフィールテキスト*/
+#chara_list > ul li.chara_item.active .main .data .profiletext {
+	transition-delay: 1500ms;
+	transition-duration: 1400ms;
+}
+
+/*階級エムブレム*/
+#chara_list > ul li.chara_item.active .main .classembolem {
+	transition-delay: 1000ms;
+}
+
+#chara_list > ul li.chara_item.active .main .classembolem p.rank {
+	transition-delay: 1600ms;
+	filter: none;
+}
+
+/*サンプルボイス*/
+#chara_list > ul li.chara_item .main .samplevoice {
+	transform: scaleY(0);
+}
+
+#chara_list > ul li.chara_item.active .main .samplevoice {
+	transition-delay: 1600ms;
+	transform: scaleY(1);
+}
+
+/*スクリーンショット*/
+#chara_list > ul li.chara_item.active .main ul.ss li:first-child {
+	transition-delay: 2000ms;
+}
+
+#chara_list > ul li.chara_item.active .main ul.ss li:last-child {
+	transition-delay: 2100ms;
+}
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　 sub_CHARACTER_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+SPECIAL_start
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#special{
+	position: relative;
+	width: 100%;
+	padding: 150px 0 180px;
+}
+
+
+
+
+
+
+/*
+〓〓〓bannerlist〓〓〓
+*/
+#special > ul.bannerlist{
+	width: 800px;
+	margin: 0 auto;
+}
+#special > ul.bannerlist a{
+	display: block;
+	width: 800px;
+	height: 280px;
+	text-indent: -9999px;
+	border-radius: 6px;
+	transition-duration: 300ms;
+	transition-property: all;
+	transition-timing-function: cubic-bezier(.42,0,0,.99);
+	transition-delay: 0ms;
+	transform-origin:center;
+	box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+#special > ul.bannerlist a:hover{
+	opacity: 0.8;
+	transform: translateY(-5px);
+}
+
+
+.banner_fankit a{
+	background-image: url(../images/special_banner_fankit.html);
+}
+
+
+
+
+
+
+/*
+〓〓〓cs〓〓〓
+*/
+.cs{
+	width: 1000px;
+	margin: 0 auto;
+	text-align: center;
+}
+.cs p{
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 700;
+	font-style: normal;
+	font-size: 60px;
+	letter-spacing: 0.1em;
+}
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　SPECIAL_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+ファンキット_start
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+/*
+〓〓〓fun kit_COMMON〓〓〓
+*/
+#special_fk {
+	font-size: 16px;
+	color: #736b7a;
+	font-family: "FOT-UD角ゴ_スモール Pr6 DB", sans-serif;
+	font-weight: 500;
+	font-style: normal;
+}
+
+#special_fk section {
+	width: 850px;
+	margin: 0 auto 200px auto;
+	text-align: center;
+}
+
+#special_fk h2 {
+	font-size: 30px;
+	line-height: 1em;
+	letter-spacing: 0.2em;
+	font-weight: 400;
+	margin: 0 0 50px 0;
+}
+
+#special_fk h2 span {
+	display: block;
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 700;
+	font-style: normal;
+	font-size: 14px;
+	letter-spacing: 0.1em;
+}
+
+
+/*link*/
+#special_fk .dl,
+#special_fk .btn {
+	cursor: pointer;
+}
+
+
+#fk_top {
+	width: 100%;
+	padding: 30px;
+	box-sizing: border-box;
+	text-indent: -9999px;
+}
+
+
+/*MyDearest_logo*/
+#fk_top .md_logo {
+	width: 102px;
+	height: 52px;
+	margin: 0 0 0 auto;
+	background-image: url(../images/fk_logo_mydearest.png);
+}
+
+
+/*back_btn*/
+#fk_top .back {
+	width: 153px;
+	height: 50px;
+	float: left;
+	background-image: url(../images/fk_back_btn.png);
+}
+
+
+#fk_top .wrapper {
+	width: 900px;
+	height: 700px;
+	box-sizing: border-box;
+	margin: 0 auto;
+	padding: 150px 0 0 0;
+	background-image: url(../images/fk_kv_img.png);
+	background-size: auto 696px;
+	background-position: top right;
+}
+
+/*altdeus_logo*/
+#fk_top h1 {
+	width: 444px;
+	height: 138px;
+	margin: 0 0 130px 0;
+	background-image: url(../images/fk_logo.png);
+}
+
+
+
+/*fankit_logo*/
+#fk_top h1 span {
+	display: block;
+	width: 460px;
+	height: 20px;
+	margin: 120px 0 0 0;
+	border-radius: 10px;
+	background-color: #736b7a;
+	background-image: url(../images/fk_fankit_logo.png);
+	background-size: 77px auto;
+	background-position: center center;
+}
+
+#fk_top h1::after {
+	content: '';
+	display: block;
+	width: 460px;
+	height: 55px;
+	margin: 50px 0 0 0;
+	background-image: url(../images/fk_emblem.png);
+	background-size: 40px auto;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+
+#fk_top p {
+	box-sizing: border-box;
+	width: 460px;
+	padding: 50px;
+
+	font-family: "FOT-UD角ゴ_スモール Pr6 DB", sans-serif;
+	font-weight: 500;
+	font-style: normal;
+	font-size: 14px;
+	line-height: 2em;
+	text-indent: 0px;
+	text-align: left;
+	letter-spacing: 0.1em;
+}
+
+
+#fk_top p::before,
+#fk_top p::after {
+	content: '';
+	display: block;
+	width: 80px;
+	height: 80px;
+	margin: -50px;
+}
+
+#fk_top p::before {
+	border-top: 1px solid #736b7a;
+	border-left: 1px solid #736b7a;
+}
+
+#fk_top p::after {
+	border-right: 1px solid #736b7a;
+	border-bottom: 1px solid #736b7a;
+	margin: -50px -50px 0 auto;
+}
+
+
+
+
+
+
+/*
+〓〓〓fk_usagerule〓〓〓
+*/
+#fk_usagerule ul {
+	text-align: left;
+}
+
+#fk_usagerule li {
+	position: relative;
+	line-height: 2em;
+	margin: 0 0.5em 1em 0;
+}
+
+#fk_usagerule li::before {
+	content: '';
+	position: absolute;
+	display: block;
+	left: -1em;
+	width: 4px;
+	height: 4px;
+	border-radius: 2px;
+	margin: 16px 0 0 0;
+	background-color: #736b7a;
+
+}
+
+#fk_usagerule > ul {
+	margin: 0 0 100px 0;
+}
+
+#fk_usagerule h3 {
+	width: 100%;
+	height: 50px;
+	margin: 0 0 20px 0;
+	border-top: 1px solid #736b7a;
+	border-bottom: 1px solid #736b7a;
+	letter-spacing: 0.1em;
+	line-height: 50px;
+}
+
+
+#fk_usagerule h3.ok span,
+#fk_usagerule h3.ng span {
+	display: inline-block;
+	position: relative;
+	top: 4px;
+	width: 23px;
+	height: 23px;
+	margin: 0 15px 0 0;
+	background-repeat: no-repeat;
+}
+
+#fk_usagerule h3.ok span {
+	background-image: url(../images/fk_ok_icon.png);
+	background-size: 23px auto;
+}
+
+#fk_usagerule h3.ng span {
+	top: 5px;
+	background-image: url(../images/fk_ng_icon.png);
+	background-size: 21px auto;
+}
+
+#fk_usagerule .okng {
+	width: 80%;
+	margin: 0 auto;
+}
+
+
+#fk_usagerule .okng ul {
+	margin: 0 0 50px 0;
+}
+
+#fk_usagerule .okng li {
+	font-size: 0.9em;
+	line-height: 2.4em;
+}
+
+/*OPTIMIZE*/
+@media screen and (min-width:768px) and (max-width:1279px) {
+	/**/
+}
+
+
+
+
+
+
+/*
+〓〓〓fk_fankit_start〓〓〓
+*/
+#fk_fankit section,
+#fk_deliverykit section {
+	margin: 0 0 100px 0;
+}
+
+
+#fk_fankit h3,
+#fk_deliverykit h3 {
+	font-size: 18px;
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 600;
+	font-style: normal;
+	width: 100%;
+	height: 2.5em;
+	margin: 0 0 30px 0;
+	line-height: 2.5em;
+	letter-spacing: 0.2em;
+
+	background-color: #736b7a;
+	color: #ffffff;
+}
+
+
+/*fankit_deliverykit_common*/
+#fk_fankit .snsicon ul,
+#fk_fankit .snscover ul,
+#fk_fankit .wallpaper ul,
+#fk_fankit .wallpaper > ul > li ul,
+#fk_deliverykit .logo ul,
+#fk_deliverykit .chara ul {
+	/*	position: relative;*/
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+
+}
+
+
+#fk_fankit .snsicon a,
+#fk_fankit .snscover a,
+#fk_fankit .wallpaper a,
+#fk_deliverykit .logo a,
+#fk_deliverykit .chara a,
+#fk_deliverykit .overlay a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	text-indent: -9999px;
+}
+
+
+#fk_fankit .wallpaper a {
+	text-indent: 0;
+}
+/*end_fankit_deliverykit_common*/
+
+
+/*SNS_Icon*/
+#fk_fankit .snsicon li {
+	width: 150px;
+	height: 150px;
+	margin: 0 0 25px 0;
+	background-size: 150px auto;
+	background-repeat: no-repeat;
+	/*	box-shadow: 5px 5px 5px #000000;*/
+}
+
+
+#fk_fankit .snsicon li.chloe {
+	background-image: url(../images/snsicon_chloe.png);
+}
+
+#fk_fankit .snsicon li.coco {
+	background-image: url(../images/snsicon_coco.png);
+}
+
+#fk_fankit .snsicon li.noa {
+	background-image: url(../images/snsicon_noa.png);
+}
+
+#fk_fankit .snsicon li.anima {
+	background-image: url(../images/snsicon_anima.png);
+}
+
+#fk_fankit .snsicon li.yamato {
+	background-image: url(../images/snsicon_yamato.png);
+}
+
+#fk_fankit .snsicon li.aoba {
+	background-image: url(../images/snsicon_aoba.png);
+}
+
+#fk_fankit .snsicon li.julie {
+	background-image: url(../images/snsicon_julie.png);
+}
+
+#fk_fankit .snsicon li.deiter {
+	background-image: url(../images/snsicon_deiter.png);
+}
+
+#fk_fankit .snsicon li.alto_makhia {
+	background-image: url(../images/snsicon_alto_makhia.png);
+}
+
+#fk_fankit .snsicon li.prometheus {
+	background-image: url(../images/snsicon_prometheus.png);
+}
+
+
+
+
+/*SNS_Cover*/
+#fk_fankit .snscover li {
+	position: relative;
+	width: 400px;
+	height: 135px;
+	margin: 0 0 20px 0;
+	background-size: 400px auto;
+	background-repeat: no-repeat;
+}
+
+#fk_fankit .snscover li.chloe {
+	background-image: url(../images/snscover_chloe.png);
+}
+
+#fk_fankit .snscover li.coco {
+	background-image: url(../images/snscover_coco.png);
+}
+
+#fk_fankit .snscover li.noa {
+	background-image: url(../images/snscover_noa.png);
+}
+
+#fk_fankit .snscover li.anima {
+	background-image: url(../images/snscover_anima.png);
+}
+
+#fk_fankit .snscover li.yamato {
+	background-image: url(../images/snscover_yamato.png);
+}
+
+#fk_fankit .snscover li.aoba {
+	background-image: url(../images/snscover_aoba.png);
+}
+
+#fk_fankit .snscover li.julie {
+	background-image: url(../images/snscover_julie.png);
+}
+
+#fk_fankit .snscover li.deiter {
+	background-image: url(../images/snscover_deiter.png);
+}
+
+#fk_fankit .snscover li.alto_makhia {
+	background-image: url(../images/snscover_alto_makhia.png);
+}
+
+#fk_fankit .snscover li.prometheus {
+	background-image: url(../images/snscover_prometheus.png);
+}
+
+
+
+/*Wallpaper*/
+#fk_fankit .wallpaper > ul > li {
+	position: relative;
+	width: 400px;
+	height: 275px;
+	margin: 0 0 20px 0;
+}
+
+#fk_fankit .wallpaper > ul > li div {
+	width: 400px;
+	height: 225px;
+	margin: 0 0 20px 0;
+	background-size: 400px auto;
+	background-repeat: no-repeat;
+}
+
+#fk_fankit .wallpaper > ul > li.kv .img {
+	background-image: url(../images/fk_wallpaper_kv_1920.png);
+}
+
+#fk_fankit .wallpaper > ul > li.prometheus .img {
+	background-image: url(../images/fk_wallpaper_prometheus_1920.png);
+}
+
+#fk_fankit .wallpaper > ul > li li {
+	width: 90px;
+	height: 40px;
+	background-color: #736b7a;
+	border-radius: 100px;
+}
+
+#fk_fankit .wallpaper > ul > li li a {
+	font-size: 14px;
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 500;
+	font-style: normal;
+	color: #ffffff;
+	line-height: 40px;
+}
+
+
+
+
+
+
+/*
+〓〓〓fk_deliverykit〓〓〓
+*/
+/*logo*/
+#fk_deliverykit .logo li {
+	width: 400px;
+	height: 200px;
+	background-size: 300px auto;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+#fk_deliverykit .logo .black {
+	background-image: url(../images/fk_logo_b.png);
+}
+
+#fk_deliverykit .logo .white {
+	background-image: url(../images/fk_logo_w.png);
+	background-color: #000000;
+}
+
+
+
+/*character*/
+#fk_deliverykit .chara li {
+	width: 100px;
+	height: 300px;
+	border: 1px solid #736b7a;
+
+}
+
+#fk_deliverykit .chara .chloe {
+	background-image: url(../images/fk_chara_chloe.png);
+	background-size: auto 1000px;
+	background-position: -80px 10px;
+}
+
+#fk_deliverykit .chara .coco {
+	background-image: url(../images/fk_chara_coco.png);
+	background-size: auto 710px;
+	background-position: -250px 0px;
+}
+
+#fk_deliverykit .chara .noa {
+	background-image: url(../images/fk_chara_noa.png);
+	background-size: auto 840px;
+	background-position: -550px -30px;
+}
+
+#fk_deliverykit .chara .anima {
+	background-image: url(../images/fk_chara_anima.png);
+	background-size: auto 820px;
+	background-position: -80px 0px;
+}
+
+
+#fk_deliverykit .chara .yamato {
+	background-image: url(../images/fk_chara_yamato.png);
+	background-size: auto 980px;
+	background-position: -107px 5px;
+}
+
+#fk_deliverykit .chara .aoba {
+	background-image: url(../images/fk_chara_aoba.png);
+	background-size: auto 1040px;
+	background-position: -73px -3px;
+}
+
+#fk_deliverykit .chara .julie {
+	background-image: url(../images/fk_chara_julie.png);
+	background-size: auto 1036px;
+	background-position: -328px -53px;
+}
+
+#fk_deliverykit .chara .deiter {
+	background-image: url(../images/fk_chara_deiter.png);
+	background-size: auto 1036px;
+	background-position: -108px -13px;
+}
+
+
+
+/*overlay*/
+#fk_deliverykit .overlay .img {
+	position: relative;
+	width: 100%;
+	height: 500px;
+	margin: 0 auto;
+	background-image: url(../images/fk_overlay_view.png);
+}
+
+
+
+
+
+
+/*
+〓〓〓fk_footer〓〓〓
+*/
+#special_fk .share {
+	padding: 0;
+}
+
+#special_fk footer {
+	width: 100%;
+	height: 200px;
+}
+
+#special_fk footer .logo {
+	position: relative;
+	width: 200px;
+	height: 130px;
+	margin: 0 auto;
+	background-image: url(../images/fk_logo_w.png);
+	background-size: 200px auto;
+	background-position: center bottom;
+}
+
+#special_fk footer p {
+	margin: 50px 0 0 0;
+}
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　ファンキット_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+Append_start
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#append{
+	padding: 140px 0;
+}
+
+#append > section{
+	width: 900px;
+	margin: 0 auto;
+}
+
+#append > section > div {
+	margin: 0 0 7em 0;
+}
+
+#append > section > div.documetinfo {
+	padding: 5em 0 0 0;
+	border-top: 3px #000000 double;
+}
+
+#append > section > div time {
+	margin: 0 0 0 1em;
+}
+
+#append > section > div h3 {
+	margin: 0 0 1em 0;
+}
+
+#append > section > div p {
+	word-break: break-word;
+	text-align: justify;
+}
+
+#append > section > div dl {
+	box-sizing: border-box;
+	margin: 1em auto;
+	padding: 2em;
+	border: 1px #000000 solid;
+	border-radius: 6px;
+	word-break: break-word;
+}
+#append > section > div dl dt{
+	margin: 2em  0 0.5em 0;
+	padding: 0 0 0 1em;
+	border-left: 1px #000000 solid;
+}
+#append > section > div dl dt:first-child {
+	margin: 0 0 0.5em 0;
+}
+#append > section > div dl dd {
+	margin: 1em 0 1em 1em;
+	padding: 1em;
+	line-height: 1.5em;
+	font-size: 14px;
+	background-color: #f1f1f1;
+	border-radius: 6px;
+}
+
+#append > section > div ul {
+	box-sizing: border-box;
+	margin: 1em auto;
+	padding: 1.5em 2em;
+	border: 1px #000000 solid;
+	border-radius: 6px;
+	word-break: break-word;
+}
+#append > section > div li {
+	margin: 0.5em 0 0.5em 1em;
+	list-style-type: circle;
+}
+
+#append #cid_index ul {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 0 60px 0;
+}
+#append #cid_index ul li a {
+	display: block;
+	background-color: #000000;
+	color: #ffffff;
+	margin: 0 10px 10px 0;
+	padding: 1em;
+	line-height: 1.65em;
+}
+
+#append > section > div pre {
+	white-space: pre-wrap;
+}
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　Append_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+privacypolicy
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+.outer_box h2{
+	font-size: 28px;
+	margin: 0 0 20px;
+	padding: 0 0 15px;
+	border-bottom: 3px solid #000;
+}
+
+.outer_box{
+	font-size: 16px;
+	line-height: 1.8em;
+    word-break: break-word;
+    text-align: justify;
+	width: 1000px;
+	margin: 0 auto;
+}
+
+.outer_box > div{
+	margin: 0 0 7em;
+}
+.outer_box > div:first-of-type{
+	text-align: right;
+	margin: 0 0 150px;
+}
+.outer_box > div:last-of-type{
+	margin: 0 0 200px;
+}
+.outer_box > div > h3{
+	font-weight: normal;
+	margin: 0 0 1em 0;
+    padding: 0 0 0 1em;
+	border-left: 1px #000 solid;
+}
+.outer_box > div > p{
+    margin: 0 0 1em 0;
+}
+.outer_box > div > ul{
+    padding: 2em 2em 1em 3em;
+    border: 1px #000000 solid;
+    border-radius: 6px;
+	margin-bottom: 1em;
+}
+.outer_box > div > ul li{
+	list-style-type: decimal;
+	margin-bottom: 1em;
+}
+.outer_box > div .brackets_box{
+	margin: 1em 0 0;
+    padding: 2em 2em 1em;
+    border: 1px #000000 solid;
+    border-radius: 6px;
+}
+.outer_box > div .brackets_box p{
+	text-indent: -42px;
+	margin: 0 0 1em 42px;
+}
+.outer_box > div .brackets_box > ul{
+	margin: 0 0 0 62px;
+}
+.outer_box > div dl{
+	box-sizing: border-box;
+    margin: 1em auto;
+    padding: 2em;
+    border: 1px #000000 solid;
+    border-radius: 6px;
+    word-break: break-word;
+}
+.outer_box > div dl dt{
+	margin: 2em 0 0.5em 0;
+    padding: 0 0 0 1em;
+    border-left: 1px #000000 solid;
+}
+.outer_box > div dl dt:first-child{
+	margin: 0 0 0.5em 0;
+}
+.outer_box > div dl dd{
+	margin: 1em 0 1em 1em;
+    padding: 1em;
+    line-height: 1.5em;
+    background-color: #f1f1f1;
+    border-radius: 6px;
+}
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　privacypolicy_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
