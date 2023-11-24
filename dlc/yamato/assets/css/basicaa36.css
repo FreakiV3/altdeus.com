@@ -1,0 +1,1004 @@
+@charset "UTF-8";
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+RESET_start
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+*{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+h1,h2,h3,h4,h5,h6,
+div,p,
+span,em,strong,
+ul,ol,li,
+dl,dt,dd,
+a{
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+}
+
+a{
+	outline: none;
+	text-decoration: none;
+}
+
+.sp{
+	display: none !important;
+}
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　RESET_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+COMMON_start
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+body{}
+html,body{
+	width: 100%;
+	height: 100%;
+	font-family: "FOT-UD角ゴ_スモール Pr6 DB", sans-serif;
+	font-weight: 500;
+	font-style: normal;
+}
+#grandwrapper{
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+}
+
+img{vertical-align: bottom;}
+
+
+
+
+
+
+/*
+プラグイン調整
+*/
+#top .mfp-figure::after,
+#top .mfp-counter {
+	display: none;
+}
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　COMMON_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+footer_start
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+footer{
+	background-color: #000;
+	text-align: center;
+	width: 100%;
+	padding: 55px 0;
+}
+
+
+
+
+
+
+/*
+コピーライト
+*/
+footer p{
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	color: #6C6C6C;
+	font-size: 10px;
+	letter-spacing: 0.1em;
+	text-indent: 0.1em;
+	width: 90%;
+	margin: 0 auto 10px auto;
+}
+
+
+
+
+
+
+/*
+コピーライト
+*/
+small{
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	color: #6C6C6C;
+	font-size: 9px;
+	letter-spacing: 0.1em;
+	text-indent: 0.1em;
+}
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　footer_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+KV
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#kv{
+	position: relative;
+	background-color: #000;
+	height: 820px;
+}
+
+
+
+
+
+/*
+ロゴ
+*/
+#kv h1{
+	z-index: 3;
+	position: absolute;
+	background-image: url(../images/logo_dlc.png);
+	background-position: top center;
+	background-repeat: no-repeat;
+	text-indent: -9999px;
+	width: 552px;
+	height: 346px;
+	top: 444px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+#kv h2{
+	z-index: 4;
+	position: absolute;
+	background-image: url(../images/sale_date556a.png?20110609_01);
+	background-position: top center;
+	background-repeat: no-repeat;
+	text-indent: -9999px;
+	width: 818px;
+	height: 85px;
+	top: 782px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+
+
+
+
+/*
+platform_develop
+*/
+#kv h3{
+	z-index: 5;
+	position: absolute;
+	background-position: top center;
+	background-repeat: no-repeat;
+	text-indent: -9999px;
+	top: 20px;
+}
+#kv h3.platform{
+	background-image: url(../images/icon_platform.png);
+	width: 100px;
+	height: 30px;
+	left: 20px;
+}
+#kv h3.develop{
+	background-image: url(../images/icon_mydearest.png);
+	width: 102px;
+	height: 52px;
+	right: 20px;
+}
+
+
+
+
+
+/*
+ムービー
+*/
+#kv .video-box{
+	z-index: 1;
+	position: absolute;
+	width: 100%;
+	height: 820px;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+}
+#kv .video-box::before{
+	content: "";
+	z-index: 2;
+	position: absolute;
+	background-image: url(../images/kv_overlay.png);
+	background-size: 30px auto;
+	background-position: top center;
+	background-repeat: repeat;
+	width: 100%;
+	height: 820px;
+	top: 0;
+	left: 0;
+}
+#kv .video-box video{
+	position: absolute;
+	background-size: cover;
+	min-width: 100%;
+	min-height: 820px;
+	margin: 0 auto;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+
+
+
+
+
+
+/*OPTIMIZE*/
+@media screen and (min-width:768px) and ( max-width:1279px) {
+	/**/
+}
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　KV_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+about
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#about{
+	position: relative;
+	background-image: url(../images/about_bg.png);
+	background-position: top center;
+	background-repeat: no-repeat;
+	height: 1900px;
+	padding: 150px 0 0;
+}
+
+
+
+
+
+/*
+DLC
+*/
+#about .dlc{
+	position: relative;
+	background-color: rgba(255,255,255,0.8);
+	margin: 0 auto;
+	padding: 460px 0 80px;
+	border-bottom: 1px solid #838383;
+}
+#about .dlc::before{
+	content: "";
+	z-index: 3;
+	position: absolute;
+	background-color: #000;
+	width: 100%;
+	height: 340px;
+	top: 0;
+	left: 0;
+}
+
+/*LOGO*/
+#about .dlc h2{
+	z-index: 6;
+	position: relative;
+	background-image: url(../images/about_dlc_logo.png);
+	background-position: top center;
+	background-repeat: no-repeat;
+	text-indent: -9999px;
+	width: 395px;
+	height: 259px;
+	margin: 0 auto;
+}
+
+/*KV*/
+#about .dlc figure{
+	z-index: 5;
+	position: absolute;
+	width: 1112px;
+	height: 617px;
+	top: -86px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+/*text*/
+#about .dlc p{
+	font-size: 18px;
+	line-height: 2em;
+	letter-spacing: 0.05em;
+	text-align: center;
+}
+#about .dlc h4{
+	font-family: "FOT-UD角ゴ_スモール Pr6 B", sans-serif;
+	font-size: 26px;
+	line-height: 1em;
+	letter-spacing: 0.05em;
+	text-align: center;
+	margin: 30px auto 0;
+}
+
+/*リスト*/
+#about .dlc ul{
+	display: flex;
+	justify-content: space-between;
+	width: 820px;
+	margin: 50px auto 0;
+}
+#about .dlc li{
+	width: 380px;
+}
+
+/*リンク*/
+#about .dlc li a{
+	display: block;
+	background-position: top center;
+	background-repeat: no-repeat;
+	text-indent: -9999px;
+	width: 380px;
+	height: 80px;
+}
+#about .dlc li a:hover{
+	transform: scale(0.9);
+}
+
+#about .dlc li.ingame a{
+	background-image: url(../images/about_dlc_btn_ingame.png);
+}
+#about .dlc li.oculus a{
+	background-image: url(../images/about_dlc_btn_oculus.png);
+}
+
+/*グレーアウト*/
+/*
+#about .dlc li.oculus{
+	background-image: url(../images/about_dlc_btn_oculus_glayout.png);
+	background-position: top center;
+	background-repeat: no-repeat;
+	text-indent: -9999px;
+	width: 380px;
+	height: 80px;
+}
+*/
+
+
+
+
+
+/*
+DLC
+*/
+#about .altdeus{
+	position: relative;
+	background-color: rgba(255,255,255,0.8);
+	margin: 40px auto 0;
+	border-top: 1px solid #838383;
+	border-bottom: 1px solid #838383;
+}
+
+/*BOX*/
+#about .altdeus .wrap_box{
+	display: flex;
+	justify-content: space-between;
+	width: 1000px;
+	margin: 0 auto;
+}
+#about .altdeus .wrap_box li:nth-of-type(1){
+	width: 430px;
+}
+#about .altdeus .wrap_box li:nth-of-type(2){
+	width: 550px;
+}
+
+/*LOGO*/
+#about .altdeus .wrap_box h2{
+	background-color: #000;
+	background-image: url(../images/about_altdeus_logo_white.png);
+	background-size: 234px 73px;
+	background-position: center center;
+	background-repeat: no-repeat;
+	text-indent: -9999px;
+	width: 550px;
+	height: 120px;
+	margin: 20px auto 0;
+}
+
+/*text*/
+#about .altdeus .wrap_box h3{
+	font-family: "FOT-UD角ゴ_スモール Pr6 B", sans-serif;
+	font-size: 20px;
+	text-align: center;
+	margin: 20px auto 0;
+}
+#about .altdeus .wrap_box p{
+	font-size: 14px;
+	line-height: 1.8em;
+	margin: 20px auto 0;
+}
+
+/*store誘導*/
+#about .altdeus .wrap_box .store_link{
+	width: 546px;
+	margin: 35px auto 0;
+	padding: 0 0 10px;
+	border: 2px solid #000;
+}
+#about .altdeus .wrap_box .store_link h5{
+	background-color: #000;
+	color: #fff;
+	font-family: "FOT-UD角ゴ_スモール Pr6 B", sans-serif;
+	font-size: 16px;
+	line-height: 1em;
+	letter-spacing: 0.07em;
+	text-align: center;
+	padding: 15px 0;
+}
+#about .altdeus .wrap_box .store_link h5 span{color: #f22f32;}
+
+/*リスト*/
+#about .altdeus .wrap_box .store_link ul{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	width: 510px;
+	margin: 20px auto 0;
+}
+#about .altdeus .wrap_box .store_link ul li{
+	width: 246px;
+	margin: 0 0 10px;
+}
+
+/*リンク*/
+#about .altdeus .wrap_box .store_link ul li a{
+	display: block;
+	background-position: center center;
+	background-repeat: no-repeat;
+	text-indent: -9999px;
+	width: 246px;
+	height: 66px;
+}
+#about .altdeus .wrap_box .store_link ul li a:hover{
+	transform: scale(0.9);
+}
+
+#about .altdeus .wrap_box .store_link ul li.quest a{
+	background-image: url(../images/about_altdeus_btn_quest.png);
+}
+#about .altdeus .wrap_box .store_link ul li.rift a{
+	background-image: url(../images/about_altdeus_btn_rift.png);
+}
+#about .altdeus .wrap_box .store_link ul li.psvr a{
+	background-image: url(../images/about_altdeus_btn_psvr.png);
+}
+#about .altdeus .wrap_box .store_link ul li.amazon a{
+	background-image: url(../images/about_altdeus_btn_amazon.png);
+}
+#about .altdeus .wrap_box .store_link ul li.steam a{
+	background-image: url(../images/about_altdeus_btn_steam.png);
+}
+
+
+
+
+
+/*
+animation
+*/
+#about .dlc li a,
+#about .altdeus .wrap_box .store_link ul li a{
+	transition-duration: 300ms;
+	transition-property: all;
+	transition-timing-function: cubic-bezier(.42,0,0,.99);
+	transition-delay: 0ms;
+	transform-origin: center;
+}
+
+
+
+
+/*OPTIMIZE*/
+@media screen and (min-width:768px) and ( max-width:1279px) {
+	/**/
+}
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　about_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+story
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#story{
+	position: relative;
+	background-color: #000;
+	background-image: url(../images/story_bg.png);
+	background-position: top center;
+	background-repeat: no-repeat;
+	height: 305px;
+	padding: 95px 0 0;
+}
+
+
+
+
+
+/*chara*/
+#story figure{
+	z-index: 5;
+	position: absolute;
+	width: 389px;
+	height: 439px;
+	top: -39px;
+	left: 50%;
+	margin: 0 0 0 133px;
+}
+
+/*BOX*/
+#story div{
+	z-index: 6;
+	position: relative;
+	color: #fff;
+	text-align: left;
+	width: 950px;
+	margin: 0 auto;
+}
+
+/*text*/
+#story div h2{
+	font-family: "FOT-UD角ゴ_スモール Pr6 B", sans-serif;
+	font-size: 30px;
+	line-height: 1em;
+	letter-spacing: 0.05em;
+	text-shadow: 0px 0px 5px rgba(0,0,0,0.8);
+}
+#story div p{
+	font-size: 24px;
+	line-height: 1.8em;
+	letter-spacing: 0.05em;
+	margin: 40px auto 0;
+	text-shadow: 0px 0px 5px rgba(0,0,0,0.8);
+}
+#story div span{
+	color: #ff9100;
+}
+
+
+
+
+
+
+/*OPTIMIZE*/
+@media screen and (min-width:768px) and ( max-width:1279px) {
+	/**/
+}
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　story_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+feature
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#feature{
+	text-align: center;
+	padding: 130px 0 0;
+}
+
+
+
+
+
+/*img_text*/
+#feature figure{
+	margin: 0 auto 60px;
+}
+#feature figure figcaption{
+	text-indent: -9999px;
+	height: 0;
+}
+
+
+
+
+
+
+/*OPTIMIZE*/
+@media screen and (min-width:768px) and ( max-width:1279px) {
+	/**/
+}
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　feature_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+process
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#process{
+	padding: 70px 0 0;
+}
+
+
+
+
+
+/*title*/
+#process h2{
+	background-image: url(../images/h2_title_bg.png);
+	background-size: 28px 15px;
+	background-position: bottom center;
+	background-repeat: no-repeat;
+	font-family: "FOT-UD角ゴ_スモール Pr6 B", sans-serif;
+	font-size: 30px;
+	line-height: 1em;
+	letter-spacing: 0.05em;
+	text-align: center;
+	padding: 0 0 40px;
+}
+#process h3{
+	font-family: "FOT-UD角ゴ_スモール Pr6 B", sans-serif;
+	font-size: 24px;
+	line-height: 1em;
+	letter-spacing: 0.05em;
+	text-align: center;
+	margin: 60px auto 0;
+}
+
+/*リスト*/
+#process .ingame{
+	display: flex;
+	justify-content: space-between;
+	width: 1000px;
+	margin: 40px auto 0;
+}
+
+#process .ingame li{
+	position: relative;
+	background-image: url(../images/process_flow_bg.png);
+	background-position: bottom center;
+	background-repeat: no-repeat;
+	width: 320px;
+	height: 235px;
+	padding: 15px 0 0 ;
+}
+#process .ingame li::after{
+	content: "";
+	z-index: 3;
+	position: absolute;
+	background-image: url(../images/arrow_right.png);
+	background-size: 50px auto;
+	background-position: top center;
+	background-repeat: no-repeat;
+	width: 50px;
+	height: 69px;
+	top: 40%;
+	right: -35px;
+}
+#process .ingame li:last-child::after{
+	display: none;
+}
+
+/*img_text*/
+#process .ingame li figure{
+	width: 290px;
+	margin: 0 auto;
+}
+#process .ingame li figure img {
+	width: 100%;
+	height: auto;
+}
+#process .ingame li figure figcaption{
+	display: flex;
+	align-items: center;
+	height: 70px;
+}
+#process .ingame li figure figcaption p{
+	box-sizing: border-box;
+	color: #fff;
+	font-size: 13px;
+	line-height: 1.8em;
+	letter-spacing: 0.05em;
+	text-align: center;
+	margin: 0 auto;
+}
+
+
+
+
+
+
+/*OPTIMIZE*/
+@media screen and (min-width:768px) and ( max-width:1279px) {
+	/**/
+}
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　process_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+store
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#store{
+	padding: 130px 0 160px;
+}
+
+
+
+
+
+/*title*/
+#store h2{
+	background-image: url(../images/h2_title_bg.png);
+	background-size: 28px 15px;
+	background-position: bottom center;
+	background-repeat: no-repeat;
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 30px;
+	line-height: 1em;
+	letter-spacing: 0.05em;
+	text-align: center;
+	padding: 0 0 40px;
+}
+
+/*リスト*/
+#store ul{
+	width: 980px;
+	margin: 60px auto 0;
+}
+
+#store ul li{}
+#store ul li.quest{
+	margin: 0 auto 100px;
+}
+#store ul li.platform{
+	background-image: url(../images/store_platform.png);
+	background-size: auto 59px;
+	background-position: top center;
+	background-repeat: no-repeat;
+	text-indent: -9999px;
+	height: 59px;
+}
+
+/*text*/
+#store p{
+	font-size: 16px;
+	line-height: 1em;
+	letter-spacing: 0.05em;
+	text-align: center;
+	margin: 80px auto 0;
+}
+
+
+
+
+
+
+
+/*OPTIMIZE*/
+@media screen and (min-width:768px) and ( max-width:1279px) {
+	/**/
+}
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　store_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+music
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#music{
+	background-image: url(../images/music_bg.png);
+	background-position: top center;
+	background-repeat: no-repeat;
+	margin: 150px auto;
+}
+
+
+
+
+
+/*リスト*/
+#music ul.details{
+	display: flex;
+	width: 1000px;
+	margin: 0 auto;
+}
+
+#music ul.details li{
+	width: 500px;
+}
+
+#music ul.details li.info{
+	background-color: #affaff;
+	text-align: center;
+	padding: 80px 0 0;
+}
+#music ul.details li.info h2{
+	background-image: url(../images/music_caption.png);
+	background-position: center center;
+	background-repeat: no-repeat;
+	text-indent: -9999px;
+	width: 270px;
+	height: 36px;
+	margin: 0 auto 40px;
+}
+#music ul.details li.info h3{
+	font-family: "FOT-UD角ゴ_スモール Pr6 B", sans-serif;
+	font-size: 60px;
+	line-height: 1em;
+	letter-spacing: 0.1em;
+}
+
+#music li.info li{}
+#music li.info li.artist{
+	margin: 25px 0 0;
+}
+#music li.info li.lyric{
+	margin: 35px 0 0;
+}
+#music li.info li.music{
+	margin: 0;
+}
+
+#music li.info li h4{
+	background-position: center center;
+	background-repeat: no-repeat;
+	text-indent: -9999px;
+	margin: 0 auto;
+}
+#music li.info li.artist h4{
+	background-image: url(../images/music_h4_artist.png);
+	width: 151px;
+	height: 44px;
+}
+#music li.info li.lyric h4{
+	background-image: url(../images/music_h4_lyric.png);
+	width: 76px;
+	height: 41px;
+}
+#music li.info li.music h4{
+	background-image: url(../images/music_h4_music.png);
+	width: 293px;
+	height: 98px;
+}
+
+#music li.info li p{
+	font-size: 16px;
+	line-height: 1em;
+	letter-spacing: 0.07em;
+}
+#music li.info li.artist p{
+	margin: 8px 0 0;
+}
+#music li.info li.lyric p{
+	margin: 5px 0 0;
+}
+#music li.info li.music p{
+	margin: -15px 0 0;
+}
+
+
+
+#music .movie{
+	position: relative;
+	text-align: center;
+	margin: 0 auto;
+	padding: 30px 0 0;
+}
+#music .movie::before{
+	content: "";
+	z-index: 1;
+	position: absolute;
+	background-color: #affaff;
+	background-image: url(../images/music_movie_bg.png);
+	background-position: top center;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 390px;
+	top: 0;
+	left: 0;
+}
+#music .movie p{
+	z-index: 2;
+	position: relative;
+	width: 783px;
+	height: 441px;
+	margin: 0 auto 10px;
+}
+#music .movie p a{
+	display: block;
+	background-image: url(../images/music_movie_thumb.png);
+	background-position: center center;
+	background-repeat: no-repeat;
+	text-indent: -9999px;
+	width: 783px;
+	height: 441px;
+	/*anime*/
+	transition-duration: 300ms;
+	transition-property: all;
+	transition-timing-function: cubic-bezier(.42,0,0,.99);
+	transition-delay: 0ms;
+	transform-origin: center;
+}
+#music .movie p a:hover{
+	transform: scale(0.9);
+}
+
+#music .movie h2{
+	display: inline-block;
+	background-color: #000000;
+	color: #fff;
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 12px;
+	padding: 0 5px;
+}
+#music .movie h3{
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 700;
+	font-style: normal;
+	font-size: 26px;
+}
+
+
+
+
+
+
+
+
+/*OPTIMIZE*/
+@media screen and (min-width:768px) and ( max-width:1279px) {
+	/**/
+}
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　music_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
