@@ -1,0 +1,2093 @@
+@charset "UTF-8";
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+RESET_start
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+*{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+h1,h2,h3,h4,h5,h6,
+div,p,
+span,em,strong,
+ul,ol,li,
+dl,dt,dd,
+a{
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+}
+
+a{
+	outline: none;
+	text-decoration: none;
+}
+
+.pc{
+	display: none !important;
+}
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　RESET_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+COMMON_start
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+body{}
+html,body{
+	width: 100%;
+	height: 100%;
+	font-family: "FOT-UD角ゴ_スモール Pr6 DB", sans-serif;
+	font-weight: 500;
+	font-style: normal;
+}
+#grandwrapper{
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+	background-image: url(../images/pattern_bg005c.png?20210120_02);
+	background-size: 402.5px 804px;
+	background-position: top center;
+	background-repeat: repeat-y;
+	background-attachment: fixed;
+}
+img{vertical-align: bottom;}
+
+
+
+
+
+
+/*
+プラグイン調整
+*/
+#top .mfp-figure::after,
+#top .mfp-counter {
+	display: none;
+}
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　COMMON_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+footer_start
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+footer{
+	background-color: #000000;
+	text-align: center;
+	width: 100%;
+	padding: 35px 0 35px;
+}
+
+
+
+
+
+
+/*
+コピーライト
+*/
+footer p{
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	color: #6C6C6C;
+	font-size: 9px;
+	letter-spacing: 0.12em;
+	text-indent: 0.12em;
+	width: 90%;
+	margin: 0 auto 25px;
+}
+
+
+
+
+
+
+/*
+コピーライト
+*/
+small{
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	color: #ffffff;
+	font-size: 9px;
+	letter-spacing: 0.12em;
+	text-indent: 0.12em;
+}
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　footer_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+PSVRKV
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#psvrkv{
+	position: relative;
+	background-color: #000000;
+	height: 450px;
+	margin: 0 0 120px 0;
+}
+
+
+
+
+
+
+/*
+ブロック
+*/
+#psvrkv h1{
+	z-index: 5;
+	position: absolute;
+	background-image: url(../images/kv_title005c.png?20210120_02);
+	background-position: top center;
+	background-repeat: no-repeat;
+	width: 189px;
+	height: 72px;
+	text-indent: -9999px;
+	top: 73px;
+	right: 15px;
+}
+#psvrkv h2{
+	z-index: 5;
+	position: absolute;
+	background-image: url(../images/kv_genre005c.png?20210120_02);
+	background-position: top center;
+	background-repeat: no-repeat;
+	width: 106px;
+	height: 16px;
+	text-indent: -9999px;
+	top: 59px;
+	right: 56px;
+}
+#psvrkv h3.platform{
+	z-index: 5;
+	position: absolute;
+	background-image: url(../images/platformicons005c.png?20210120_02);
+	background-position: top center;
+	background-repeat: no-repeat;
+	width: 220px;
+	height: 16px;
+	text-indent: -9999px;
+	top: 20px;
+	left: 20px;
+}
+#psvrkv h3.develop{
+	z-index: 5;
+	position: absolute;
+	background-image: url(../images/icon_mydearest005c.png?20210120_02);
+	background-position: top center;
+	background-repeat: no-repeat;
+	width: 51px;
+	height: 26px;
+	text-indent: -9999px;
+	top: 20px;
+	right: 20px;
+}
+/*buynow*/
+#psvrkv p.buynow{
+	z-index: 5;
+	position: absolute;
+	top: 355px;
+	left: 50%;
+	margin: 0 0 0 -103px;
+}
+#psvrkv p.buynow a{
+	display: block;
+	background-image: url(../images/psvr_buynow005c.png?20210120_02);
+	background-position: top center;
+	background-repeat: no-repeat;
+	width: 230px;
+	height: 81px;
+	text-indent: -9999px;
+}
+/*onsale*/
+#psvrkv .onsale {
+	z-index: 5;
+	position: absolute;
+	top: 169px;
+	right: 27px;
+	background-image: url(../images/psvr_onsale005c.png?20210120_02);
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	width: 94px;
+	height: 96px;
+	text-indent: -9999px;
+	filter: drop-shadow(0 0 10px rgba(0,0,0,0.5));
+}
+
+
+
+/*countdown*/
+#psvrkv div.countdown{
+	z-index: 5;
+	position: absolute;
+	/*background-color: #0045a3;*/
+	background: linear-gradient(45deg,  #0045a3 45%,#0fb4e7 100%);
+	color: #fff;
+	font-size: 16px;
+	text-align: center;
+	font-weight: bold;
+	letter-spacing: 0.5em;
+	text-indent: 0.5em;
+	width: 202px;
+	top: 450px;
+	left: 50%;
+	margin: 0 0 0 -102px;
+	padding: 10px 0 5px;
+	border: solid 1px #fff;
+	text-shadow: 3px 3px 2px #0045a3;
+}
+#psvrkv div.countdown p.reserve{}
+#psvrkv div.countdown p.countdata{
+	font-size: 18px;
+}
+#psvrkv div.countdown p.countdata span{
+	font-family: 'Oswald', sans-serif;
+	font-size: 32px;
+	margin: 0 3px;
+}
+
+
+
+
+
+
+/*
+キービジュアル
+*/
+#psvrkv div.visual{
+	z-index: 3;
+	width: 100%;
+	height: 450px;
+}
+#psvrkv div.visual span{
+	display: block;
+	position: absolute;
+	left: 50%;
+	background-size: 100% auto;
+	background-position: top center;
+}
+#psvrkv div.visual span.chara{
+	z-index: 3;
+	background-image: url(../images/sp_kv_main_chara005c.png?20210120_02);
+	background-size: 335px auto;
+	width: 335px;
+	height: 281px;
+	top: 119px;
+	left: 50%;
+	margin: 0 0 0 -223px;
+}
+#psvrkv div.visual span.background{
+	z-index: 2;
+	background-image: url(../images/sp_kv_main_bg005c.png?20210120_02);
+	background-size: 609px 354px;
+	width: 609px;
+	height: 354px;
+	top: 0;
+	left: 50%;
+	margin: 0 0 0 -418px;
+}
+
+
+
+
+
+
+/*
+斜め
+*/
+#psvrkv::before{
+  content:"";
+  position: absolute;
+  bottom: -50px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+
+  /*ここで三角形のサイズを決める。
+  必ず幅100vwにして、ブラウザサイズいっぱいにしてください。*/
+  border-width: 50px 0 0 100vw ;
+
+  border-color: #000 transparent transparent transparent;
+}
+
+
+
+
+
+
+/*OPTIMIZE*/
+@media screen and (min-width:768px) and ( max-width:1279px) {
+	/**/
+}
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　PSVRKV_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+KV
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#kv{
+	position: relative;
+	background-color: #000000;
+	height: 450px;
+	margin: 0 0 120px 0;
+}
+
+
+
+
+
+
+/*
+ブロック
+*/
+#kv h1{
+	z-index: 5;
+	position: absolute;
+	background-image: url(../images/kv_title005c.png?20210120_02);
+	background-position: top center;
+	background-repeat: no-repeat;
+	width: 189px;
+	height: 72px;
+	text-indent: -9999px;
+	top: 73px;
+	right: 15px;
+}
+#kv h2{
+	z-index: 5;
+	position: absolute;
+	background-image: url(../images/kv_genre005c.png?20210120_02);
+	background-position: top center;
+	background-repeat: no-repeat;
+	width: 106px;
+	height: 16px;
+	text-indent: -9999px;
+	top: 59px;
+	right: 56px;
+}
+#kv h3.platform{
+	z-index: 5;
+	position: absolute;
+	background-image: url(../images/platformicons005c.png?20210120_02);
+	background-position: top center;
+	background-repeat: no-repeat;
+	width: 220px;
+	height: 16px;
+	text-indent: -9999px;
+	top: 20px;
+	left: 20px;
+}
+#kv h3.develop{
+	z-index: 5;
+	position: absolute;
+	background-image: url(../images/icon_mydearest005c.png?20210120_02);
+	background-position: top center;
+	background-repeat: no-repeat;
+	width: 51px;
+	height: 26px;
+	text-indent: -9999px;
+	top: 20px;
+	right: 20px;
+}
+/*buynow*/
+#kv p.buynow{
+	z-index: 5;
+	position: absolute;
+	top: 355px;
+	left: 50%;
+	margin: 0 0 0 -103px;
+}
+#kv p.buynow a{
+	display: block;
+	background-image: url(../images/reserve005c.png?20210120_02);
+	background-position: top center;
+	background-repeat: no-repeat;
+	width: 230px;
+	height: 81px;
+	text-indent: -9999px;
+}
+/*onsale*/
+#kv .onsale {
+	z-index: 5;
+	position: absolute;
+	top: 169px;
+	right: 27px;
+	background-image: url(../images/onsale005c.png?20210120_02);
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	width: 94px;
+	height: 96px;
+	text-indent: -9999px;
+	filter: drop-shadow(0 0 10px rgba(0,0,0,0.5));
+}
+
+
+
+
+
+
+/*
+キービジュアル
+*/
+#kv div.visual{
+	z-index: 3;
+	width: 100%;
+	height: 450px;
+}
+#kv div.visual span{
+	display: block;
+	position: absolute;
+	left: 50%;
+	background-size: 100% auto;
+	background-position: top center;
+}
+#kv div.visual span.chara{
+	z-index: 3;
+	background-image: url(../images/sp_kv_main_chara005c.png?20210120_02);
+	background-size: 335px auto;
+	width: 335px;
+	height: 281px;
+	top: 119px;
+	left: 50%;
+	margin: 0 0 0 -223px;
+}
+#kv div.visual span.background{
+	z-index: 2;
+	background-image: url(../images/sp_kv_main_bg005c.png?20210120_02);
+	background-size: 609px 354px;
+	width: 609px;
+	height: 354px;
+	top: 0;
+	left: 50%;
+	margin: 0 0 0 -418px;
+}
+
+
+
+
+
+
+/*
+斜め
+*/
+#kv::before{
+  content:"";
+  position: absolute;
+  bottom: -50px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+
+  /*ここで三角形のサイズを決める。
+  必ず幅100vwにして、ブラウザサイズいっぱいにしてください。*/
+  border-width: 50px 0 0 100vw ;
+
+  border-color: #000 transparent transparent transparent;
+}
+
+
+
+
+
+
+/*OPTIMIZE*/
+@media screen and (min-width:768px) and ( max-width:1279px) {
+	/**/
+}
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　KV_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+BOX
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#grandwrapper > section:not(:first-of-type){
+	position: relative;
+	background-color: rgba(255,255,255,0.9);
+	margin: 100px 0;
+}
+#grandwrapper > section:not(:first-of-type)::before{
+    content: "";
+	position: absolute;
+	background-image: url(../images/sp_object_slash_top005c.png?20210120_02);
+	background-size: 689px 13px;
+	background-position: top center;
+	background-repeat: repeat-x;
+	height: 13px;
+	width: 100%;
+	top: -13px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+#grandwrapper > section:not(:first-of-type)::after{
+    content: "";
+	position: absolute;
+	background-image: url(../images/sp_object_slash_bottom005c.png?20210120_02);
+	background-size: 689px 13px;
+	background-position: top center;
+	background-repeat: repeat-x;
+	height: 13px;
+	width: 100%;
+	bottom: -13px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+
+
+
+
+
+
+/*OPTIMIZE*/
+@media screen and (min-width:768px) and ( max-width:1279px) {
+	/**/
+}
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　BOX_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+GAMEINFO
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#gameinfo{
+	text-align: center;
+	padding: 150px 0 25px;
+}
+
+#gameinfo h3{
+	z-index: 5;
+	position: absolute;
+	color: transparent;
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 500;
+	font-style: normal;
+	font-size: 25px;
+	-webkit-text-stroke: 1px #333333;
+	top: 35px;
+	left: 50%;
+	margin: 0 0 0 -150px;
+}
+#gameinfo h4{
+	z-index: 5;
+	position: absolute;
+	font-size: 15px;
+	letter-spacing: 0.05em;
+	text-shadow: 0 0 10px #fff;
+	top: 75px;
+	left: 50%;
+	margin: 0 0 0 -150px;
+}
+#gameinfo p{
+	z-index: 5;
+	position: relative;
+	color: #ffffff;
+	font-size: 13px;
+	line-height: 2.5em;
+	letter-spacing: 0.1em;
+}
+#gameinfo p span{
+	background-color: #000;
+}
+#gameinfo figure{
+	z-index: 5;
+	position: relative;
+	margin: 35px auto 0;
+}
+#gameinfo figure img{
+	width: 310px;
+	height: auto;
+}
+#gameinfo .bg_chara{
+	z-index: 1;
+	position: absolute;
+	background-image: url(../images/sp_gameinfo_chloe005c.png?20210120_02);
+	background-size: 241px 500px;
+	width: 241px;
+	height: 500px;
+	bottom: 0;
+	left: 50%;
+	margin: 0 0 0 14px;
+}
+
+
+
+
+
+
+/*OPTIMIZE*/
+@media screen and (min-width:768px) and ( max-width:1279px) {
+	/**/
+}
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　GAMEINFO_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+GAMESYSTEM
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#gamesystem{
+	text-align: center;
+	padding: 30px 0 20px;
+}
+
+#gamesystem h3{
+	background-image: url(../images/sp_title_bg005c.png?20210120_02);
+	background-size: 301px 55px;
+	color: #fff;
+	font-size: 12px;
+	line-height: 55px;
+	width: 301px;
+	height: 55px;
+	margin: 0 auto 15px;
+}
+
+#gamesystem ul{
+	width: 306px;
+	margin: 0 auto;
+}
+#gamesystem ul li{
+	background-size: 100% auto;
+	width: 300px;
+	height: 461px;
+	margin: 0 auto 10px auto;
+	padding: 0;
+	text-indent: -9999px;
+}
+#gamesystem ul li h4{
+	display: none;
+}
+#gamesystem ul li p{
+	display: none;
+}
+
+#gamesystem ul li.system_A{
+	background-image: url(../images/sp_gamesystem_01005c.png?20210120_02);
+}
+#gamesystem ul li.system_B{
+	background-image: url(../images/sp_gamesystem_02005c.png?20210120_02);
+}
+#gamesystem ul li.system_C{
+	background-image: url(../images/sp_gamesystem_03005c.png?20210120_02);
+}
+
+
+
+
+
+
+
+
+/*OPTIMIZE*/
+@media screen and (min-width:768px) and ( max-width:1279px) {
+	/**/
+}
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　GAMESYSTEM_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+CHARACTER
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#character{
+	text-align: center;
+	padding: 30px 0 20px;
+}
+
+#character h3{
+	background-image: url(../images/sp_title_bg005c.png?20210120_02);
+	background-size: 301px 55px;
+	color: #fff;
+	font-size: 15px;
+	line-height: 55px;
+	width: 301px;
+	height: 55px;
+	margin: 0 auto 15px;
+}
+
+#character ul{
+	width: 270px;
+	margin: 0 auto;
+}
+#character ul li{
+	width: 270px;
+	height: 378px;
+	margin: 0 auto 20px auto;
+}
+#character ul li figure img{
+	width: 100%;
+	height: auto;
+}
+#character ul li figure figcaption{
+	width: 0;
+	height: 0;
+	text-indent: -9999px;
+}
+
+
+
+
+
+
+/*OPTIMIZE*/
+@media screen and (min-width:768px) and ( max-width:1279px) {
+	/**/
+}
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　CHARACTER_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+CAMPFIRE
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#campfire{
+	text-align: center;
+	padding: 30px 0;
+}
+
+#campfire h3{
+	background-image: url(../images/sp_title_bg005c.png?20210120_02);
+	background-size: 301px 55px;
+	color: #fff;
+	font-size: 15px;
+	line-height: 55px;
+	width: 301px;
+	height: 55px;
+	margin: 0 auto 288px;
+}
+
+#campfire h4{
+	background-image: url(../images/campfire_text005c.png?20210120_02);
+	background-size: 300px 31px;
+	background-position: center center;
+	font-size: 15px;
+}
+
+#campfire .ss_1{
+	position: absolute;
+	width: 211px;
+	height: 190px;
+	top: 100px;
+	left: 50%;
+	margin: 0 0 0 -155px;
+}
+#campfire .ss_1 img{
+	width: 211px;
+	height: auto;
+}
+#campfire .ss_2{
+	position: absolute;
+	width: 228px;
+	height: 166px;
+	top: 184px;
+	left: 50%;
+	margin: 0 0 0 -72px;
+}
+#campfire .ss_2 img{
+	width: 228px;
+	height: auto;
+}
+
+
+
+
+
+
+/*OPTIMIZE*/
+@media screen and (min-width:768px) and ( max-width:1279px) {
+	/**/
+}
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　CAMPFIRE_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+CHEER
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#cheer{
+	text-align: center;
+	padding: 30px 0 20px;
+}
+
+#grandwrapper > section:not(:first-of-type)#cheer{
+	background-color: rgba(0,0,4,0.9);
+}
+
+#cheer h3{
+	background-image: url(../images/sp_title_bg005c.png?20210120_02);
+	background-size: 301px 55px;
+	color: #fff;
+	font-size: 12px;
+    line-height: 1.5em;
+	width: 301px;
+	height: 35px;
+	margin: 0 auto 15px;
+	padding: 10px 0;
+}
+
+#cheer figure{
+	display: flex;
+	justify-content: center;
+}
+#cheer figure img{
+	width: 450px;
+	height: 737px;
+	margin: 0 auto;
+}
+
+
+
+
+
+
+/*OPTIMIZE*/
+@media screen and (min-width:768px) and ( max-width:1279px) {
+	/**/
+}
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　CHEER_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+QUEST
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#quest{
+	text-align: center;
+	padding: 30px 0;
+}
+
+#quest h3{
+	background-image: url(../images/sp_title_bg005c.png?20210120_02);
+	background-size: 301px 55px;
+	color: #fff;
+	font-size: 12px;
+    line-height: 1.5em;
+	width: 301px;
+	height: 35px;
+	margin: 0 auto 15px;
+	padding: 10px 0;
+}
+
+#quest h4{
+	font-size: 15px;
+}
+#quest h4 span{
+	color: #2751ff;
+}
+
+#quest figure{
+	position: relative;
+	background-color: #fff;
+	width: 100%;
+	margin: 0 auto 20px;
+	padding: 10px 0;
+	box-shadow: 0 0 10px 0 rgba(0,0,0,0.8);
+}
+#quest figure::after{
+    content: "";
+	position: absolute;
+	background-image: url(../images/quest_ornament005c.png?20210120_02);
+	background-size: 439px 190px;
+	background-position: top center;
+	background-repeat: no-repeat;
+	width: 439px;
+	height: 190px;
+	top: -9px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+#quest figure img{
+	width: 280px;
+	height: auto;
+	margin: 0 auto;
+}
+
+
+
+
+
+
+/*OPTIMIZE*/
+@media screen and (min-width:768px) and ( max-width:1279px) {
+	/**/
+}
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　QUEST_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+LAM
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#lam{
+	text-align: center;
+	padding: 30px 0;
+}
+
+#grandwrapper > section:not(:first-of-type)#lam{
+	background-color: rgba(0,0,4,0.9);
+}
+
+#lam figure{
+	z-index: 1;
+	position: relative;
+	margin: 0 0 0 20px;
+}
+#lam figure img{
+	display: block;
+	width: 70%;
+	min-width: 220px;
+	height: auto;
+}
+
+#lam .profile{
+	z-index: 3;
+	position: relative;
+	background-color: rgba(51,51,51,0.9);
+	color: #fff;
+	text-align: left;
+	width: 55%;
+	min-width: 220px;
+	margin: -30% 20px 0 auto;
+	padding: 20px 15px;
+}
+#lam .profile h3{
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 500;
+	font-style: normal;
+	font-size: 30px;
+	line-height: 1em;
+	letter-spacing: 0.5em;
+	margin: 0 0 15px;
+}
+#lam .profile h4{
+	color: #717171;
+	font-size: 13px;
+	line-height: 1.5em;
+	letter-spacing: 0.1em;
+	margin: 0 0 15px;
+}
+#lam .profile p{
+	font-size: 12px;
+	line-height: 1.8em;
+	letter-spacing: 0.2em;
+}
+
+
+
+
+
+/*OPTIMIZE*/
+@media screen and (min-width:768px) and ( max-width:1279px) {
+	/**/
+}
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　LAM_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+SERIES
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#series{
+	text-align: center;
+	padding: 30px 0;
+}
+
+#series h3{
+	background-image: url(../images/sp_title_bg005c.png?20210120_02);
+	background-size: 301px 55px;
+	color: #fff;
+	font-size: 15px;
+	line-height: 55px;
+	width: 301px;
+	height: 55px;
+	margin: 0 auto 15px;
+}
+
+#series h4{
+	background-color: #fff;
+	color: #f01818;
+	font-size: 15px;
+	line-height: 1.8em;
+	margin: 30px 0 0;
+	padding: 15px 0;
+	border-top: solid 1px #000;
+	border-bottom: solid 1px #000;
+}
+
+#series p{
+	font-size: 14px;
+	line-height: 1.8em;
+	margin: 0 auto 20px;
+}
+
+#series figure{
+	display: flex;
+	justify-content: center;
+}
+#series figure img{
+	width: 332px;
+	margin: 0 auto;
+}
+#series figure.tc img {
+	height: 615px;
+}
+#series figure.sk img {
+	height: 609px;
+}
+#series figure.abc img {
+	height: 615px;
+}
+
+#series figure img.mediamix{
+	width: 280px;
+	height: 174px;
+}
+#series figure figcaption{
+	width: 0;
+	height: 0;
+	text-indent: -9999px;
+}
+
+#series hr{
+	background-image: url(../images/series_hz005c.png?20210120_02);
+	background-size: 5px 72px;
+	width: 5px;
+	height: 72px;
+	margin: 15px auto;
+	border: none;
+}
+#series hr.branch{
+	margin: 15px auto 25px;
+}
+
+
+
+
+
+
+/*OPTIMIZE*/
+@media screen and (min-width:768px) and ( max-width:1279px) {
+	/**/
+}
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　SERIES_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+STORY
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#story{
+	text-align: center;
+	padding: 30px 0 50px;
+}
+
+#grandwrapper > section:not(:first-of-type)#story{
+	background-color: rgba(0,0,4,0.9);
+}
+
+#story h3{
+	background-image: url(../images/sp_title_bg005c.png?20210120_02);
+	background-size: 301px 55px;
+	color: #fff;
+	font-size: 15px;
+	line-height: 55px;
+	width: 301px;
+	height: 55px;
+	margin: 0 auto 20px;
+}
+
+#story h4{
+	background-size: 163px 88.5px;
+	width: 163px;
+	height: 88.5px;
+	margin: 0 auto 10px;
+	text-indent: -9999px;
+}
+#story h4.y2080{
+	background-image: url(../images/story_year_2080005c.png?20210120_02);
+}
+#story h4.y2280{
+	background-image: url(../images/story_year_2280005c.png?20210120_02);
+}
+
+#story p{
+	color: #fff;
+	font-size: 12px;
+	line-height: 2.5em;
+	letter-spacing: 0.02em;
+	text-shadow: 0 0 15px #2ed5ff;
+}
+#story p:nth-of-type(1){
+	text-shadow: 0 0 15px #2ed5ff;
+	margin: 0 auto;
+}
+#story p:nth-of-type(2){
+	text-shadow: 0 0 15px #2ed5ff;
+	margin: 0 auto;
+}
+#story p:nth-of-type(3){
+	text-shadow: 0 0 15px #ff2e5a;
+	margin: 0 auto;
+}
+#story p:nth-of-type(4){
+	text-shadow: 0 0 15px #ff2e5a;
+	margin: 0 auto 30px;
+}
+#story p:nth-of-type(5){
+	text-shadow: 0 0 15px #ff2e5a;
+	margin: 0 auto 30px;
+}
+#story p:nth-of-type(6){
+	text-shadow: 0 0 15px #ff2e5a;
+	margin: 0 auto 40px;
+}
+#story p:nth-of-type(7){
+	text-shadow: 0 0 15px #ff2e5a;
+	margin: 20px auto 0;
+}
+
+#story figure{
+	display: flex;
+	position: relative;
+	justify-content: center;
+}
+#story figure.ss::before{
+	z-index: 1;
+    content: "";
+	position: absolute;
+	background-color: #000;
+	background-image: url(../images/pattern_lattice_bk70005c.png?20210120_02);
+	background-size: 180px auto;
+	background-position: top center;
+	background-repeat: repeat;
+	width: 100%;
+	height: 70%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+#story figure.ss img{
+	z-index: 3;
+	position: relative;
+	width: 360px;
+	height: 162px;
+	margin: 30px auto;
+}
+#story figure.sphere img{
+	position: relative;
+	width: 167px;
+	height: 247px;
+	margin: 0 auto;
+	filter: drop-shadow(0px 0px 10px #FF2E5A);
+}
+
+#story hr{
+	background-image: url(../images/story_arrow005c.png?20210120_02);
+	background-size: 27px 17px;
+	width: 27px;
+	height: 17px;
+	margin: 25px auto 20px;
+	border: none;
+}
+
+
+
+
+
+/*OPTIMIZE*/
+@media screen and (min-width:768px) and ( max-width:1279px) {
+	/**/
+}
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　STORY_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+MOVIE
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#movie{
+	text-align: center;
+	padding: 30px 0;
+}
+
+#movie h3{
+	background-image: url(../images/sp_title_bg005c.png?20210120_02);
+	background-size: 301px 55px;
+	color: #fff;
+	font-size: 15px;
+	line-height: 55px;
+	width: 301px;
+	height: 55px;
+	margin: 0 auto 20px;
+}
+
+#movie h4{
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 700;
+	font-style: normal;
+	font-size: 16px;
+	line-height: 1.5em;
+	margin: 0 auto 5px;
+}
+
+#movie h5{
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 11px;
+	line-height: 1em;
+}
+
+#movie p{
+	position: relative;
+	width: 310px;
+	height: 174px;
+	margin: 0 auto 15px;
+}
+#movie p::before{
+	content: "";
+	position: absolute;
+	background-image: url(../images/sp_movie_cont_bg005c.png?20210120_02);
+	background-size: 491px 319px;
+	width: 491px;
+	height: 319px;
+	top: -65px;
+	left: 50%;
+	margin: 0 0 0 -258px;
+}
+#movie p a{
+	display: block;
+	position: relative;
+	background-image: url(../images/movie_thumb005c.png?20210120_02);
+	background-size: 310px 174px;
+	background-position: top center;
+	width: 310px;
+	height: 174px;
+	margin: 0 auto;
+	text-indent: -9999px;
+	border-radius: 6px;
+}
+#movie p a::before{
+	z-index: 5;
+	content: "";
+	position: absolute;
+	background-image: url(../images/movie_thumbnail_play005c.png?20210120_02);
+	background-size: 55px 55px;
+	width: 55px;
+	height: 55px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+
+
+
+
+/*OPTIMIZE*/
+@media screen and (min-width:768px) and ( max-width:1279px) {
+	/**/
+}
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　MOVIE_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+PRODUCT
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#product{
+	text-align: center;
+	padding: 30px 0;
+}
+
+#product h3{
+	background-image: url(../images/sp_title_bg005c.png?20210120_02);
+	background-size: 301px 55px;
+	color: #fff;
+	font-size: 15px;
+	line-height: 55px;
+	width: 301px;
+	height: 55px;
+	margin: 0 auto 15px;
+}
+
+
+
+
+
+
+/*
+商品詳細
+*/
+/*価格*/
+#product .specandprice{
+	margin: 0 0 30px 0;
+}
+#product .pricebox {
+	background-image: url(../images/pricebox_bg005c.png?20210120_02);
+	background-attachment: fixed;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: 200% auto;
+	background-color: #eeeeee;
+	padding: 20px 0;
+}
+#product .pricebox > ul {
+	width: 300px;
+	margin: 0 auto;
+}
+#product .pricebox > ul > li {
+	position: relative;
+	box-sizing: border-box;
+	background-color: #ffffff;
+	width: 300px;
+	margin: 0 0 10px 0;
+	padding: 10px;
+	border-radius: 6px;
+}
+#product .pricebox > ul > li:last-child {
+	margin: 0;
+}
+#product .pricebox > ul > li > div:nth-of-type(1) {
+}
+#product .pricebox > ul > li > div:nth-of-type(1) h4 {
+	margin: 0 0 10px 0;
+	padding: 10px 0 15px 0;
+	font-family: "FOT-UD角ゴ_スモール Pr6 B";
+	text-align: center;
+	border-bottom: 1px #000000 solid;
+}
+#product .pricebox > ul > li > div:nth-of-type(1) p {
+	box-sizing: border-box;
+	width: 100%;
+	padding: 0px 0 10px 0;
+	text-align: center;
+}
+#product .pricebox > ul > li > div:nth-of-type(1) p em {
+	font-style: normal;
+}
+#product .pricebox > ul > li > div:nth-of-type(1) p span {
+	font-size: 23px;
+	padding: 0 5px 0 0;
+}
+#product .pricebox > ul > li > div:nth-of-type(1) a,
+#product .pricebox > ul > li > div:nth-of-type(1) span.disabled {
+	box-sizing: border-box;
+	display: block;
+	background-color: #ffe400;
+	color: #000000;
+	margin: 0 0 10px 0;
+	padding: 10px 20px;
+	font-family: "FOT-UD角ゴ_スモール Pr6 B";
+	font-size: 14px;
+	text-align: center;
+	line-height: 1em;
+	border-radius: 100px;
+}
+#product .pricebox > ul > li > div:nth-of-type(1) span.disabled {
+	background-color: #cccccc;
+	color: #666666;
+}
+#product .pricebox > ul > li .caption {
+	background-color: #f8f8f8;
+	padding: 10px;
+	font-size: 11px;
+	text-align: left;
+}
+#product .pricebox > ul > li .caption strong {
+	color: #ff0000;
+}
+
+#product .pricebox > ul > li.saleactive > div:nth-of-type(1) p em {
+	margin: 0 10px 0 0;
+	color: #afafaf;
+	text-decoration: line-through;
+}
+#product .pricebox > ul > li.saleactive > div:nth-of-type(1) p em:nth-of-type(2) {
+	margin: 0 0 0 10px;
+	text-decoration: none;
+	color: #000000;
+}
+#product .pricebox > ul > li.saleactive > div:nth-of-type(1) p em:nth-of-type(2) span {
+	color: #ff0000;
+}
+#product .pricebox > ul > li.saleactive .saletag {
+	display: inline-block;
+}
+#product .pricebox > ul > li .saletag {
+	display: none;
+	box-sizing: border-box;
+	position: absolute;
+	top: -10px;
+	left: 0;
+	background-color: #0065cc;
+	color: #ffffff;
+	padding: 5px 10px;
+	font-size: 14px;
+	font-family: din-2014, sans-serif;
+	font-weight: 300;
+	font-style: italic;
+	line-height: 1em;
+}
+#product .pricebox > ul > li .saletag span {
+	font-family: din-2014, sans-serif;
+	font-weight: 700;
+	font-style: italic;
+}
+
+
+
+
+
+
+/*
+製品概要
+*/
+#product .wrapper figure{
+	width: 260px;
+	margin: 0 auto 15px;
+}
+#product .wrapper figure img{
+	width: 260px;
+	height: auto;
+}
+
+#product .spec{
+	position: relative;
+	background-image: linear-gradient(110deg, #000344, #000000);
+	width: 300px;
+	margin: 0 auto;
+	padding: 15px 0;
+}
+#product .spec::before{
+	content: "";
+	position: absolute;
+	background-image: url(../images/sp_product_mesh005c.png?20210120_02);
+    background-size: 100% auto;
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+#product .spec ul{
+	background-image: url(../images/sp_product_hz005c.png?20210120_02);
+	background-size: 280px 5px;
+	background-position: center top;
+	background-repeat: no-repeat;
+	width: 300px;
+	margin: 0 auto;
+}
+#product .spec ul li{
+	background-image: url(../images/sp_product_hz005c.png?20210120_02);
+	background-size: 280px 5px;
+	background-position: center bottom;
+	background-repeat: no-repeat;
+	color: #fff;
+}
+#product .spec ul li > div{
+	box-sizing: border-box;
+	align-items: center;
+	line-height: 1em;
+}
+#product .spec ul li > div h4{
+	box-sizing: border-box;
+	font-size: 12px;
+	line-height: 1.5em;
+	letter-spacing: 0.02em;
+	text-align: center;
+	padding: 20px 0 10px 0;
+}
+
+#product .spec ul li > div > div{
+	flex: 1;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0 0 20px 0;
+}
+#product .spec ul li > div > div p{
+	box-sizing: border-box;
+	font-size: 10px;
+	line-height: 2em;
+	letter-spacing: 0.02em;
+	text-align: center;
+	margin: 0 auto;
+	padding: 0 2em;
+	word-break: break-all;
+}
+#product .spec ul li > div > div p span{
+	color: #f9ff49;
+	font-size: 10px;
+	line-height: 1.3em;
+}
+
+
+
+
+
+
+/*OPTIMIZE*/
+@media screen and (min-width:768px) and ( max-width:1279px) {
+	/**/
+}
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　PRODUCT_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+HOWTO
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#howto{
+	text-align: center;
+	padding: 30px 0 15px;
+}
+
+
+
+#howto h3{
+	background-image: url(../images/sp_title_bg005c.png?20210120_02);
+	background-size: 301px 55px;
+	color: #fff;
+	font-size: 15px;
+	line-height: 55px;
+	width: 301px;
+	height: 55px;
+	margin: 0 auto 15px;
+}
+
+
+
+#howto p{
+	font-size: 14px;
+	line-height: 1.8em;
+	margin: 0 auto 20px;
+}
+
+
+
+#howto figure{
+	position: relative;
+	width: 310px;
+	margin: 0 auto 15px;
+}
+#howto figure img{
+	display: block;
+	width: 310px;
+	height: auto;
+}
+#howto figure figcaption{
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+#howto figure figcaption p.apple{
+	position: absolute;
+	top: 211px;
+	left: 73px;
+}
+#howto figure figcaption p.apple a{
+	display: block;
+	width: 164px;
+	height: 46px;
+	text-indent: -9999px;
+}
+#howto figure figcaption p.android{
+	position: absolute;
+	top: 309px;
+	left: 77px;
+}
+#howto figure figcaption p.android a{
+	display: block;
+	width: 157px;
+	height: 48px;
+	text-indent: -9999px;
+}
+#howto figure figcaption p.oculus{
+	position: absolute;
+	top: 242px;
+	left: 17px;
+}
+
+
+
+#howto figure.step1 img.sp {
+	width: 310px;
+	height: 428px;
+}
+#howto figure.step2 img.sp {
+	width: 310px;
+	height: 547px;
+}
+#howto figure.step3 img.sp {
+	width: 310px;
+	height: 597px;
+}
+
+
+#howto figure figcaption p.gotobuyinfo a{
+	display: block;
+	position: absolute;
+	top: 270px;
+	left: 50%;
+	width: 271px;
+	height: 57px;
+	margin: 0 0 0 -137px;
+	background-image: url(../images/banner_store_guide005c.png?20210120_02);
+	background-repeat: no-repeat;
+	text-indent: -9999px;
+}
+
+
+
+
+
+
+/*OPTIMIZE*/
+@media screen and (min-width:768px) and ( max-width:1279px) {
+	/**/
+}
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　HOWTO_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+CRONOS
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#cronos{
+	padding: 30px 0;
+}
+
+#grandwrapper > section:not(:first-of-type)#cronos{
+	background-color: rgba(0,0,4,0.9);
+}
+
+#cronos ul{
+	width: 280px;
+	margin: 0 auto;
+}
+#cronos ul li{
+	margin: 0 auto 15px;
+}
+#cronos ul li figure{}
+#cronos ul li figure figcaption{
+	width: 0;
+	height: 0;
+	text-indent: -9999px;
+}
+#cronos ul li figure img{
+	width: 280px;
+	height: auto;
+}
+
+#cronos p{
+	color: #fff;
+	font-size: 13px;
+	line-height: 1.8em;
+	letter-spacing: 0.05em;
+	width: 280px;
+	margin: 0 auto;
+}
+#cronos p span{
+	color: #d3be4c;
+}
+
+
+
+
+
+/*OPTIMIZE*/
+@media screen and (min-width:768px) and ( max-width:1279px) {
+	/**/
+}
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　CRONOS_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+BUYINFO
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#buyinfo{
+	padding:40px 0 20px 0;
+}
+
+
+
+#buyinfo h3{
+	font-family: "DINEngschriftLTPro";
+	font-size: 27px;
+	text-align: center;
+	line-height: 1em;
+	letter-spacing: 0.05em;
+	margin: 0 0 10px 0;
+}
+
+
+
+#buyinfo > ul {}
+#buyinfo > ul li a {
+	display: block;
+	width: 280px;
+	height: 95px;
+	margin: 0 auto 10px auto;
+	/*text-indent: -9999px;*/
+}
+#buyinfo > ul li a img {
+	width: 100%;
+	height: auto;
+}
+/*
+#buyinfo > ul li.oculusquest a {background-image: url(../images/banner_store_altdeus_quest.png?20210120_02);}
+#buyinfo > ul li.oculusrift a {background-image: url(../images/banner_store_altdeus_rift.png?20210120_02);}
+#buyinfo > ul li.oculusrift.off a {background-image: url(../images/banner_store_altdeus_rift_cs.png?20210120_02);}
+#buyinfo > ul li.psvr a {background-image: url(../images/banner_store_altdeus_psvr.png?20210120_02);}
+#buyinfo > ul li.steam a {background-image: url(../images/banner_store_altdeus_steam.png?20210120_02);}
+*/
+
+
+
+
+
+/*OPTIMIZE*/
+@media screen and (min-width:768px) and ( max-width:1279px) {
+	/**/
+}
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　BUYINFO_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+REVIEW
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#review{
+	text-align: center;
+	padding: 30px 0;
+}
+
+
+
+#review h3{
+	background-image: url(../images/sp_title_bg005c.png?20210120_02);
+	background-size: 301px 55px;
+	color: #fff;
+	font-size: 15px;
+	line-height: 55px;
+	width: 301px;
+	height: 55px;
+	margin: 0 auto 15px;
+}
+
+#grandwrapper > section:not(:first-of-type)#review{
+	background-color: rgba(0,0,4,0.9);
+}
+
+
+
+#review figure img{
+	width: 300px;
+	height: 838px;
+}
+
+
+
+
+
+/*OPTIMIZE*/
+@media screen and (min-width:768px) and ( max-width:1279px) {
+	/**/
+}
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　REVIEW_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+PSVR
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#psvr{
+	text-align: center;
+	padding: 30px 0;
+}
+
+
+
+#psvr h3{
+	background-image: url(../images/sp_title_bg005c.png?20210120_02);
+	background-size: 301px 55px;
+	color: #fff;
+	font-size: 15px;
+	line-height: 55px;
+	width: 301px;
+	height: 55px;
+	margin: 0 auto 15px;
+}
+
+#grandwrapper > section:not(:first-of-type)#psvr{
+	background-color: rgba(0,0,4,0.9);
+}
+
+
+
+#psvr .psvr_price {
+	background-image: url(../images/sp_block_psvr_price005c.png?20210120_02);
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	width: 300px;
+	height: 675px;
+	margin: 0 auto 40px auto;
+	text-indent: -9999px;
+}
+
+
+
+#psvr .psvr_countdown {
+	background-color: #0045a3;
+	text-align: center;
+	width: 286px;
+	border: solid 2px #fff;
+	margin: 20px auto 40px;
+	padding: 20px 5px 10px;
+}
+
+#psvr .psvr_countdown p {
+	color: #fff;
+	font-size: 16px;
+	font-weight: bold;
+	letter-spacing: 0.2em;
+	text-shadow: 3px 3px 2px #000C5B;
+}
+#psvr .psvr_countdown p span {
+	color: #ffe400;
+	font-family: 'Oswald', sans-serif;
+	font-size: 40px;
+	font-weight: normal;
+	margin: 0 5px;
+}
+
+
+
+#psvr .psvr_bonus {
+	background-image: url(../images/sp_block_psvr_items_normal005c.png?20210120_02);
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	width: 300px;
+	height: 305px;
+	margin: 0 auto 40px auto;
+	text-indent: -9999px;
+}
+
+
+
+#psvr .psvr_bonus_2 {
+	position: relative;
+	background-image: url(../images/sp_block_psvr_buynow_normal_2.png);
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	width: 300px;
+	height: 560px;
+	margin: 0 auto 40px auto;
+	text-indent: -9999px;
+}
+#psvr .psvr_bonus_2 p {
+	position: absolute;
+	width: 260px;
+	height: 52px;
+	top: 490px;
+	left: 50%;
+	margin: 0 0 0 -130px;
+}
+#psvr .psvr_bonus_2 p a {
+	display: block;
+	background-image: url(../images/block_psvr_specialgift.png);
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	width: 260px;
+	height: 52px;
+}
+
+
+
+#psvr .psvr_items_special {
+	background-image: url(../images/sp_block_psvr_items_special005c.png?20210120_02);
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	width: 300px;
+	height: 1417px;
+	margin: 0 auto 40px auto;
+	text-indent: -9999px;
+}
+
+
+
+#psvr .psvr_buynow {
+width: 300px;
+	margin: 0 auto;
+}
+#psvr .psvr_buynow ul {
+	width: 300px;
+}
+#psvr .psvr_buynow ul li {
+	margin: 10px 0;
+}
+#psvr .psvr_buynow ul li a {
+	display: block;
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	width: 300px;
+	height: 60px;
+	text-indent: -9999px;
+}
+#psvr .psvr_buynow ul li:nth-of-type(1) a {
+	background-image: url(../images/block_psvr_buynow_amazon005c.png?20210120_02);
+}
+#psvr .psvr_buynow ul li:nth-of-type(2) a {
+	background-image: url(../images/block_psvr_buynow_special005c.png?20210120_02);
+}
+#psvr .psvr_buynow ul li:nth-of-type(3) a {
+	background-image: url(../images/block_psvr_buynow_normal005c.png?20210120_02);
+}
+
+
+
+
+
+/*OPTIMIZE*/
+@media screen and (min-width:768px) and ( max-width:1279px) {
+	/**/
+}
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　PSVR_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/

@@ -1,0 +1,2101 @@
+@charset "UTF-8";
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+RESET_start
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+*{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+h1,h2,h3,h4,h5,h6,
+div,p,
+span,em,strong,
+ul,ol,li,
+dl,dt,dd,
+a{
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+}
+
+a{
+	outline: none;
+	text-decoration: none;
+}
+
+.sp{
+	display: none !important;
+}
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　RESET_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+COMMON_start
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+body{
+}
+html,body{
+	width: 100%;
+	height: 100%;
+	/*font-family: "FOT-UD角ゴ_スモール Pr6 DB", sans-serif;*/
+	font-family: "FOT-UD角ゴ_スモール Pr6 B", sans-serif;
+	font-weight: 500;
+	font-style: normal;
+}
+#grandwrapper{
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+	background-image: url(../images/pattern_bg005c.png?20210120_02);
+	background-size: 1680px auto;
+	background-position: top center;
+	background-repeat: repeat-y;
+	background-attachment: fixed;
+}
+img{vertical-align: bottom;}
+
+
+
+
+
+
+/*
+プラグイン調整
+*/
+#top .mfp-figure::after,
+#top .mfp-counter {
+	display: none;
+}
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　COMMON_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+footer_start
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+footer{
+	background-color: #000000;
+	text-align: center;
+	width: 100%;
+	padding: 40px 0;
+}
+
+
+
+
+
+
+/*
+コピーライト
+*/
+footer p{
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	color: #6C6C6C;
+	font-size: 10px;
+	letter-spacing: 0.12em;
+	text-indent: 0.12em;
+	width: 90%;
+	margin: 0 auto 10px auto;
+}
+
+
+
+
+
+
+/*
+コピーライト
+*/
+small{
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	color: #ffffff;
+	font-size: 9px;
+	letter-spacing: 0.12em;
+	text-indent: 0.12em;
+}
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　footer_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+PSVRKV
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#psvrkv{
+	position: relative;
+	background-color: #000000;
+	height: 720px;
+	margin: 0 0 176px 0;
+}
+
+
+
+
+
+
+/*
+ロゴ
+*/
+#psvrkv h1{
+	z-index: 5;
+	position: absolute;
+	background-image: url(../images/kv_title005c.png?20210120_02);
+	background-position: top center;
+	background-repeat: no-repeat;
+	width: 376px;
+	height: 143px;
+	text-indent: -9999px;
+	top: 120px;
+	left: 50%;
+	margin: 0 0 0 70px;
+}
+#psvrkv h2{
+	z-index: 5;
+	position: absolute;
+	background-image: url(../images/kv_genre005c.png?20210120_02);
+	background-position: top center;
+	background-repeat: no-repeat;
+	width: 230px;
+	height: 22px;
+	text-indent: -9999px;
+	top: 90px;
+	left: 50%;
+	margin: 0 0 0 150px;
+}
+
+
+
+#psvrkv h3.platform{
+	z-index: 5;
+	position: absolute;
+	background-image: url(../images/platformicons005c.png?20210120_02);
+	background-position: top center;
+	background-repeat: no-repeat;
+	width: 430px;
+	height: 30px;
+	text-indent: -9999px;
+	top: 20px;
+	left: 20px;
+}
+#psvrkv h3.develop{
+	z-index: 5;
+	position: absolute;
+	background-image: url(../images/icon_mydearest005c.png?20210120_02);
+	background-position: top center;
+	background-repeat: no-repeat;
+	width: 70px;
+	height: 36px;
+	text-indent: -9999px;
+	top: 20px;
+	right: 20px;
+}
+
+
+
+/*buynow*/
+#psvrkv p.buynow{
+}
+#psvrkv p.buynow a{
+	z-index: 5;
+	position: absolute;
+	display: block;
+	background-image: url(../images/psvr_buynow005c.png?20210120_02);
+	background-position: top center;
+	background-repeat: no-repeat;
+	width: 364px;
+	height: 128px;
+	top: 510px;
+	left: 50%;
+	margin: 0 0 0px 97px;
+	text-indent: -9999px;
+}
+
+
+
+/*onsale*/
+#psvrkv .onsale {
+	z-index: 5;
+	position: absolute;
+	background-image: url(../images/psvr_onsale005c.png?20210120_02);
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	width: 188px;
+	height: 193px;
+	top: 284px;
+	left: 50%;
+	margin: 0 0 0 158px;
+	text-indent: -9999px;
+	filter: drop-shadow(0 0 10px rgba(0,0,0,0.5));
+}
+
+
+
+/*countdown*/
+#psvrkv div.countdown{
+	z-index: 5;
+	position: absolute;
+	/*background-color: #0045a3;*/
+	background: linear-gradient(45deg,  #0045a3 45%,#0fb4e7 100%);
+	color: #fff;
+	font-size: 18px;
+	text-align: center;
+	font-weight: bold;
+	letter-spacing: 0.5em;
+	text-indent: 0.5em;
+	width: 323px;
+	top: 670px;
+	left: 50%;
+	margin: 0 0 0 97px;
+	padding: 10px 0 5px;
+	border: solid 1px #fff;
+	text-shadow: 3px 3px 2px #0045a3;
+}
+#psvrkv div.countdown p.reserve{}
+#psvrkv div.countdown p.countdata{
+	font-size: 26px;
+}
+#psvrkv div.countdown p.countdata span{
+	font-family: 'Oswald', sans-serif;
+	font-size: 32px;
+	margin: 0 3px;
+}
+
+
+
+
+
+
+/*
+キービジュアル
+*/
+#psvrkv div.visual{
+	z-index: 3;
+	background-image: url(../images/kv_art005c.png?20210120_02);
+	background-position: top center;
+	background-size: auto 720px;
+	width: 100%;
+	height: 100%;
+}
+
+
+
+
+
+
+/*
+斜め
+*/
+#psvrkv::before{
+  content:"";
+  position: absolute;
+  bottom: -50px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+
+  /*ここで三角形のサイズを決める。
+  必ず幅100vwにして、ブラウザサイズいっぱいにしてください。*/
+  border-width: 50px 0 0 100vw ;
+
+  border-color: #000 transparent transparent transparent;
+}
+
+
+
+
+
+
+/*OPTIMIZE*/
+@media screen and (min-width:768px) and ( max-width:1279px) {
+	/**/
+}
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　PSVRKV_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+KV
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#kv{
+	position: relative;
+	background-color: #000000;
+	height: 720px;
+	margin: 0 0 176px 0;
+}
+
+
+
+
+
+
+/*
+ロゴ
+*/
+#kv h1{
+	z-index: 5;
+	position: absolute;
+	background-image: url(../images/kv_title005c.png?20210120_02);
+	background-position: top center;
+	background-repeat: no-repeat;
+	width: 376px;
+	height: 143px;
+	text-indent: -9999px;
+	top: 120px;
+	left: 50%;
+	margin: 0 0 0 70px;
+}
+#kv h2{
+	z-index: 5;
+	position: absolute;
+	background-image: url(../images/kv_genre005c.png?20210120_02);
+	background-position: top center;
+	background-repeat: no-repeat;
+	width: 230px;
+	height: 22px;
+	text-indent: -9999px;
+	top: 90px;
+	left: 50%;
+	margin: 0 0 0 150px;
+}
+
+
+
+#kv h3.platform{
+	z-index: 5;
+	position: absolute;
+	background-image: url(../images/platformicons005c.png?20210120_02);
+	background-position: top center;
+	background-repeat: no-repeat;
+	width: 430px;
+	height: 30px;
+	text-indent: -9999px;
+	top: 20px;
+	left: 20px;
+}
+#kv h3.develop{
+	z-index: 5;
+	position: absolute;
+	background-image: url(../images/icon_mydearest005c.png?20210120_02);
+	background-position: top center;
+	background-repeat: no-repeat;
+	width: 70px;
+	height: 36px;
+	text-indent: -9999px;
+	top: 20px;
+	right: 20px;
+}
+
+
+
+/*buynow*/
+#kv p.buynow{
+}
+#kv p.buynow a{
+	z-index: 5;
+	position: absolute;
+	display: block;
+	background-image: url(../images/reserve005c.png?20210120_02);
+	background-position: top center;
+	background-repeat: no-repeat;
+	width: 364px;
+	height: 128px;
+	top: 510px;
+	left: 50%;
+	margin: 0 0 0px 97px;
+	text-indent: -9999px;
+}
+
+
+
+/*onsale*/
+#kv .onsale {
+	z-index: 5;
+	position: absolute;
+	background-image: url(../images/onsale005c.png?20210120_02);
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	width: 188px;
+	height: 193px;
+	top: 284px;
+	left: 50%;
+	margin: 0 0 0 158px;
+	text-indent: -9999px;
+	filter: drop-shadow(0 0 10px rgba(0,0,0,0.5));
+}
+
+
+
+
+
+
+/*
+キービジュアル
+*/
+#kv div.visual{
+	z-index: 3;
+	background-image: url(../images/kv_art005c.png?20210120_02);
+	background-position: top center;
+	background-size: auto 100%;
+	width: 100%;
+	height: 100%;
+}
+
+
+
+
+
+
+/*
+斜め
+*/
+#kv::before{
+  content:"";
+  position: absolute;
+  bottom: -50px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+
+  /*ここで三角形のサイズを決める。
+  必ず幅100vwにして、ブラウザサイズいっぱいにしてください。*/
+  border-width: 50px 0 0 100vw ;
+
+  border-color: #000 transparent transparent transparent;
+}
+
+
+
+
+
+
+/*OPTIMIZE*/
+@media screen and (min-width:768px) and ( max-width:1279px) {
+	/**/
+}
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　KV_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+BOX
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#grandwrapper > section:not(:first-of-type){
+	position: relative;
+	background-color: rgba(255,255,255,0.9);
+	margin: 170px 0;
+}
+#grandwrapper > section:not(:first-of-type)::before{
+	content: "";
+	position: absolute;
+	background-image: url(../images/sp_object_slash_top005c.png?20210120_02);
+	background-size: auto 34px;
+	background-position: top center;
+	background-repeat: repeat-x;
+	height: 34px;
+	width: 100%;
+	top: -34px;
+	left: 50%;
+	margin: 0 0 0 -50%;
+}
+#grandwrapper > section:not(:first-of-type)::after{
+	content: "";
+	position: absolute;
+	background-image: url(../images/sp_object_slash_bottom005c.png?20210120_02);
+	background-size: auto 34px;
+	background-position: top center;
+	background-repeat: repeat-x;
+	height: 34px;
+	width: 100%;
+	bottom: -34px;
+	left: 50%;
+	margin: 0 0 0 -50%;
+}
+
+
+
+
+
+
+#gamesystem h3,
+#character h3,
+#campfire h3,
+#cheer h3,
+#quest h3,
+#series h3,
+#story h3,
+#product h3,
+#howto h3,
+#movie h3,
+#review h3,
+#psvr h3{
+	background-image: url(../images/title_bg005c.png?20210120_02);
+	background-size: 100% auto;
+	color: #fff;
+	font-size: 30px;
+	line-height: 110px;
+	width: 942px;
+	height: 110px;
+	margin: 0 auto 30px;
+	text-align: center;
+}
+
+
+
+
+
+
+
+/*OPTIMIZE*/
+@media screen and (min-width:768px) and ( max-width:1279px) {
+	/**/
+}
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　BOX_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+GAMEINFO
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#gameinfo{
+	text-align: center;
+	padding: 80px 0 50px 0;
+}
+
+
+
+/*
+キャラ
+*/
+#gameinfo .bg_chara{
+	z-index: 1;
+	position: absolute;
+	background-image: url(../images/sp_gameinfo_chloe005c.png?20210120_02);
+	background-size: 100% auto;
+	width: 400px;
+	height: 830px;
+	bottom: 0;
+	left: 50%;
+	margin: 0 0 0 277px;
+}
+
+
+
+/*キャッチ*/
+#gameinfo h3{
+	color: transparent;
+	font-family: "DINEngschriftLTPro";
+	font-weight: 500;
+	font-style: normal;
+	font-size: 111px;
+	text-align: center;
+	line-height: 1em;
+	-webkit-text-stroke: 1px #333333;
+}
+
+
+
+/*リードコピー*/
+#gameinfo h4{
+	font-size: 35px;
+	letter-spacing: 0.05em;
+	line-height: 1.7em;
+	margin: 0 0 40px 0;
+}
+
+
+
+/*
+本文
+*/
+#gameinfo p{
+	position: relative;
+	z-index: 6;
+	color: #ffffff;
+	font-size: 20px;
+	line-height: 2.5em;
+	letter-spacing: 0.1em;
+}
+#gameinfo p span{
+	background-color: #000;
+}
+
+
+
+/*
+スクショ
+*/
+#gameinfo figure{
+	z-index: 5;
+	position: relative;
+	margin: 35px auto 0;
+}
+#gameinfo figure img{
+	width: 1032px;
+	height: auto;
+}
+
+
+
+
+
+
+/*OPTIMIZE*/
+@media screen and (min-width:768px) and ( max-width:1279px) {
+	/**/
+}
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　GAMEINFO_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+GAMESYSTEM
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#gamesystem{
+	text-align: center;
+	padding: 60px 0 40px 0;
+}
+
+#gamesystem h3{
+}
+
+#gamesystem ul{
+	width: 1000px;
+	margin: 0 auto;
+}
+#gamesystem ul li{
+	background-size: 100% auto;
+	width: 900px;
+	height: 896px;
+	margin: 0 auto 20px auto;
+	padding: 0;
+	text-indent: -9999px;
+}
+#gamesystem ul li h4{
+	display: none;
+}
+#gamesystem ul li p{
+	display: none;
+}
+
+#gamesystem ul li.system_A{
+	background-image: url(../images/gamesystem_01005c.png?20210120_02);
+}
+#gamesystem ul li.system_B{
+	background-image: url(../images/gamesystem_02005c.png?20210120_02);
+}
+#gamesystem ul li.system_C{
+	background-image: url(../images/gamesystem_03005c.png?20210120_02);
+}
+
+
+
+
+
+
+
+
+/*OPTIMIZE*/
+@media screen and (min-width:768px) and ( max-width:1279px) {
+	/**/
+}
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　GAMESYSTEM_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+CHARACTER
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#character{
+	text-align: center;
+	padding: 60px 0 100px;
+}
+
+#character h3{
+}
+
+#character ul{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	width: 778px;
+	margin: 0 auto;
+}
+#character ul li{
+	width: 379px;
+	height: 530px;
+	margin: 0 0 20px 0;
+}
+#character ul li figure img{
+	width: 100%;
+	height: auto;
+}
+#character ul li figure figcaption{
+	width: 0;
+	height: 0;
+	text-indent: -9999px;
+}
+
+
+
+
+
+
+/*OPTIMIZE*/
+@media screen and (min-width:768px) and ( max-width:1279px) {
+	/**/
+}
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　CHARACTER_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+CAMPFIRE
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#campfire{
+	text-align: center;
+	padding: 60px 0 80px 0;
+}
+
+#campfire h3{
+	margin: 0 auto 600px auto;
+}
+
+
+
+#campfire h4{
+	background-image: url(../images/campfire_text005c.png?20210120_02);
+	background-size: 300px 31px;
+	background-position: center center;
+	font-size: 20px;
+}
+
+
+
+#campfire .ss_1{
+	position: absolute;
+	width: 622px;
+	height: 559px;
+	top: 190px;
+	left: 50%;
+	margin: 0 0 0 -570px;
+}
+#campfire .ss_2{
+	position: absolute;
+	width: 571px;
+	height: 416px;
+	top: 224px;
+	left: 50%;
+	margin: 0 0 0 -30px;
+}
+
+
+
+
+
+
+/*OPTIMIZE*/
+@media screen and (min-width:768px) and ( max-width:1279px) {
+	/**/
+}
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　CAMPFIRE_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+CHEER
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#cheer{
+	text-align: center;
+	padding: 60px 0 20px;
+	min-height: 920px;
+}
+
+#grandwrapper > section:not(:first-of-type)#cheer{
+	background-color: rgba(0,0,4,0.9);
+}
+
+#cheer h3{
+}
+
+#cheer figure{
+position: absolute;
+top: 190px;
+left: 50%;
+width: 1454px;
+height: 755px;
+margin: 0 0 0 -727px;
+}
+#cheer figure img.pc{
+	display: block;
+}
+
+
+
+
+
+
+/*OPTIMIZE*/
+@media screen and (min-width:768px) and ( max-width:1279px) {
+	/**/
+}
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　CHEER_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+QUEST
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#quest{
+	text-align: center;
+	padding: 60px 0;
+}
+
+
+
+#quest h3{
+	font-size: 20px;
+}
+
+
+
+#quest h4{
+	z-index: 2;
+	position: relative;
+	font-size: 20px;
+}
+#quest h4 span{
+	color: #2751ff;
+}
+
+
+
+#quest figure{
+	position: relative;
+	background-color: #fff;
+	width: 100%;
+	margin: 40px auto 60px auto;
+	box-shadow: 0 0 10px 0 rgba(0,0,0,0.8);
+}
+#quest figure::after{
+	content: "";
+	position: absolute;
+	background-image: url(../images/quest_ornament005c.png?20210120_02);
+	background-size: auto 100%;
+	background-position: top center;
+	background-repeat: no-repeat;
+	width: 1331px;
+	height: 577px;
+	top: -29px;
+	left: 50%;
+	margin: 0 0 0 -665px;
+}
+#quest figure img{}
+
+
+
+
+
+
+/*OPTIMIZE*/
+@media screen and (min-width:768px) and ( max-width:1279px) {
+	/**/
+}
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　QUEST_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+LAM
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#lam{
+	position: relative;
+	text-align: center;
+	padding: 0;
+}
+
+#grandwrapper > section:not(:first-of-type)#lam{
+	background-color: rgba(0,0,4,0.9);
+}
+
+
+
+#lam figure{
+	position: relative;
+	left: 50%;
+	margin: 0 0 0 -500px;
+	width: 486px;
+	height: 691px;
+}
+#lam figure img{}
+
+
+
+#lam .profile{
+	z-index: 3;
+	position: absolute;
+	top: 100px;
+	left: 565px;
+	width: 440px;
+	color: #fff;
+	text-align: left;
+}
+#lam .profile h3{
+	font-family: "DINEngschriftLTPro";
+	font-size: 135px;
+	line-height: 1em;
+	letter-spacing: 0.1em;
+	margin: 0px 0 15px 0;
+}
+#lam .profile h4{
+	color: #717171;
+	font-size: 20px;
+	line-height: 1.5em;
+	letter-spacing: 0.1em;
+	margin: 0 0 55px 0;
+}
+#lam .profile p{
+	font-size: 14px;
+	line-height: 2.5em;
+	letter-spacing: 0.2em;
+	text-align: justify;
+}
+
+
+
+
+
+/*OPTIMIZE*/
+@media screen and (min-width:768px) and ( max-width:1279px) {
+	/**/
+}
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　LAM_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+SERIES
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#series{
+	text-align: center;
+	padding: 60px 0;
+}
+
+
+
+#series h3{
+	margin: 0 auto 40px auto;
+}
+
+
+
+#series p{
+	font-size: 20px;
+	line-height: 1.8em;
+	margin: 0 auto 20px;
+}
+
+
+
+
+#series hr{
+	background-image: url(../images/series_hz005c.png?20210120_02);
+	background-size: 100% auto;
+	width: 10px;
+	height: 144px;
+	margin: 15px auto;
+	border: none;
+}
+#series hr.branch{
+	background-image: url(../images/hz_brunch005c.png?20210120_02);
+	margin: 15px auto 25px;
+	width: 530px;
+	height: 262px;
+}
+
+
+
+#series figure{
+	display: flex;
+	justify-content: center;
+}
+#series figure figcaption{
+	width: 0;
+	height: 0;
+	text-indent: -9999px;
+}
+
+#series h4{
+	background-color: #fff;
+	color: #f01818;
+	font-size: 20px;
+	line-height: 1.8em;
+	margin: 50px 0 0;
+	padding: 45px 0;
+	border-top: solid 1px #000;
+	border-bottom: solid 1px #000;
+}
+
+
+
+
+
+
+/*OPTIMIZE*/
+@media screen and (min-width:768px) and ( max-width:1279px) {
+	/**/
+}
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　SERIES_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+STORY
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#story{
+	text-align: center;
+	padding: 60px 0 200px;
+}
+
+#grandwrapper > section:not(:first-of-type)#story{
+	background-color: rgba(0,0,4,0.9);
+}
+
+
+
+#story h3{
+}
+
+
+
+#story h4{
+	background-position: top center;
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 177px;
+	margin: 0 auto 10px;
+	text-indent: -9999px;
+}
+#story h4.y2080{
+	background-image: url(../images/story_year_2080005c.png?20210120_02);
+}
+#story h4.y2280{
+	background-image: url(../images/story_year_2280005c.png?20210120_02);
+}
+
+
+
+#story p{
+	color: #fff;
+	font-family: "FOT-UD角ゴ_スモール Pr6 DB", sans-serif;
+	font-size: 16px;
+	line-height: 2.5em;
+	letter-spacing: 0.065em;
+	text-shadow: 0 0 15px #2ed5ff;
+}
+#story p:nth-of-type(1){
+	text-shadow: 0 0 15px #2ed5ff;
+	margin: 0 auto;
+}
+#story p:nth-of-type(2){
+	text-shadow: 0 0 15px #2ed5ff;
+	margin: 0 auto;
+}
+#story p:nth-of-type(3){
+	text-shadow: 0 0 15px #ff2e5a;
+	margin: 0 auto;
+}
+#story p:nth-of-type(4){
+	text-shadow: 0 0 15px #ff2e5a;
+	margin: 0 auto 30px;
+}
+#story p:nth-of-type(5){
+	text-shadow: 0 0 15px #ff2e5a;
+	margin: 0 auto 30px;
+}
+#story p:nth-of-type(6){
+	text-shadow: 0 0 15px #ff2e5a;
+	margin: 0 auto 40px;
+}
+#story p:nth-of-type(7){
+	text-shadow: 0 0 15px #ff2e5a;
+	margin: 20px auto 0;
+}
+
+
+
+#story figure{
+	display: flex;
+	position: relative;
+	justify-content: center;
+}
+#story figure.ss::before{
+	z-index: 1;
+    content: "";
+	position: absolute;
+	background-color: #000;
+	background-image: url(../images/pattern_lattice_bk70005c.png?20210120_02);
+	background-size: 180px auto;
+	background-position: top center;
+	background-repeat: repeat;
+	width: 100%;
+	height: 70%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+#story figure.ss img{
+	z-index: 3;
+	position: relative;
+	width: 1111px;
+	height: 502px;
+}
+
+#story figure.sphere {
+	margin: 70px auto 0 auto;
+}
+#story figure.sphere img{
+	filter: drop-shadow(0px 0px 10px #FF2E5A);
+}
+
+#story hr{
+	background-image: url(../images/story_arrow005c.png?20210120_02);
+	background-size: 100%;
+	width: 54px;
+	height: 34px;
+	margin: 90px auto;
+	border: none;
+}
+
+
+
+
+
+/*OPTIMIZE*/
+@media screen and (min-width:768px) and ( max-width:1279px) {
+	/**/
+}
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　STORY_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+MOVIE
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#movie{
+	text-align: center;
+	padding: 60px 0 85px 0;
+}
+
+
+
+#movie h3{
+	margin: 0 auto 80px auto;
+}
+
+
+
+#movie p{
+	position: relative;
+	margin: 0 auto 45px auto
+}
+#movie p::before{
+	content: "";
+	z-index: 0;
+	position: absolute;
+	background-image: url(../images/sp_movie_cont_bg005c.png?20210120_02);
+	background-size: 100% auto;
+	width: 981px;
+	height: 637px;
+	top: -42px;
+	left: 50%;
+	margin: 0 0 0 -508px;
+}
+#movie p a{
+	display: block;
+	position: relative;
+	background-image: url(../images/movie_thumb005c.png?20210120_02);
+	background-size: 100% auto;
+	background-position: top center;
+	width: 750px;
+	height: 447px;
+	margin: 0 auto;
+	text-indent: -9999px;
+	border-radius: 6px;
+	transform: scale(1);
+	transition-duration: 300ms;
+	transition-property: all;
+	transition-timing-function: cubic-bezier(.42,0,0,.99);
+	transition-delay: 0ms;
+	transform-origin:center;
+}
+#movie p a:hover{
+	transform: scale(0.95);
+}
+#movie p a::before{
+	z-index: 5;
+	content: "";
+	position: absolute;
+	background-image: url(../images/movie_thumbnail_play005c.png?20210120_02);
+	background-size: 55px 55px;
+	width: 55px;
+	height: 55px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+
+
+
+#movie h4{
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 700;
+	font-style: normal;
+	font-size: 20px;
+	line-height: 1.5em;
+	margin: 0 auto 15px auto;
+}
+
+#movie h5{
+	font-family: "FuturaLTPro-Medium", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 14px;
+	line-height: 1em;
+}
+
+
+
+/*OPTIMIZE*/
+@media screen and (min-width:768px) and ( max-width:1279px) {
+	/**/
+}
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　MOVIE_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+PRODUCT
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#product{
+	text-align: center;
+	padding: 60px 0 87px 0;
+}
+
+
+
+#product h3{
+	margin: 0 auto 40px auto;
+}
+
+
+
+
+
+
+/*
+商品詳細
+*/
+#product .specandprice{
+	margin: 0 0 50px 0;
+}
+#product .specandprice ul li div{
+	display: flex;
+	box-sizing: border-box;
+	align-items: center;
+	line-height: 1em;
+}
+#product .specandprice ul li div h4{
+	box-sizing: border-box;
+	font-size: 13px;
+	line-height: 2.5em;
+	letter-spacing: 0.03em;
+	text-align: center;
+	width: 300px;
+	padding: 15px 0;
+}
+
+#product .specandprice ul li div > div{
+	flex: 1;
+	box-sizing: border-box;
+	width: 680px;
+	margin: 0 0 0 20px;
+	padding: 15px 0;
+}
+#product .specandprice ul li div > div p{
+	box-sizing: border-box;
+	font-size: 12px;
+	line-height: 2.5em;
+	letter-spacing: 0.25em;
+	text-align: center;
+	margin: 0 auto;
+	padding: 0 2em;
+	word-break: break-all;
+}
+#product .specandprice ul li div > div p span{
+	color: #003cd3;
+	font-size: 11px;
+}
+
+
+/*価格*/
+#product .pricebox {
+	background-image: url(../images/pricebox_bg005c.png?20210120_02);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: 1000px auto;
+	background-color: #eeeeee;
+	padding: 40px 0;
+}
+#product .pricebox > ul {
+	width: 780px;
+	margin: 0 auto;
+}
+#product .pricebox > ul > li {
+	position: relative;
+	box-sizing: border-box;
+	background-color: #ffffff;
+	width: 780px;
+	margin: 0 0 10px 0;
+	padding: 10px;
+	border-radius: 6px;
+}
+#product .pricebox > ul > li:last-child {
+	margin: 0;
+}
+#product .pricebox > ul > li > div:nth-of-type(1) {
+	display: flex;
+	justify-content: space-between;
+	margin: 0 0 10px 0;
+}
+#product .pricebox > ul > li > div:nth-of-type(1) h4 {
+	flex: 0 0 200px;
+	font-family: "FOT-UD角ゴ_スモール Pr6 B";
+	border-right: 1px #000000 solid;
+}
+#product .pricebox > ul > li > div:nth-of-type(1) p {
+	box-sizing: border-box;
+	width: 100%;
+	padding: 0 10px;
+	text-align: right;
+}
+#product .pricebox > ul > li > div:nth-of-type(1) p em {
+	font-style: normal;
+}
+#product .pricebox > ul > li > div:nth-of-type(1) p span {
+	font-size: 26px;
+	padding: 0 5px 0 0;
+}
+#product .pricebox > ul > li > div:nth-of-type(1) a,
+#product .pricebox > ul > li > div:nth-of-type(1) span.disabled {
+	box-sizing: border-box;
+	display: block;
+	flex: 0 0 190px;
+	background-color: #ffe400;
+	color: #000000;
+	padding: 1em 2em;
+	font-family: "FOT-UD角ゴ_スモール Pr6 B";
+	font-size: 12px;
+	text-align: center;
+	border-radius: 100px;
+}
+#product .pricebox > ul > li > div:nth-of-type(1) span.disabled {
+	background-color: #cccccc;
+	color: #666666;
+}
+#product .pricebox > ul > li .caption {
+	background-color: #f8f8f8;
+	padding: 15px;
+	font-size: 11px;
+	line-height: 1.65em;
+	text-align: justify;
+}
+#product .pricebox > ul > li .caption strong {
+	color: #ff0000;
+}
+
+#product .pricebox > ul > li.saleactive > div:nth-of-type(1) p em {
+	margin: 0 10px 0 0;
+	color: #afafaf;
+	text-decoration: line-through;
+}
+#product .pricebox > ul > li.saleactive > div:nth-of-type(1) p em:nth-of-type(2) {
+	margin: 0 0 0 10px;
+	text-decoration: none;
+	color: #000000;
+}
+#product .pricebox > ul > li.saleactive > div:nth-of-type(1) p em:nth-of-type(2) span {
+	color: #ff0000;
+}
+#product .pricebox > ul > li.saleactive .saletag {
+	display: inline-block;
+}
+#product .pricebox > ul > li .saletag {
+	display: none;
+	box-sizing: border-box;
+	position: absolute;
+	top: -10px;
+	left: -10px;
+	background-color: #0065cc;
+	color: #ffffff;
+	padding: 5px 10px;
+	font-size: 14px;
+	font-family: din-2014, sans-serif;
+	font-weight: 300;
+	font-style: italic;
+	line-height: 1em;
+}
+#product .pricebox > ul > li .saletag span {
+	font-family: din-2014, sans-serif;
+	font-weight: 700;
+	font-style: italic;
+}
+
+
+
+
+
+
+/*
+製品概要
+*/
+#product .wrapper {
+	display: flex;
+	justify-content: space-between;
+	width: 950px;
+	margin: 0 auto;
+}
+
+
+
+#product figure{
+}
+#product figure img{
+}
+
+
+
+/*
+#product .spec{
+	background-image: url(../images/iteminfo_spec.png?20210120_02);
+	width: 551px;
+	height: 605px;
+	text-indent: -9999px;
+}
+#product .spec li p {
+	text-indent: -9999px;
+}
+#product .spec li p br {
+	display: none;
+}
+*/
+#product .spec{
+	position: relative;
+	background-image: linear-gradient(110deg, #000344, #000000);
+	width: 500px;
+	margin: 0 auto;
+	padding: 30px 0;
+}
+#product .spec::before{
+	content: "";
+	position: absolute;
+	background-image: url(../images/sp_product_mesh.png);
+    background-size: 100% auto;
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+#product .spec ul{
+	background-image: url(../images/sp_product_hz.png);
+	background-size: 100% 5px;
+	background-position: center bottom;
+	background-repeat: no-repeat;
+	width: 90%;
+	margin: 0 auto;
+	padding: 0 0 5px 0;
+}
+#product .spec ul li{
+	background-image: url(../images/sp_product_hz.png);
+	background-size: 100% 5px;
+	background-position: center top;
+	background-repeat: no-repeat;
+	width: 100%;
+	margin: 0 auto;
+	padding: 5px 0 0 0;
+	color: #fff;
+}
+#product .spec ul li > div{
+	/*
+	box-sizing: border-box;
+	align-items: center;
+	line-height: 1em;
+	*/
+	display: flex;
+	align-items: center;
+	line-height: 1em;
+	padding: 20px;
+}
+#product .spec ul li > div h4{
+	flex: 0 0 120px;
+	box-sizing: border-box;
+	font-size: 12px;
+	line-height: 1.5em;
+	letter-spacing: 0.02em;
+	text-align: center;
+	/*padding: 20px 0 10px 0;*/
+}
+
+#product .spec ul li > div > div{
+	box-sizing: border-box;
+	width: 100%;
+	margin: 0;
+}
+#product .spec ul li > div > div p{
+	box-sizing: border-box;
+	font-size: 10px;
+	line-height: 2em;
+	letter-spacing: 0.02em;
+	text-align: center;
+	margin: 0 auto;
+	padding: 0 2em;
+	word-break: break-all;
+}
+#product .spec ul li > div > div p span{
+	color: #f9ff49;
+	font-size: 10px;
+	line-height: 1.3em;
+}
+
+
+
+
+
+
+/*OPTIMIZE*/
+@media screen and (min-width:768px) and ( max-width:1279px) {
+	/**/
+}
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　PRODUCT_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+HOWTO
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#howto{
+	text-align: center;
+	padding: 60px 0;
+}
+
+
+
+#howto h3{
+	margin: 0 auto 40px auto;
+}
+
+
+
+#howto p:first-of-type{
+	font-size: 20px;
+	line-height: 2.5em;
+	margin: 0 auto 40px auto;
+}
+
+
+
+#howto figure{
+	position: relative;
+	width: 800px;
+	margin: 0 auto 20px;
+}
+
+
+
+#howto .step1 {}
+#howto .step1 figcaption {
+	display: none;
+}
+
+
+
+#howto figure img {
+	width: 800px;
+	height: auto;
+}
+
+
+
+#howto .gotobuyinfo a {
+	display: block;
+	position: absolute;
+	top: 340px;
+	left: 50%;
+	background-image: url(../images/banner_store_guide005c.png?20210120_02);
+	width: 360px;
+	height: 104px;
+	margin: 0 0 0 -180px;
+	text-indent: -9999px;
+}
+
+
+
+
+
+/*OPTIMIZE*/
+@media screen and (min-width:768px) and ( max-width:1279px) {
+	/**/
+}
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　HOWTO_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+CRONOS
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#cronos{
+	padding:60px 0;
+}
+
+#grandwrapper > section:not(:first-of-type)#cronos{
+	background-color: rgba(0,0,4,0.9);
+}
+
+
+
+#cronos ul{
+	display: flex;
+	justify-content: space-between;
+	width: 1000px;
+	margin: 0 auto 40px auto;
+}
+#cronos ul li{}
+#cronos ul li figure{}
+#cronos ul li figure figcaption{
+	width: 0;
+	height: 0;
+	text-indent: -9999px;
+}
+#cronos ul li figure img{}
+
+#cronos p{
+	color: #fff;
+	font-size: 20px;
+	line-height: 1.8em;
+	letter-spacing: 0.05em;
+	text-align: justify;
+	width: 1000px;
+	margin: 0 auto;
+}
+#cronos p span{
+	color: #d3be4c;
+}
+
+
+
+
+
+/*OPTIMIZE*/
+@media screen and (min-width:768px) and ( max-width:1279px) {
+	/**/
+}
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　CRONOS_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+BUYINFO
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#buyinfo{
+	padding:90px 0 100px 0;
+}
+
+
+
+#buyinfo h3{
+	margin: 0 auto 20px auto;
+	font-family: "DINEngschriftLTPro";
+	font-size: 58px;
+	text-align: center;
+	letter-spacing: 0.05em;
+}
+
+
+
+#buyinfo > ul {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	width: 980px;
+	margin: 0 auto;
+}
+#buyinfo > ul li {
+	margin: 0 0 20px 0;
+}
+#buyinfo > ul li a {
+	display: block;
+	width: 480px;
+	height: 160px;
+	/*
+	text-indent: -9999px;
+	*/
+	transform: scale(1);
+	transition-duration: 300ms;
+	transition-property: all;
+	transition-timing-function: cubic-bezier(.42,0,0,.99);
+	transition-delay: 0ms;
+	transform-origin:center;
+}
+#buyinfo > ul li:not(.off) a:hover{
+	transform: scale(0.95);
+}
+/*
+#buyinfo > ul li.oculusquest a {background-image: url(../images/banner_store_altdeus_quest.png?20210120_02);}
+#buyinfo > ul li.oculusrift a {background-image: url(../images/banner_store_altdeus_rift.png?20210120_02);}
+#buyinfo > ul li.oculusrift.off a {background-image: url(../images/banner_store_altdeus_rift_cs.png?20210120_02);}
+#buyinfo > ul li.psvr a {background-image: url(../images/banner_store_altdeus_psvr.png?20210120_02);}
+#buyinfo > ul li.steam a {background-image: url(../images/banner_store_altdeus_steam.png?20210120_02);}
+*/
+
+
+
+
+
+/*OPTIMIZE*/
+@media screen and (min-width:768px) and ( max-width:1279px) {
+	/**/
+}
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　BUYINFO_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+REVIEW
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#review{
+	text-align: center;
+	padding: 60px 0 100px;
+}
+
+#grandwrapper > section:not(:first-of-type)#review{
+	background-color: rgba(0,0,4,0.9);
+}
+
+
+
+#review > figure img{
+	width: 800px;
+	height: 726px;
+}
+
+
+
+
+
+/*OPTIMIZE*/
+@media screen and (min-width:768px) and ( max-width:1279px) {
+	/**/
+}
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　REVIEW_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+PSVR
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+#psvr{
+	padding:60px 0;
+}
+
+#grandwrapper > section:not(:first-of-type)#psvr{
+	background-color: rgba(0,0,4,0.9);
+	color: #ffffff;
+}
+
+
+
+#psvr .psvr_price {
+	background-image: url(../images/block_psvr_price005c.png?20210120_02);
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	width: 1000px;
+	height: 799px;
+	margin: 0 auto 40px auto;
+	text-indent: -9999px;
+}
+
+
+
+#psvr .psvr_countdown {
+	background-color: #0045a3;
+	text-align: center;
+	width: 994px;
+	border: solid 3px #fff;
+	margin: 20px auto 50px;
+	padding: 40px 0;
+}
+
+#psvr .psvr_countdown p {
+	font-size: 30px;
+	font-weight: bold;
+	line-height: 1em;
+	letter-spacing: 0.3em;
+	text-shadow: 3px 3px 2px #000C5B;
+}
+#psvr .psvr_countdown p span {
+	color: #ffe400;
+	font-family: 'Oswald', sans-serif;
+	font-size: 70px;
+	font-weight: normal;
+	vertical-align: text-top;
+	margin: 0 5px;
+}
+
+
+
+#psvr .psvr_bonus {
+	background-image: url(../images/block_psvr_items_normal005c.png?20210120_02);
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	width: 1000px;
+	height: 379px;
+	margin: 0 auto 40px auto;
+	text-indent: -9999px;
+}
+
+
+
+#psvr .psvr_bonus_2 {
+	position: relative;
+	background-image: url(../images/block_psvr_buynow_normal_2.png);
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	width: 1000px;
+	height: 923px;
+	margin: 0 auto 40px auto;
+	text-indent: -9999px;
+}
+#psvr .psvr_bonus_2 p {
+	position: absolute;
+	width: 490px;
+	height: 98px;
+	top: 780px;
+	left: 50%;
+	margin: 0 0 0 -245px;
+}
+#psvr .psvr_bonus_2 p a {
+	display: block;
+	background-image: url(../images/block_psvr_specialgift.png);
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	width: 490px;
+	height: 98px;
+	transition-duration: 300ms;
+	transition-property: all;
+	transition-timing-function: cubic-bezier(.42,0,0,.99);
+	transition-delay: 0ms;
+	transform-origin: center;
+}
+#psvr .psvr_bonus_2 p a:hover {
+	transform: scale(0.95);
+}
+
+
+
+#psvr .psvr_items_special {
+	background-image: url(../images/block_psvr_items_special005c.png?20210120_02);
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	width: 1000px;
+	height: 1120px;
+	margin: 0 auto 40px auto;
+	text-indent: -9999px;
+}
+
+
+
+#psvr .psvr_buynow {
+	width: 1000px;
+	margin: 0 auto;
+}
+#psvr .psvr_buynow ul {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	width: 1000px;
+}
+#psvr .psvr_buynow ul li {
+	margin: 0 0 20px 0;
+}
+#psvr .psvr_buynow ul li a {
+	display: block;
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	width: 490px;
+	height: 98px;
+	text-indent: -9999px;
+	transition-duration: 300ms;
+	transition-property: all;
+	transition-timing-function: cubic-bezier(.42,0,0,.99);
+	transition-delay: 0ms;
+	transform-origin: center;
+}
+#psvr .psvr_buynow ul li a:hover {
+	transform: scale(0.95);
+}
+#psvr .psvr_buynow ul li:nth-of-type(1) a {
+	background-image: url(../images/block_psvr_buynow_amazon005c.png?20210120_02);
+}
+#psvr .psvr_buynow ul li:nth-of-type(2) a {
+	background-image: url(../images/block_psvr_buynow_special005c.png?20210120_02);
+}
+#psvr .psvr_buynow ul li:nth-of-type(3) a {
+	background-image: url(../images/block_psvr_buynow_normal005c.png?20210120_02);
+}
+
+
+
+
+
+
+/*OPTIMIZE*/
+@media screen and (min-width:768px) and ( max-width:1279px) {
+	/**/
+}
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　PSVR_end
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
